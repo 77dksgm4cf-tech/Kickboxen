@@ -624,7 +624,7 @@ document.getElementById('importMembersFile').addEventListener('change', async (e
     const buffer = await readFileAsArrayBuffer(file);
     const result = importMembersEditFromExcel(buffer);
     renderAll();
-    let msg = `Mitgliederliste importiert: ${result.updated} aktualisiert, ${result.skipped} übersprungen.`;
+    let msg = `Mitgliederliste importiert: ${result.created} neu angelegt, ${result.updated} aktualisiert, ${result.skipped} übersprungen.`;
     if (result.warnings.length) msg += ` ${result.warnings.length} Warnung(en), siehe Konsole.`;
     showStatus(msg, result.warnings.length > 0);
     if (result.warnings.length) console.warn(result.warnings.join('\n'));

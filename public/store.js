@@ -557,6 +557,7 @@ function importMembersEditFromExcel(arrayBuffer) {
   if (rows.length < 2) throw new Error('Die Datei enthält keine Daten.');
 
   const byId = new Map(members.map((m) => [m.id, m]));
+  let created = 0;
   let updated = 0;
   let skipped = 0;
   const warnings = [];
@@ -565,17 +566,45 @@ function importMembersEditFromExcel(arrayBuffer) {
     const row = rows[i];
     const memberId = String(row[0] || '').trim();
     if (!memberId) continue;
-    const member = byId.get(memberId);
-    if (!member) {
-      skipped++;
-      continue;
-    }
 
+    const nachname = String(row[1] || '').trim();
+    const vorname = String(row[2] || '').trim();
+    const alterInput = String(row[3] || '').trim();
     const status = String(row[4] || '').trim();
     const trainingsgruppe = String(row[5] || '').trim();
     const guertelInput = String(row[6] || '').trim();
     const wettkaempfer = String(row[7] || '').trim();
     const sparring = String(row[8] || '').trim();
+
+    let member = byId.get(memberId);
+    const isNew = !member;
+    if (isNew) {
+      const rawAlter = alterInput === '' ? null : Number(alterInput);
+      const alter = Number.isNaN(rawAlter) ? null : rawAlter;
+      const typ =
+        trainingsgruppe === 'Kindertraining'
+          ? 'Kind'
+          : trainingsgruppe === 'Erwachsenentraining'
+            ? 'Erwachsener'
+            : defaultTypForAge(alter);
+      member = {
+        id: memberId,
+        vorname,
+        nachname,
+        geburtsdatum: null,
+        alter,
+        austrittsdatum: null,
+        active: true,
+        guertel: beltLevelsFor(typ)[0],
+        typ,
+        gekuendigt: false,
+        ausgetreten: false,
+        wettkaempfer: false,
+        sparring: false,
+        kindGruppe: DEFAULT_KIND_GRUPPE,
+      };
+      byId.set(memberId, member);
+    }
 
     member.active = status.toLowerCase() === 'inaktiv' ? false : true;
     if (trainingsgruppe === 'Kindertraining') member.typ = 'Kind';
@@ -585,7 +614,9 @@ function importMembersEditFromExcel(arrayBuffer) {
       member.guertel = guertelInput;
     } else {
       member.guertel = beltLevelsFor(member.typ)[0];
-      warnings.push(`Mitglied ${memberId}: Gürtel "${guertelInput}" ist für ${member.typ} ungültig, auf "${member.guertel}" zurückgesetzt.`);
+      if (guertelInput) {
+        warnings.push(`Mitglied ${memberId}: Gürtel "${guertelInput}" ist für ${member.typ} ungültig, auf "${member.guertel}" zurückgesetzt.`);
+      }
     }
     member.wettkaempfer = wettkaempfer.toLowerCase() === 'ja';
     member.sparring = sparring.toLowerCase() === 'ja';
@@ -594,11 +625,14 @@ function importMembersEditFromExcel(arrayBuffer) {
       const kindGruppeInput = String(row[9] || '').trim();
       member.kindGruppe = KIND_GRUPPEN.includes(kindGruppeInput) ? kindGruppeInput : DEFAULT_KIND_GRUPPE;
     }
-    updated++;
+
+    if (isNew) created++;
+    else updated++;
   }
 
+  members = Array.from(byId.values());
   persistMembers();
-  return { updated, skipped, warnings };
+  return { created, updated, skipped, warnings };
 }
 
 // ---------- JSON-Archivierung (Backup) ----------
