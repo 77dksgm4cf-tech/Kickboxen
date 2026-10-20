@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Kickbox Fortschritt</title>
+<link rel="manifest" href="manifest.json" />
+<meta name="theme-color" content="#ffb703" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-title" content="Kickbox" />
+<link rel="apple-touch-icon" href="icons/icon-192.png" />
+<link rel="stylesheet" href="styles.css" />
+<script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <h1>🥋 Kickbox Fortschritt</h1>
+    <div class="view-switch">
+      <button id="btnViewChild" class="tab active">Kind</button>
+      <button id="btnViewAdult" class="tab">Erwachsene</button>
+      <button id="btnViewTechnique" class="tab">Technik</button>
+      <button id="btnViewOverview" class="tab">Übersicht</button>
+      <button id="btnViewPlan" class="tab">Trainingsplan</button>
+      <button id="btnViewAttendance" class="tab">Anwesenheit</button>
+      <button id="btnViewBackup" class="tab">Daten/Archiv</button>
+    </div>
+  </header>
+
+  <div class="toolbar">
+    <label class="fileLabel">
+      🔄 Mitglieder aktualisieren (Excel)
+      <input type="file" id="syncMembersFile" accept=".xlsx" hidden />
+    </label>
+    <button id="btnExportChecklist">⬇️ Offline-Liste exportieren</button>
+    <label class="fileLabel">
+      ⬆️ Offline-Liste importieren
+      <input type="file" id="importChecklistFile" accept=".xlsx" hidden />
+    </label>
+    <button id="btnExportMembers">⬇️ Mitgliederliste exportieren (Massenänderung)</button>
+    <label class="fileLabel">
+      ⬆️ Mitgliederliste importieren
+      <input type="file" id="importMembersFile" accept=".xlsx" hidden />
+    </label>
+    <select id="activeFilter">
+      <option value="active">Nur aktive</option>
+      <option value="inactive">Nur inaktive</option>
+      <option value="ausgetreten">Ausgetreten</option>
+      <option value="all">Alle</option>
+    </select>
+    <select id="typFilter">
+      <option value="all">Kind + Erwachsene</option>
+      <option value="Kind">Nur Kindertraining</option>
+      <option value="Erwachsener">Nur Erwachsenentraining</option>
+    </select>
+    <label class="activeToggle"><input type="checkbox" id="filterWettkaempfer" /> Nur Wettkämpfer</label>
+    <label class="activeToggle"><input type="checkbox" id="filterSparring" /> Nur Sparring</label>
+    <select id="kindGruppeFilter">
+      <option value="all">Anfänger + Fortgeschrittene</option>
+      <option value="Anfänger">Nur Anfänger</option>
+      <option value="Fortgeschrittene">Nur Fortgeschrittene</option>
+    </select>
+  </div>
+
+  <div id="status" class="status"></div>
+
+  <main id="viewChild" class="view">
+    <input type="search" id="childSearch" placeholder="Kind suchen (Vor- oder Nachname)…" />
+    <div id="childList" class="pillList"></div>
+    <button id="btnAddChild" class="fileLabel" style="margin-bottom:12px;width:100%;">➕ Neues Kind anlegen</button>
+    <div id="childDetail" class="childDetail hidden">
+      <span id="childAge" class="childAge"></span>
+      <select id="childGuertel"></select>
+      <label class="activeToggle"><input type="checkbox" id="childActive" /> Aktiv</label>
+      <label class="activeToggle"><input type="checkbox" id="childWettkaempfer" /> Wettkämpfer</label>
+      <label class="activeToggle"><input type="checkbox" id="childSparring" /> Sparring</label>
+      <select id="childKindGruppe">
+        <option value="Anfänger">Anfänger</option>
+        <option value="Fortgeschrittene">Fortgeschrittene</option>
+      </select>
+    </div>
+    <div id="childGekuendigt" class="gekuendigtInfo hidden"></div>
+    <div id="childNextInfo" class="childNextInfo hidden"></div>
+    <div id="childTechniques" class="techniqueList"></div>
+  </main>
+
+  <main id="viewAdult" class="view hidden">
+    <input type="search" id="adultSearch" placeholder="Mitglied suchen (Vor- oder Nachname)…" />
+    <div id="adultList" class="pillList"></div>
+    <button id="btnAddAdult" class="fileLabel" style="margin-bottom:12px;width:100%;">➕ Neues Mitglied anlegen</button>
+    <div id="adultDetail" class="childDetail hidden">
+      <span id="adultAge" class="childAge"></span>
+      <select id="adultGuertel"></select>
+      <label class="activeToggle"><input type="checkbox" id="adultActive" /> Aktiv</label>
+      <label class="activeToggle"><input type="checkbox" id="adultWettkaempfer" /> Wettkämpfer</label>
+      <label class="activeToggle"><input type="checkbox" id="adultSparring" /> Sparring</label>
+    </div>
+    <div id="adultGekuendigt" class="gekuendigtInfo hidden"></div>
+    <div id="adultNextInfo" class="childNextInfo hidden"></div>
+    <div id="adultTechniques" class="techniqueList"></div>
+  </main>
+
+  <main id="viewTechnique" class="view hidden">
+    <select id="techniqueSelect"></select>
+    <div id="techniqueMembers" class="memberList"></div>
+  </main>
+
+  <main id="viewOverview" class="view hidden">
+    <label class="filterToggle">
+      <input type="checkbox" id="filterMissing" />
+      Nur fehlende Techniken anzeigen
+    </label>
+    <div id="overviewMatrix" class="matrixWrap"></div>
+  </main>
+
+  <main id="viewPlan" class="view hidden">
+    <div class="planControls">
+      <select id="planTyp">
+        <option value="Kind">Kind</option>
+        <option value="Erwachsener">Erwachsener</option>
+      </select>
+      <select id="planGuertel"></select>
+    </div>
+    <div id="planTable" class="matrixWrap"></div>
+  </main>
+
+  <main id="viewAttendance" class="view hidden">
+    <div class="planControls">
+      <select id="attendanceTyp">
+        <option value="Kind">Kind</option>
+        <option value="Erwachsener">Erwachsener</option>
+      </select>
+      <input type="date" id="attendanceDate" />
+      <button id="btnCreateSession">➕ Training anlegen</button>
+      <select id="attendanceSessionSelect"></select>
+      <button id="btnDeleteSession">🗑️ Termin löschen</button>
+    </div>
+    <div id="attendanceNextInfo" class="childNextInfo hidden"></div>
+    <div id="attendanceQuickActions" class="planControls hidden">
+      <button id="btnMarkAllPresent">Alle anwesend</button>
+      <button id="btnMarkAllAbsent">Alle abwesend</button>
+    </div>
+    <div id="attendanceList" class="memberList"></div>
+
+    <h3>Trainingsübersicht (pro Monat)</h3>
+    <div id="attendanceSummary" class="matrixWrap"></div>
+  </main>
+
+  <main id="viewBackup" class="view hidden">
+    <p>
+      Diese App speichert alle Daten (Mitglieder, Technik-Fortschritt, Anwesenheit)
+      <strong>nur im Browser-Speicher (localStorage) dieses Geräts</strong> — es gibt
+      keinen Server, der die Daten sichert. Wenn du den Browser-Speicher löschst,
+      einen anderen Browser/Gerät benutzt oder bei iOS die Seite lange nicht öffnest,
+      sind die Daten weg. Exportiere daher regelmäßig ein Archiv!
+    </p>
+    <div class="planControls">
+      <button id="btnExportBackup">⬇️ Daten exportieren (JSON-Archiv)</button>
+      <label class="fileLabel">
+        ⬆️ Daten importieren (JSON-Archiv)
+        <input type="file" id="importBackupFile" accept=".json" hidden />
+      </label>
+    </div>
+    <div class="planControls">
+      <button id="btnClearAll">🗑️ Alle lokalen Daten löschen</button>
+    </div>
+    <p id="backupInfo" class="childNextInfo"></p>
+  </main>
+
+  <script src="store.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,2504 @@
+[
+  {
+    "id": "w1",
+    "week": 1,
+    "name": "Grundstellung, Hände hoch, Blick nach vorne",
+    "label": "Woche 1: Kampfstellung",
+    "category": "Grundlagen",
+    "guertel": "Weiß-Gelb",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "w2",
+    "week": 2,
+    "name": "Vorwärts/rückwärts",
+    "label": "Woche 2: Bewegung",
+    "category": "Grundlagen",
+    "guertel": "Weiß-Gelb",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "w3",
+    "week": 3,
+    "name": "Links/rechts aus der Stellung",
+    "label": "Woche 3: Seitwärtsbewegung",
+    "category": "Grundlagen",
+    "guertel": "Weiß-Gelb",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "w4",
+    "week": 4,
+    "name": "Deckung + Bewegung",
+    "label": "Woche 4: Deckung",
+    "category": "Grundlagen",
+    "guertel": "Weiß-Gelb",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "w5",
+    "week": 5,
+    "name": "Jab, Rückführung zur Deckung",
+    "label": "Woche 5: Jab",
+    "category": "Schläge",
+    "guertel": "Weiß-Gelb",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "w6",
+    "week": 6,
+    "name": "Cross, Hüft-/Schulterdrehung",
+    "label": "Woche 6: Cross",
+    "category": "Schläge",
+    "guertel": "Weiß-Gelb",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "w7",
+    "week": 7,
+    "name": "1–2 aus der Bewegung",
+    "label": "Woche 7: Jab + Cross",
+    "category": "Schläge",
+    "guertel": "Weiß-Gelb",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "w8",
+    "week": 8,
+    "name": "Stellung + Deckung + 1–2",
+    "label": "Woche 8: Wiederholung",
+    "category": "Schläge",
+    "guertel": "Weiß-Gelb",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "w9",
+    "week": 9,
+    "name": "Linker Hook, Ellbogenposition",
+    "label": "Woche 9: Hook",
+    "category": "Schläge / Kicks",
+    "guertel": "Weiß-Gelb",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "w10",
+    "week": 10,
+    "name": "Jab → Cross → Hook",
+    "label": "Woche 10: Kombination",
+    "category": "Schläge / Kicks",
+    "guertel": "Weiß-Gelb",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "w11",
+    "week": 11,
+    "name": "Knie hoch, Kick, Bein zurück",
+    "label": "Woche 11: Front Kick",
+    "category": "Schläge / Kicks",
+    "guertel": "Weiß-Gelb",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "w12",
+    "week": 12,
+    "name": "Jab → Cross → Front Kick",
+    "label": "Woche 12: Punch + Front Kick",
+    "category": "Schläge / Kicks",
+    "guertel": "Weiß-Gelb",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "w13",
+    "week": 13,
+    "name": "Vorbereitung, Drehung, Gleichgewicht",
+    "label": "Woche 13: Roundhouse",
+    "category": "Kicks",
+    "guertel": "Weiß-Gelb",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "w14",
+    "week": 14,
+    "name": "Jab → Cross → Roundhouse",
+    "label": "Woche 14: Roundhouse + Punch",
+    "category": "Kicks",
+    "guertel": "Weiß-Gelb",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "w15",
+    "week": 15,
+    "name": "Knieposition, Streckung, Rückkehr",
+    "label": "Woche 15: Side Kick",
+    "category": "Kicks",
+    "guertel": "Weiß-Gelb",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "w16",
+    "week": 16,
+    "name": "Front/Round/Side Kick",
+    "label": "Woche 16: Alle Kicks",
+    "category": "Kicks",
+    "guertel": "Weiß-Gelb",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "w17",
+    "week": 17,
+    "name": "Jab beim Vor-/Rückwärtsgehen",
+    "label": "Woche 17: Bewegung + Punch",
+    "category": "Kombinationen",
+    "guertel": "Weiß-Gelb",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "w18",
+    "week": 18,
+    "name": "Front Kick aus Bewegung",
+    "label": "Woche 18: Bewegung + Kick",
+    "category": "Kombinationen",
+    "guertel": "Weiß-Gelb",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "w19",
+    "week": 19,
+    "name": "Nähe/Distanz erkennen",
+    "label": "Woche 19: Distanz",
+    "category": "Kombinationen",
+    "guertel": "Weiß-Gelb",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "w20",
+    "week": 20,
+    "name": "Signal → passende Technik",
+    "label": "Woche 20: Reaktion",
+    "category": "Kombinationen",
+    "guertel": "Weiß-Gelb",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "w21",
+    "week": 21,
+    "name": "1–2–Hook / 1–2–Front Kick",
+    "label": "Woche 21: Kombinationen",
+    "category": "Kombinationen",
+    "guertel": "Weiß-Gelb",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "w22",
+    "week": 22,
+    "name": "1–2–Hook–Roundhouse",
+    "label": "Woche 22: Punch + Kick",
+    "category": "Kombinationen",
+    "guertel": "Weiß-Gelb",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "w23",
+    "week": 23,
+    "name": "Stellung, Deckung, Bewegung",
+    "label": "Woche 23: Kontrolliertes Kämpfen",
+    "category": "Kombinationen",
+    "guertel": "Weiß-Gelb",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "w24",
+    "week": 24,
+    "name": "Wiederholung aller Grundlagen",
+    "label": "Woche 24: Abschluss",
+    "category": "Kombinationen",
+    "guertel": "Weiß-Gelb",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "extra_purzelbaum_vor",
+    "name": "Purzelbaum vorwärts",
+    "category": "Bodenarbeit / Fallschule",
+    "week": null,
+    "label": "Purzelbaum vorwärts",
+    "guertel": "Weiß-Gelb",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "extra_purzelbaum_rueck",
+    "name": "Purzelbaum rückwärts",
+    "category": "Bodenarbeit / Fallschule",
+    "week": null,
+    "label": "Purzelbaum rückwärts",
+    "guertel": "Weiß-Gelb",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "extra_fallschule_vor",
+    "name": "Fallschule vorwärts",
+    "category": "Bodenarbeit / Fallschule",
+    "week": null,
+    "label": "Fallschule vorwärts",
+    "guertel": "Weiß-Gelb",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "extra_fallschule_rueck",
+    "name": "Fallschule rückwärts",
+    "category": "Bodenarbeit / Fallschule",
+    "week": null,
+    "label": "Fallschule rückwärts",
+    "guertel": "Weiß-Gelb",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "extra_sv_vorne",
+    "name": "Selbstverteidigung: Umklammern von vorne",
+    "category": "Selbstverteidigung",
+    "week": null,
+    "label": "Selbstverteidigung: Umklammern von vorne",
+    "guertel": "Weiß-Gelb",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "extra_sv_hinten",
+    "name": "Selbstverteidigung: Umklammern von hinten",
+    "category": "Selbstverteidigung",
+    "week": null,
+    "label": "Selbstverteidigung: Umklammern von hinten",
+    "guertel": "Weiß-Gelb",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "kind_gelb_wechselsprunge",
+    "week": null,
+    "name": "Wechselsprünge",
+    "label": "Wechselsprünge",
+    "category": "allgemein",
+    "guertel": "Gelb",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "kind_gelb_knieheben_aus_der_bewegung",
+    "week": null,
+    "name": "Knieheben aus der Bewegung",
+    "label": "Knieheben aus der Bewegung",
+    "category": "allgemein",
+    "guertel": "Gelb",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "kind_gelb_malen_der_zahlen_von_eins_bis_zehn_mit_einem_fu_links_und_rechts",
+    "week": null,
+    "name": "Malen der Zahlen von eins bis zehn mit einem Fuß (links und rechts)",
+    "label": "Malen der Zahlen von eins bis zehn mit einem Fuß (links und rechts)",
+    "category": "allgemein",
+    "guertel": "Gelb",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "kind_gelb_abwehr_gegen_vordere_gerade_jab",
+    "week": null,
+    "name": "Abwehr gegen vordere Gerade (jab)",
+    "label": "Abwehr gegen vordere Gerade (jab)",
+    "category": "speziell",
+    "guertel": "Gelb",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "kind_gelb_abwehr_gegen_hintere_gerade_punch",
+    "week": null,
+    "name": "Abwehr gegen hintere Gerade (punch)",
+    "label": "Abwehr gegen hintere Gerade (punch)",
+    "category": "speziell",
+    "guertel": "Gelb",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "kind_gelb_abwehr_gegen_faustruckenschlag_backfist",
+    "week": null,
+    "name": "Abwehr gegen Faustrückenschlag (backfist)",
+    "label": "Abwehr gegen Faustrückenschlag (backfist)",
+    "category": "speziell",
+    "guertel": "Gelb",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "kind_gelb_abwehr_gegen_vorwartstritt_vorne_frontkick",
+    "week": null,
+    "name": "Abwehr gegen Vorwärtstritt vorne (frontkick)",
+    "label": "Abwehr gegen Vorwärtstritt vorne (frontkick)",
+    "category": "speziell",
+    "guertel": "Gelb",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "kind_gelb_abwehr_gegen_vorwartstritt_hinten_frontkick",
+    "week": null,
+    "name": "Abwehr gegen Vorwärtstritt hinten (frontkick)",
+    "label": "Abwehr gegen Vorwärtstritt hinten (frontkick)",
+    "category": "speziell",
+    "guertel": "Gelb",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "kind_gelb_abwehr_gegen_halbkreistritt_vorne_roundhousekick",
+    "week": null,
+    "name": "Abwehr gegen Halbkreistritt vorne (roundhousekick)",
+    "label": "Abwehr gegen Halbkreistritt vorne (roundhousekick)",
+    "category": "speziell",
+    "guertel": "Gelb",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "kind_gelb_abwehr_gegenangriff_vorgegebene_kombinationen",
+    "week": null,
+    "name": "Abwehr & Gegenangriff (vorgegebene Kombinationen)",
+    "label": "Abwehr & Gegenangriff (vorgegebene Kombinationen)",
+    "category": "speziell",
+    "guertel": "Gelb",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "kind_gelb_teamfahiges_und_kooperatives_verhalten_in_einem_mannschaftsspiel",
+    "week": null,
+    "name": "Teamfähiges und kooperatives Verhalten in einem Mannschaftsspiel",
+    "label": "Teamfähiges und kooperatives Verhalten in einem Mannschaftsspiel",
+    "category": "soziales Verhalten",
+    "guertel": "Gelb",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "kind_gelb_abwehr_gegen_ohrfeige",
+    "week": null,
+    "name": "Abwehr gegen Ohrfeige",
+    "label": "Abwehr gegen Ohrfeige",
+    "category": "Selbstverteidigung",
+    "guertel": "Gelb",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "kind_gelb_eine_frei_ausgewahlte_form_des_wurgens",
+    "week": null,
+    "name": "Eine frei ausgewählte Form des Würgens",
+    "label": "Eine frei ausgewählte Form des Würgens",
+    "category": "Selbstverteidigung",
+    "guertel": "Gelb",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "kind_gelb_orange_handstand_fortschritte_kurzes_halten_im_stutz_mit_hilfe",
+    "week": null,
+    "name": "Handstand (Fortschritte, kurzes Halten im Stütz mit Hilfe)",
+    "label": "Handstand (Fortschritte, kurzes Halten im Stütz mit Hilfe)",
+    "category": "allgemein",
+    "guertel": "Gelb-Orange",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "kind_gelb_orange_radschlagen_gestreckte_arme_schwung_gerader_korper",
+    "week": null,
+    "name": "Radschlagen (gestreckte Arme, Schwung, gerader Körper)",
+    "label": "Radschlagen (gestreckte Arme, Schwung, gerader Körper)",
+    "category": "allgemein",
+    "guertel": "Gelb-Orange",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "kind_gelb_orange_standwaage_kurzes_halten_in_optimaler_position",
+    "week": null,
+    "name": "Standwaage (kurzes Halten in optimaler Position)",
+    "label": "Standwaage (kurzes Halten in optimaler Position)",
+    "category": "allgemein",
+    "guertel": "Gelb-Orange",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "kind_gelb_orange_trainingsfortschritte_bei_der_gratsche",
+    "week": null,
+    "name": "Trainingsfortschritte bei der Grätsche",
+    "label": "Trainingsfortschritte bei der Grätsche",
+    "category": "allgemein",
+    "guertel": "Gelb-Orange",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "kind_gelb_orange_haken_vorne_hook",
+    "week": null,
+    "name": "Haken vorne (hook)",
+    "label": "Haken vorne (hook)",
+    "category": "speziell",
+    "guertel": "Gelb-Orange",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "kind_gelb_orange_haken_hinten_hook",
+    "week": null,
+    "name": "Haken hinten (hook)",
+    "label": "Haken hinten (hook)",
+    "category": "speziell",
+    "guertel": "Gelb-Orange",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "kind_gelb_orange_aufwartshaken_vorne_uppercut",
+    "week": null,
+    "name": "Aufwärtshaken vorne (uppercut)",
+    "label": "Aufwärtshaken vorne (uppercut)",
+    "category": "speziell",
+    "guertel": "Gelb-Orange",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "kind_gelb_orange_aufwartshaken_hinten_uppercut",
+    "week": null,
+    "name": "Aufwärtshaken hinten (uppercut)",
+    "label": "Aufwärtshaken hinten (uppercut)",
+    "category": "speziell",
+    "guertel": "Gelb-Orange",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "kind_gelb_orange_halbkreistritt_hinten_roundhousekick",
+    "week": null,
+    "name": "Halbkreistritt hinten (roundhousekick)",
+    "label": "Halbkreistritt hinten (roundhousekick)",
+    "category": "speziell",
+    "guertel": "Gelb-Orange",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "kind_gelb_orange_seitwartstritt_vorne_sidekick",
+    "week": null,
+    "name": "Seitwärtstritt vorne (sidekick)",
+    "label": "Seitwärtstritt vorne (sidekick)",
+    "category": "speziell",
+    "guertel": "Gelb-Orange",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "kind_gelb_orange_seitwartstritt_hinten_sidekick",
+    "week": null,
+    "name": "Seitwärtstritt hinten (sidekick)",
+    "label": "Seitwärtstritt hinten (sidekick)",
+    "category": "speziell",
+    "guertel": "Gelb-Orange",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "kind_gelb_orange_gerade_fauststo_e_in_vorwarts_ruckwarts_und_seitwartsbewegung",
+    "week": null,
+    "name": "Gerade Fauststöße in Vorwärts-, Rückwärts- und Seitwärtsbewegung",
+    "label": "Gerade Fauststöße in Vorwärts-, Rückwärts- und Seitwärtsbewegung",
+    "category": "speziell",
+    "guertel": "Gelb-Orange",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "kind_gelb_orange_rechts_linksauslage_kampfstellung",
+    "week": null,
+    "name": "Rechts-/Linksauslage (Kampfstellung)",
+    "label": "Rechts-/Linksauslage (Kampfstellung)",
+    "category": "Theorie",
+    "guertel": "Gelb-Orange",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "kind_gelb_orange_verschiedene_distanzen_im_kickboxen_erlautern",
+    "week": null,
+    "name": "Verschiedene Distanzen im Kickboxen erläutern",
+    "label": "Verschiedene Distanzen im Kickboxen erläutern",
+    "category": "Theorie",
+    "guertel": "Gelb-Orange",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "kind_gelb_orange_begriffe_erklaren_hook_uppercut_sidekick",
+    "week": null,
+    "name": "Begriffe erklären: hook, uppercut, sidekick",
+    "label": "Begriffe erklären: hook, uppercut, sidekick",
+    "category": "Theorie",
+    "guertel": "Gelb-Orange",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "kind_gelb_orange_abwehr_gegen_handangriff",
+    "week": null,
+    "name": "Abwehr gegen Handangriff",
+    "label": "Abwehr gegen Handangriff",
+    "category": "Selbstverteidigung",
+    "guertel": "Gelb-Orange",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "kind_orange_2x2_minuten_bodenkampf_ringen",
+    "week": null,
+    "name": "2x2 Minuten Bodenkampf/Ringen",
+    "label": "2x2 Minuten Bodenkampf/Ringen",
+    "category": "allgemein",
+    "guertel": "Orange",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "kind_orange_judorolle_aikidorolle",
+    "week": null,
+    "name": "Judorolle/Aikidorolle",
+    "label": "Judorolle/Aikidorolle",
+    "category": "allgemein",
+    "guertel": "Orange",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "kind_orange_fallschule_seitlich_mit_gestrecktem_arm_abfangen",
+    "week": null,
+    "name": "Fallschule seitlich (mit gestrecktem Arm abfangen)",
+    "label": "Fallschule seitlich (mit gestrecktem Arm abfangen)",
+    "category": "allgemein",
+    "guertel": "Orange",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "kind_orange_abwehr_gegen_haken_vorne_hook",
+    "week": null,
+    "name": "Abwehr gegen Haken vorne (hook)",
+    "label": "Abwehr gegen Haken vorne (hook)",
+    "category": "speziell",
+    "guertel": "Orange",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "kind_orange_abwehr_gegen_haken_hinten_hook",
+    "week": null,
+    "name": "Abwehr gegen Haken hinten (hook)",
+    "label": "Abwehr gegen Haken hinten (hook)",
+    "category": "speziell",
+    "guertel": "Orange",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "kind_orange_abwehr_gegen_aufwartshaken_vorne_uppercut",
+    "week": null,
+    "name": "Abwehr gegen Aufwärtshaken vorne (uppercut)",
+    "label": "Abwehr gegen Aufwärtshaken vorne (uppercut)",
+    "category": "speziell",
+    "guertel": "Orange",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "kind_orange_abwehr_gegen_aufwartshaken_hinten_uppercut",
+    "week": null,
+    "name": "Abwehr gegen Aufwärtshaken hinten (uppercut)",
+    "label": "Abwehr gegen Aufwärtshaken hinten (uppercut)",
+    "category": "speziell",
+    "guertel": "Orange",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "kind_orange_abwehr_gegen_halbkreistritt_hinten_roundhousekick",
+    "week": null,
+    "name": "Abwehr gegen Halbkreistritt hinten (roundhousekick)",
+    "label": "Abwehr gegen Halbkreistritt hinten (roundhousekick)",
+    "category": "speziell",
+    "guertel": "Orange",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "kind_orange_abwehr_gegen_seitwartstritt_vorne_sidekick",
+    "week": null,
+    "name": "Abwehr gegen Seitwärtstritt vorne (sidekick)",
+    "label": "Abwehr gegen Seitwärtstritt vorne (sidekick)",
+    "category": "speziell",
+    "guertel": "Orange",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "kind_orange_abwehr_gegen_seitwartstritt_hinten_sidekick",
+    "week": null,
+    "name": "Abwehr gegen Seitwärtstritt hinten (sidekick)",
+    "label": "Abwehr gegen Seitwärtstritt hinten (sidekick)",
+    "category": "speziell",
+    "guertel": "Orange",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "kind_orange_abwehr_gegenangriff_vorgegebene_kombinationen",
+    "week": null,
+    "name": "Abwehr + Gegenangriff (vorgegebene Kombinationen)",
+    "label": "Abwehr + Gegenangriff (vorgegebene Kombinationen)",
+    "category": "speziell",
+    "guertel": "Orange",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "kind_orange_demonstration_von_doppelkicks",
+    "week": null,
+    "name": "Demonstration von Doppelkicks",
+    "label": "Demonstration von Doppelkicks",
+    "category": "speziell",
+    "guertel": "Orange",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "kind_orange_fairer_partnerschaftlicher_umgang_in_wettkampfformen",
+    "week": null,
+    "name": "Fairer, partnerschaftlicher Umgang in Wettkampfformen",
+    "label": "Fairer, partnerschaftlicher Umgang in Wettkampfformen",
+    "category": "soziales Verhalten",
+    "guertel": "Orange",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "kind_orange_schwitzkasten_von_vorne_und_von_der_seite",
+    "week": null,
+    "name": "Schwitzkasten von vorne und von der Seite",
+    "label": "Schwitzkasten von vorne und von der Seite",
+    "category": "Selbstverteidigung",
+    "guertel": "Orange",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "kind_orange_grun_fallen_massiv_vorwarts_aus_dem_kniestand",
+    "week": null,
+    "name": "Fallen massiv vorwärts aus dem Kniestand",
+    "label": "Fallen massiv vorwärts aus dem Kniestand",
+    "category": "allgemein",
+    "guertel": "Orange-Grün",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "kind_orange_grun_rolle_uber_hindernisse_hechtrolle",
+    "week": null,
+    "name": "Rolle über Hindernisse (Hechtrolle)",
+    "label": "Rolle über Hindernisse (Hechtrolle)",
+    "category": "allgemein",
+    "guertel": "Orange-Grün",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "kind_orange_grun_radwende",
+    "week": null,
+    "name": "Radwende",
+    "label": "Radwende",
+    "category": "allgemein",
+    "guertel": "Orange-Grün",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "kind_orange_grun_kombination_vordere_gerade_hintere_gerade_jab_punch",
+    "week": null,
+    "name": "Kombination: vordere Gerade - hintere Gerade (jab-punch)",
+    "label": "Kombination: vordere Gerade - hintere Gerade (jab-punch)",
+    "category": "speziell",
+    "guertel": "Orange-Grün",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "kind_orange_grun_kombination_vordere_gerade_hinterer_haken_jab_hook",
+    "week": null,
+    "name": "Kombination: vordere Gerade - hinterer Haken (jab-hook)",
+    "label": "Kombination: vordere Gerade - hinterer Haken (jab-hook)",
+    "category": "speziell",
+    "guertel": "Orange-Grün",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "kind_orange_grun_kombination_vordere_gerade_hinterer_aufwartshaken_jab_uppercut",
+    "week": null,
+    "name": "Kombination: vordere Gerade - hinterer Aufwärtshaken (jab-uppercut)",
+    "label": "Kombination: vordere Gerade - hinterer Aufwärtshaken (jab-uppercut)",
+    "category": "speziell",
+    "guertel": "Orange-Grün",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "kind_orange_grun_axttritt_vorne_axekick",
+    "week": null,
+    "name": "Axttritt vorne (axekick)",
+    "label": "Axttritt vorne (axekick)",
+    "category": "speziell",
+    "guertel": "Orange-Grün",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "kind_orange_grun_axttritt_hinten_axekick",
+    "week": null,
+    "name": "Axttritt hinten (axekick)",
+    "label": "Axttritt hinten (axekick)",
+    "category": "speziell",
+    "guertel": "Orange-Grün",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "kind_orange_grun_au_enristtritt_vorne_cresentkick",
+    "week": null,
+    "name": "Außenristtritt vorne (cresentkick)",
+    "label": "Außenristtritt vorne (cresentkick)",
+    "category": "speziell",
+    "guertel": "Orange-Grün",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "kind_orange_grun_demonstration_von_dreifachkicks",
+    "week": null,
+    "name": "Demonstration von Dreifachkicks",
+    "label": "Demonstration von Dreifachkicks",
+    "category": "speziell",
+    "guertel": "Orange-Grün",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "kind_orange_grun_pratzenhalten_gegen_fausttechniken",
+    "week": null,
+    "name": "Pratzenhalten gegen Fausttechniken",
+    "label": "Pratzenhalten gegen Fausttechniken",
+    "category": "Theorie",
+    "guertel": "Orange-Grün",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "kind_orange_grun_begriffe_erklaren_axekick_cresentkick_block_parade_finten",
+    "week": null,
+    "name": "Begriffe erklären: axekick, cresentkick, Block, Parade, Finten",
+    "label": "Begriffe erklären: axekick, cresentkick, Block, Parade, Finten",
+    "category": "Theorie",
+    "guertel": "Orange-Grün",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "kind_orange_grun_punkteverteilung_im_wettkampf",
+    "week": null,
+    "name": "Punkteverteilung im Wettkampf",
+    "label": "Punkteverteilung im Wettkampf",
+    "category": "Theorie",
+    "guertel": "Orange-Grün",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "kind_orange_grun_abwehr_gegen_haarangriff_ziehen_an_den_ohren",
+    "week": null,
+    "name": "Abwehr gegen Haarangriff/Ziehen an den Ohren",
+    "label": "Abwehr gegen Haarangriff/Ziehen an den Ohren",
+    "category": "Selbstverteidigung",
+    "guertel": "Orange-Grün",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "kind_grun_vorfuhrung_einer_freien_formen_oder_musikform_mind_30_sekunden",
+    "week": null,
+    "name": "Vorführung einer freien Formen- oder Musikform (mind. 30 Sekunden)",
+    "label": "Vorführung einer freien Formen- oder Musikform (mind. 30 Sekunden)",
+    "category": "allgemein",
+    "guertel": "Grün",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "kind_grun_fallen_massiv_vorwarts_aus_dem_stand",
+    "week": null,
+    "name": "Fallen massiv vorwärts aus dem Stand",
+    "label": "Fallen massiv vorwärts aus dem Stand",
+    "category": "allgemein",
+    "guertel": "Grün",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "kind_grun_beidbeiniges_springen_funf_sprunge_mindestens_funf_meter",
+    "week": null,
+    "name": "Beidbeiniges Springen (fünf Sprünge, mindestens fünf Meter)",
+    "label": "Beidbeiniges Springen (fünf Sprünge, mindestens fünf Meter)",
+    "category": "allgemein",
+    "guertel": "Grün",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "kind_grun_abwehr_gegen_axttritt_vorne_axekick",
+    "week": null,
+    "name": "Abwehr gegen Axttritt vorne (axekick)",
+    "label": "Abwehr gegen Axttritt vorne (axekick)",
+    "category": "speziell",
+    "guertel": "Grün",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "kind_grun_abwehr_gegen_axttritt_hinten_axekick",
+    "week": null,
+    "name": "Abwehr gegen Axttritt hinten (axekick)",
+    "label": "Abwehr gegen Axttritt hinten (axekick)",
+    "category": "speziell",
+    "guertel": "Grün",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "kind_grun_abwehr_gegen_au_enristtritt_vorne_cresentkick",
+    "week": null,
+    "name": "Abwehr gegen Außenristtritt vorne (cresentkick)",
+    "label": "Abwehr gegen Außenristtritt vorne (cresentkick)",
+    "category": "speziell",
+    "guertel": "Grün",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "kind_grun_eigenstandige_kombination_von_angriffstechniken_mit_fu_und_hand",
+    "week": null,
+    "name": "Eigenständige Kombination von Angriffstechniken mit Fuß und Hand",
+    "label": "Eigenständige Kombination von Angriffstechniken mit Fuß und Hand",
+    "category": "speziell",
+    "guertel": "Grün",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "kind_grun_kickboxtechniken_in_schreitend_und_federnd_gleitender_fortbewegung",
+    "week": null,
+    "name": "Kickboxtechniken in schreitend- und federnd-gleitender Fortbewegung",
+    "label": "Kickboxtechniken in schreitend- und federnd-gleitender Fortbewegung",
+    "category": "speziell",
+    "guertel": "Grün",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "kind_grun_vorbildfunktion_in_der_gruppe",
+    "week": null,
+    "name": "Vorbildfunktion in der Gruppe",
+    "label": "Vorbildfunktion in der Gruppe",
+    "category": "soziales Verhalten",
+    "guertel": "Grün",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "kind_grun_unterarmwurgen_von_hinten_aus_dem_stand",
+    "week": null,
+    "name": "Unterarmwürgen von hinten aus dem Stand",
+    "label": "Unterarmwürgen von hinten aus dem Stand",
+    "category": "Selbstverteidigung",
+    "guertel": "Grün",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "kind_grun_blau_schieben_und_ziehen_eines_gegners_aus_einem_gurtelring_ca_2x2m",
+    "week": null,
+    "name": "Schieben und Ziehen eines Gegners aus einem Gürtelring (ca. 2x2m)",
+    "label": "Schieben und Ziehen eines Gegners aus einem Gürtelring (ca. 2x2m)",
+    "category": "allgemein",
+    "guertel": "Grün-Blau",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "kind_grun_blau_20_halbkreistritte_mit_hochster_geschwindigkeit_mind_30_sek_gegen_pratze_sandsack",
+    "week": null,
+    "name": "20 Halbkreistritte mit höchster Geschwindigkeit (mind. 30 Sek.) gegen Pratze/Sandsack",
+    "label": "20 Halbkreistritte mit höchster Geschwindigkeit (mind. 30 Sek.) gegen Pratze/Sandsack",
+    "category": "allgemein",
+    "guertel": "Grün-Blau",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "kind_grun_blau_kombination_haken_vorne_hintere_gerade_hook_punch",
+    "week": null,
+    "name": "Kombination: Haken vorne - hintere Gerade (hook-punch)",
+    "label": "Kombination: Haken vorne - hintere Gerade (hook-punch)",
+    "category": "speziell",
+    "guertel": "Grün-Blau",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "kind_grun_blau_kombination_haken_vorne_haken_hinten_hook_hook",
+    "week": null,
+    "name": "Kombination: Haken vorne - Haken hinten (hook-hook)",
+    "label": "Kombination: Haken vorne - Haken hinten (hook-hook)",
+    "category": "speziell",
+    "guertel": "Grün-Blau",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "kind_grun_blau_kombination_haken_vorne_hinterer_aufwartshaken_hook_uppercut",
+    "week": null,
+    "name": "Kombination: Haken vorne - hinterer Aufwärtshaken (hook-uppercut)",
+    "label": "Kombination: Haken vorne - hinterer Aufwärtshaken (hook-uppercut)",
+    "category": "speziell",
+    "guertel": "Grün-Blau",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "kind_grun_blau_au_enristtritt_hinten_cresentkick",
+    "week": null,
+    "name": "Außenristtritt hinten (cresentkick)",
+    "label": "Außenristtritt hinten (cresentkick)",
+    "category": "speziell",
+    "guertel": "Grün-Blau",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "kind_grun_blau_hakentritt_vorne_hookkick",
+    "week": null,
+    "name": "Hakentritt vorne (hookkick)",
+    "label": "Hakentritt vorne (hookkick)",
+    "category": "speziell",
+    "guertel": "Grün-Blau",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "kind_grun_blau_hakentritt_hinten_hookkick",
+    "week": null,
+    "name": "Hakentritt hinten (hookkick)",
+    "label": "Hakentritt hinten (hookkick)",
+    "category": "speziell",
+    "guertel": "Grün-Blau",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "kind_grun_blau_pratzenhalten_gegen_fu_techniken",
+    "week": null,
+    "name": "Pratzenhalten gegen Fußtechniken",
+    "label": "Pratzenhalten gegen Fußtechniken",
+    "category": "speziell",
+    "guertel": "Grün-Blau",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "kind_grun_blau_begriffe_erklaren_hookkick_meidbewegung_mitschlag",
+    "week": null,
+    "name": "Begriffe erklären: hookkick, Meidbewegung, Mitschlag",
+    "label": "Begriffe erklären: hookkick, Meidbewegung, Mitschlag",
+    "category": "Theorie",
+    "guertel": "Grün-Blau",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "kind_grun_blau_unterschied_von_semi_und_leichtkontakt",
+    "week": null,
+    "name": "Unterschied von Semi- und Leichtkontakt",
+    "label": "Unterschied von Semi- und Leichtkontakt",
+    "category": "Theorie",
+    "guertel": "Grün-Blau",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "kind_grun_blau_schiedsrichterkommandos_stop_break_fight",
+    "week": null,
+    "name": "Schiedsrichterkommandos: stop, break, fight",
+    "label": "Schiedsrichterkommandos: stop, break, fight",
+    "category": "Theorie",
+    "guertel": "Grün-Blau",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "kind_grun_blau_abwehr_gegen_umklammerung_von_vorn",
+    "week": null,
+    "name": "Abwehr gegen Umklammerung von vorn",
+    "label": "Abwehr gegen Umklammerung von vorn",
+    "category": "Selbstverteidigung",
+    "guertel": "Grün-Blau",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "kind_blau_20_vorwartstritte_mit_hochster_geschwindigkeit_mind_30_sek_gegen_pratze_sandsack",
+    "week": null,
+    "name": "20 Vorwärtstritte mit höchster Geschwindigkeit (mind. 30 Sek.) gegen Pratze/Sandsack",
+    "label": "20 Vorwärtstritte mit höchster Geschwindigkeit (mind. 30 Sek.) gegen Pratze/Sandsack",
+    "category": "allgemein",
+    "guertel": "Blau",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "kind_blau_halteubungen_im_unterarmstutz_mind_30_sekunden",
+    "week": null,
+    "name": "Halteübungen im Unterarmstütz (mind. 30 Sekunden)",
+    "label": "Halteübungen im Unterarmstütz (mind. 30 Sekunden)",
+    "category": "allgemein",
+    "guertel": "Blau",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "kind_blau_abwehr_gegen_au_enristtritt_hinten_cresentkick",
+    "week": null,
+    "name": "Abwehr gegen Außenristtritt hinten (cresentkick)",
+    "label": "Abwehr gegen Außenristtritt hinten (cresentkick)",
+    "category": "speziell",
+    "guertel": "Blau",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "kind_blau_abwehr_gegen_hakentritt_vorne_hookkick",
+    "week": null,
+    "name": "Abwehr gegen Hakentritt vorne (hookkick)",
+    "label": "Abwehr gegen Hakentritt vorne (hookkick)",
+    "category": "speziell",
+    "guertel": "Blau",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "kind_blau_abwehr_gegen_hakentritt_hinten_hookkick",
+    "week": null,
+    "name": "Abwehr gegen Hakentritt hinten (hookkick)",
+    "label": "Abwehr gegen Hakentritt hinten (hookkick)",
+    "category": "speziell",
+    "guertel": "Blau",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "kind_blau_modellsparring_vorgeschriebene_angriffstechniken",
+    "week": null,
+    "name": "Modellsparring (vorgeschriebene Angriffstechniken)",
+    "label": "Modellsparring (vorgeschriebene Angriffstechniken)",
+    "category": "speziell",
+    "guertel": "Blau",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "kind_blau_spiegelkickboxen_verdrehte_auslage",
+    "week": null,
+    "name": "Spiegelkickboxen (verdrehte Auslage)",
+    "label": "Spiegelkickboxen (verdrehte Auslage)",
+    "category": "speziell",
+    "guertel": "Blau",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "kind_blau_verhalten_vor_der_gruppe_unterstutzung_des_trainers",
+    "week": null,
+    "name": "Verhalten vor der Gruppe (Unterstützung des Trainers)",
+    "label": "Verhalten vor der Gruppe (Unterstützung des Trainers)",
+    "category": "soziales Verhalten",
+    "guertel": "Blau",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "kind_blau_abwehr_gegen_umklammerung_von_hinten",
+    "week": null,
+    "name": "Abwehr gegen Umklammerung von hinten",
+    "label": "Abwehr gegen Umklammerung von hinten",
+    "category": "Selbstverteidigung",
+    "guertel": "Blau",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "kind_blau_braun_20_seitwartstritte_mit_hochster_geschwindigkeit_mind_30_sek_gegen_pratze_sandsack",
+    "week": null,
+    "name": "20 Seitwärtstritte mit höchster Geschwindigkeit (mind. 30 Sek.) gegen Pratze/Sandsack",
+    "label": "20 Seitwärtstritte mit höchster Geschwindigkeit (mind. 30 Sek.) gegen Pratze/Sandsack",
+    "category": "allgemein",
+    "guertel": "Blau-Braun",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "kind_blau_braun_kombination_hintere_gerade_vordere_gerade_punch_jab",
+    "week": null,
+    "name": "Kombination: hintere Gerade - vordere Gerade (punch-jab)",
+    "label": "Kombination: hintere Gerade - vordere Gerade (punch-jab)",
+    "category": "speziell",
+    "guertel": "Blau-Braun",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "kind_blau_braun_kombination_hintere_gerade_vorderer_haken_punch_hook",
+    "week": null,
+    "name": "Kombination: hintere Gerade - vorderer Haken (punch-hook)",
+    "label": "Kombination: hintere Gerade - vorderer Haken (punch-hook)",
+    "category": "speziell",
+    "guertel": "Blau-Braun",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "kind_blau_braun_kombination_hintere_gerade_vorderer_aufwartshaken_punch_uppercut",
+    "week": null,
+    "name": "Kombination: hintere Gerade - vorderer Aufwärtshaken (punch-uppercut)",
+    "label": "Kombination: hintere Gerade - vorderer Aufwärtshaken (punch-uppercut)",
+    "category": "speziell",
+    "guertel": "Blau-Braun",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "kind_blau_braun_kombination_hinterer_haken_vorderer_haken_hook_hook",
+    "week": null,
+    "name": "Kombination: hinterer Haken - vorderer Haken (hook-hook)",
+    "label": "Kombination: hinterer Haken - vorderer Haken (hook-hook)",
+    "category": "speziell",
+    "guertel": "Blau-Braun",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "kind_blau_braun_seitwartstritt_aus_der_drehung_turnkick",
+    "week": null,
+    "name": "Seitwärtstritt aus der Drehung (turnkick)",
+    "label": "Seitwärtstritt aus der Drehung (turnkick)",
+    "category": "speziell",
+    "guertel": "Blau-Braun",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "kind_blau_braun_hakentritt_aus_der_drehung_turnhookkick",
+    "week": null,
+    "name": "Hakentritt aus der Drehung (turnhookkick)",
+    "label": "Hakentritt aus der Drehung (turnhookkick)",
+    "category": "speziell",
+    "guertel": "Blau-Braun",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "kind_blau_braun_au_enristtritt_aus_der_drehung_turncresentkick",
+    "week": null,
+    "name": "Außenristtritt aus der Drehung (turncresentkick)",
+    "label": "Außenristtritt aus der Drehung (turncresentkick)",
+    "category": "speziell",
+    "guertel": "Blau-Braun",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "kind_blau_braun_eigenstandiger_aufbau_einer_trainingseinheit",
+    "week": null,
+    "name": "Eigenständiger Aufbau einer Trainingseinheit",
+    "label": "Eigenständiger Aufbau einer Trainingseinheit",
+    "category": "speziell",
+    "guertel": "Blau-Braun",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "kind_blau_braun_schiedsrichterverhalten_im_wettkampf",
+    "week": null,
+    "name": "Schiedsrichterverhalten im Wettkampf",
+    "label": "Schiedsrichterverhalten im Wettkampf",
+    "category": "Theorie",
+    "guertel": "Blau-Braun",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "kind_blau_braun_begriffe_erklaren_sportlicher_wettkampf_aggression_und_gewalt",
+    "week": null,
+    "name": "Begriffe erklären: sportlicher Wettkampf, Aggression und Gewalt",
+    "label": "Begriffe erklären: sportlicher Wettkampf, Aggression und Gewalt",
+    "category": "Theorie",
+    "guertel": "Blau-Braun",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "kind_blau_braun_abwehr_gegen_freie_angriffsformen",
+    "week": null,
+    "name": "Abwehr gegen freie Angriffsformen",
+    "label": "Abwehr gegen freie Angriffsformen",
+    "category": "Selbstverteidigung",
+    "guertel": "Blau-Braun",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "kind_braun_hohe_belastung_uber_wettkampfdistanz_spielerisch_z_b_huhnerfangen",
+    "week": null,
+    "name": "Hohe Belastung über Wettkampfdistanz (spielerisch, z.B. Hühnerfangen)",
+    "label": "Hohe Belastung über Wettkampfdistanz (spielerisch, z.B. Hühnerfangen)",
+    "category": "allgemein",
+    "guertel": "Braun",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "kind_braun_abwehr_gegen_seitwartstritt_aus_der_drehung_turnkick",
+    "week": null,
+    "name": "Abwehr gegen Seitwärtstritt aus der Drehung (turnkick)",
+    "label": "Abwehr gegen Seitwärtstritt aus der Drehung (turnkick)",
+    "category": "speziell",
+    "guertel": "Braun",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "kind_braun_abwehr_gegen_hakentritt_aus_der_drehung_turnhookkick",
+    "week": null,
+    "name": "Abwehr gegen Hakentritt aus der Drehung (turnhookkick)",
+    "label": "Abwehr gegen Hakentritt aus der Drehung (turnhookkick)",
+    "category": "speziell",
+    "guertel": "Braun",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "kind_braun_abwehr_gegen_au_enristtritt_aus_der_drehung_turncresentkick",
+    "week": null,
+    "name": "Abwehr gegen Außenristtritt aus der Drehung (turncresentkick)",
+    "label": "Abwehr gegen Außenristtritt aus der Drehung (turncresentkick)",
+    "category": "speziell",
+    "guertel": "Braun",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "kind_braun_wettkampfnahes_freies_sparring_2x2_minuten",
+    "week": null,
+    "name": "Wettkampfnahes freies Sparring (2x2 Minuten)",
+    "label": "Wettkampfnahes freies Sparring (2x2 Minuten)",
+    "category": "speziell",
+    "guertel": "Braun",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "kind_braun_strategien_zur_deeskalation_und_konfliktvermeidung",
+    "week": null,
+    "name": "Strategien zur Deeskalation und Konfliktvermeidung",
+    "label": "Strategien zur Deeskalation und Konfliktvermeidung",
+    "category": "soziales Verhalten",
+    "guertel": "Braun",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "kind_braun_problematik_und_gefahrlichkeit_beim_angriff_mit_einer_waffe",
+    "week": null,
+    "name": "Problematik und Gefährlichkeit beim Angriff mit einer Waffe",
+    "label": "Problematik und Gefährlichkeit beim Angriff mit einer Waffe",
+    "category": "Selbstverteidigung",
+    "guertel": "Braun",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "kind_braun_abwehr_gegen_stockangriff_von_oben",
+    "week": null,
+    "name": "Abwehr gegen Stockangriff von oben",
+    "label": "Abwehr gegen Stockangriff von oben",
+    "category": "Selbstverteidigung",
+    "guertel": "Braun",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "kind_braun_notwehr_und_erlaubte_waffen_beschreiben",
+    "week": null,
+    "name": "Notwehr und erlaubte Waffen beschreiben",
+    "label": "Notwehr und erlaubte Waffen beschreiben",
+    "category": "Selbstverteidigung",
+    "guertel": "Braun",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "kind_braun_schwarz_kraftausdauerzirkel_8_10_stationen_30_sekunden_belastung",
+    "week": null,
+    "name": "Kraftausdauerzirkel (8-10 Stationen, 30 Sekunden Belastung)",
+    "label": "Kraftausdauerzirkel (8-10 Stationen, 30 Sekunden Belastung)",
+    "category": "allgemein",
+    "guertel": "Braun-Schwarz",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "kind_braun_schwarz_kombination_hinterer_haken_vordere_gerade_hook_jab",
+    "week": null,
+    "name": "Kombination: hinterer Haken - vordere Gerade (hook-jab)",
+    "label": "Kombination: hinterer Haken - vordere Gerade (hook-jab)",
+    "category": "speziell",
+    "guertel": "Braun-Schwarz",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "kind_braun_schwarz_kombination_hinterer_haken_vorderer_aufwartshaken_hook_uppercut",
+    "week": null,
+    "name": "Kombination: hinterer Haken - vorderer Aufwärtshaken (hook-uppercut)",
+    "label": "Kombination: hinterer Haken - vorderer Aufwärtshaken (hook-uppercut)",
+    "category": "speziell",
+    "guertel": "Braun-Schwarz",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "kind_braun_schwarz_kombination_hinterer_aufwartshaken_vordere_gerade_uppercut_jab",
+    "week": null,
+    "name": "Kombination: hinterer Aufwärtshaken - vordere Gerade (uppercut-jab)",
+    "label": "Kombination: hinterer Aufwärtshaken - vordere Gerade (uppercut-jab)",
+    "category": "speziell",
+    "guertel": "Braun-Schwarz",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "kind_braun_schwarz_kombination_hinterer_aufwartshaken_vorderer_haken_uppercut_hook",
+    "week": null,
+    "name": "Kombination: hinterer Aufwärtshaken - vorderer Haken (uppercut-hook)",
+    "label": "Kombination: hinterer Aufwärtshaken - vorderer Haken (uppercut-hook)",
+    "category": "speziell",
+    "guertel": "Braun-Schwarz",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "kind_braun_schwarz_vorwartstritt_im_sprung_frontkick",
+    "week": null,
+    "name": "Vorwärtstritt im Sprung (frontkick)",
+    "label": "Vorwärtstritt im Sprung (frontkick)",
+    "category": "speziell",
+    "guertel": "Braun-Schwarz",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "kind_braun_schwarz_seitwartstritt_im_sprung_sidekick",
+    "week": null,
+    "name": "Seitwärtstritt im Sprung (sidekick)",
+    "label": "Seitwärtstritt im Sprung (sidekick)",
+    "category": "speziell",
+    "guertel": "Braun-Schwarz",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "kind_braun_schwarz_hakentritt_im_sprung_hookkick",
+    "week": null,
+    "name": "Hakentritt im Sprung (hookkick)",
+    "label": "Hakentritt im Sprung (hookkick)",
+    "category": "speziell",
+    "guertel": "Braun-Schwarz",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "kind_braun_schwarz_au_enristtritt_im_sprung_cresentkick",
+    "week": null,
+    "name": "Außenristtritt im Sprung (cresentkick)",
+    "label": "Außenristtritt im Sprung (cresentkick)",
+    "category": "speziell",
+    "guertel": "Braun-Schwarz",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "kind_braun_schwarz_reaktionsschnelligkeit_an_der_pratze_2x2_minuten",
+    "week": null,
+    "name": "Reaktionsschnelligkeit an der Pratze (2x2 Minuten)",
+    "label": "Reaktionsschnelligkeit an der Pratze (2x2 Minuten)",
+    "category": "speziell",
+    "guertel": "Braun-Schwarz",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "kind_braun_schwarz_unterschiede_und_ziele_von_raububerfallen_und_sexueller_gewalt",
+    "week": null,
+    "name": "Unterschiede und Ziele von Raubüberfällen und sexueller Gewalt",
+    "label": "Unterschiede und Ziele von Raubüberfällen und sexueller Gewalt",
+    "category": "Theorie",
+    "guertel": "Braun-Schwarz",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "kind_braun_schwarz_typisches_tater_und_opferverhalten_bei_straftaten_beschreiben",
+    "week": null,
+    "name": "Typisches Täter- und Opferverhalten bei Straftaten beschreiben",
+    "label": "Typisches Täter- und Opferverhalten bei Straftaten beschreiben",
+    "category": "Theorie",
+    "guertel": "Braun-Schwarz",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "kind_braun_schwarz_abwehr_gegen_mehrere_angreifer",
+    "week": null,
+    "name": "Abwehr gegen mehrere Angreifer",
+    "label": "Abwehr gegen mehrere Angreifer",
+    "category": "Selbstverteidigung",
+    "guertel": "Braun-Schwarz",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "kind_braun_schwarz_abwehr_gegen_verschiedene_waffen",
+    "week": null,
+    "name": "Abwehr gegen verschiedene Waffen",
+    "label": "Abwehr gegen verschiedene Waffen",
+    "category": "Selbstverteidigung",
+    "guertel": "Braun-Schwarz",
+    "zielgruppe": "Kind"
+  },
+  {
+    "id": "erwachsener_gelb_gehen_in_der_kampfstellung_schreitend_gleitend",
+    "week": null,
+    "name": "Gehen in der Kampfstellung (schreitend-gleitend)",
+    "label": "Gehen in der Kampfstellung (schreitend-gleitend)",
+    "category": "Kampfstellung/Fortbewegung",
+    "guertel": "Gelb",
+    "zielgruppe": "Erwachsener"
+  },
+  {
+    "id": "erwachsener_gelb_beinarbeit_federnd_gleitend",
+    "week": null,
+    "name": "Beinarbeit (federnd-gleitend)",
+    "label": "Beinarbeit (federnd-gleitend)",
+    "category": "Kampfstellung/Fortbewegung",
+    "guertel": "Gelb",
+    "zielgruppe": "Erwachsener"
+  },
+  {
+    "id": "erwachsener_gelb_vordere_gerade_jab",
+    "week": null,
+    "name": "vordere Gerade (jab)",
+    "label": "vordere Gerade (jab)",
+    "category": "Handtechniken",
+    "guertel": "Gelb",
+    "zielgruppe": "Erwachsener"
+  },
+  {
+    "id": "erwachsener_gelb_hintere_gerade_punch",
+    "week": null,
+    "name": "hintere Gerade (punch)",
+    "label": "hintere Gerade (punch)",
+    "category": "Handtechniken",
+    "guertel": "Gelb",
+    "zielgruppe": "Erwachsener"
+  },
+  {
+    "id": "erwachsener_gelb_faustruckenschlag_backfist",
+    "week": null,
+    "name": "Faustrückenschlag (backfist)",
+    "label": "Faustrückenschlag (backfist)",
+    "category": "Handtechniken",
+    "guertel": "Gelb",
+    "zielgruppe": "Erwachsener"
+  },
+  {
+    "id": "erwachsener_gelb_vordere_gerade_hintere_gerade",
+    "week": null,
+    "name": "vordere Gerade - hintere Gerade",
+    "label": "vordere Gerade - hintere Gerade",
+    "category": "Kombinationen Hand",
+    "guertel": "Gelb",
+    "zielgruppe": "Erwachsener"
+  },
+  {
+    "id": "erwachsener_gelb_hintere_gerade_vordere_gerade",
+    "week": null,
+    "name": "hintere Gerade - vordere Gerade",
+    "label": "hintere Gerade - vordere Gerade",
+    "category": "Kombinationen Hand",
+    "guertel": "Gelb",
+    "zielgruppe": "Erwachsener"
+  },
+  {
+    "id": "erwachsener_gelb_vordere_gerade_hintere_gerade_vordere_gerade",
+    "week": null,
+    "name": "vordere Gerade - hintere Gerade - vordere Gerade",
+    "label": "vordere Gerade - hintere Gerade - vordere Gerade",
+    "category": "Kombinationen Hand",
+    "guertel": "Gelb",
+    "zielgruppe": "Erwachsener"
+  },
+  {
+    "id": "erwachsener_gelb_faustruckenschlag_hintere_gerade",
+    "week": null,
+    "name": "Faustrückenschlag - hintere Gerade",
+    "label": "Faustrückenschlag - hintere Gerade",
+    "category": "Kombinationen Hand",
+    "guertel": "Gelb",
+    "zielgruppe": "Erwachsener"
+  },
+  {
+    "id": "erwachsener_gelb_vorwartstritt_vorderes_bein_frontkick",
+    "week": null,
+    "name": "Vorwärtstritt vorderes Bein (frontkick)",
+    "label": "Vorwärtstritt vorderes Bein (frontkick)",
+    "category": "Fußtechniken",
+    "guertel": "Gelb",
+    "zielgruppe": "Erwachsener"
+  },
+  {
+    "id": "erwachsener_gelb_vorwartstritt_hinteres_bein_frontkick",
+    "week": null,
+    "name": "Vorwärtstritt hinteres Bein (frontkick)",
+    "label": "Vorwärtstritt hinteres Bein (frontkick)",
+    "category": "Fußtechniken",
+    "guertel": "Gelb",
+    "zielgruppe": "Erwachsener"
+  },
+  {
+    "id": "erwachsener_gelb_vordere_gerade_hintere_gerade_vorwartstritt_hinteres_bein",
+    "week": null,
+    "name": "vordere Gerade - hintere Gerade - Vorwärtstritt hinteres Bein",
+    "label": "vordere Gerade - hintere Gerade - Vorwärtstritt hinteres Bein",
+    "category": "Kombinationen Hand-Fuß",
+    "guertel": "Gelb",
+    "zielgruppe": "Erwachsener"
+  },
+  {
+    "id": "erwachsener_gelb_vorwartstritt_vorderes_bein_vordere_gerade_hintere_gerade_vordere_gerade",
+    "week": null,
+    "name": "Vorwärtstritt vorderes Bein - vordere Gerade - hintere Gerade - vordere Gerade",
+    "label": "Vorwärtstritt vorderes Bein - vordere Gerade - hintere Gerade - vordere Gerade",
+    "category": "Kombinationen Hand-Fuß",
+    "guertel": "Gelb",
+    "zielgruppe": "Erwachsener"
+  },
+  {
+    "id": "erwachsener_gelb_vordere_gerade_hintere_gerade_vordere_gerade_vorwartstritt_vorderes_bein",
+    "week": null,
+    "name": "vordere Gerade - hintere Gerade - vordere Gerade - Vorwärtstritt vorderes Bein",
+    "label": "vordere Gerade - hintere Gerade - vordere Gerade - Vorwärtstritt vorderes Bein",
+    "category": "Kombinationen Hand-Fuß",
+    "guertel": "Gelb",
+    "zielgruppe": "Erwachsener"
+  },
+  {
+    "id": "erwachsener_gelb_abwehr_gegen_vordere_gerade",
+    "week": null,
+    "name": "Abwehr gegen vordere Gerade",
+    "label": "Abwehr gegen vordere Gerade",
+    "category": "Abwehrkombinationen",
+    "guertel": "Gelb",
+    "zielgruppe": "Erwachsener"
+  },
+  {
+    "id": "erwachsener_gelb_abwehr_gegen_hintere_gerade",
+    "week": null,
+    "name": "Abwehr gegen hintere Gerade",
+    "label": "Abwehr gegen hintere Gerade",
+    "category": "Abwehrkombinationen",
+    "guertel": "Gelb",
+    "zielgruppe": "Erwachsener"
+  },
+  {
+    "id": "erwachsener_gelb_abwehr_gegen_faustruckenschlag",
+    "week": null,
+    "name": "Abwehr gegen Faustrückenschlag",
+    "label": "Abwehr gegen Faustrückenschlag",
+    "category": "Abwehrkombinationen",
+    "guertel": "Gelb",
+    "zielgruppe": "Erwachsener"
+  },
+  {
+    "id": "erwachsener_gelb_abwehr_gegen_vorwartstritt_vorderes_bein",
+    "week": null,
+    "name": "Abwehr gegen Vorwärtstritt vorderes Bein",
+    "label": "Abwehr gegen Vorwärtstritt vorderes Bein",
+    "category": "Abwehrkombinationen",
+    "guertel": "Gelb",
+    "zielgruppe": "Erwachsener"
+  },
+  {
+    "id": "erwachsener_gelb_abwehr_gegen_vorwartstritt_hinteres_bein",
+    "week": null,
+    "name": "Abwehr gegen Vorwärtstritt hinteres Bein",
+    "label": "Abwehr gegen Vorwärtstritt hinteres Bein",
+    "category": "Abwehrkombinationen",
+    "guertel": "Gelb",
+    "zielgruppe": "Erwachsener"
+  },
+  {
+    "id": "erwachsener_gelb_rolle_vorwarts_und_ruckwarts",
+    "week": null,
+    "name": "Rolle vorwärts und rückwärts",
+    "label": "Rolle vorwärts und rückwärts",
+    "category": "Selbstverteidigung/Fallschule",
+    "guertel": "Gelb",
+    "zielgruppe": "Erwachsener"
+  },
+  {
+    "id": "erwachsener_gelb_wurgen_von_vorne_hinten_und_der_seite",
+    "week": null,
+    "name": "Würgen von vorne, hinten und der Seite",
+    "label": "Würgen von vorne, hinten und der Seite",
+    "category": "Selbstverteidigung/Fallschule",
+    "guertel": "Gelb",
+    "zielgruppe": "Erwachsener"
+  },
+  {
+    "id": "erwachsener_gelb_ohr_und_haare_fassen",
+    "week": null,
+    "name": "Ohr und Haare fassen",
+    "label": "Ohr und Haare fassen",
+    "category": "Selbstverteidigung/Fallschule",
+    "guertel": "Gelb",
+    "zielgruppe": "Erwachsener"
+  },
+  {
+    "id": "erwachsener_gelb_notwehr",
+    "week": null,
+    "name": "Notwehr",
+    "label": "Notwehr",
+    "category": "Theorie",
+    "guertel": "Gelb",
+    "zielgruppe": "Erwachsener"
+  },
+  {
+    "id": "erwachsener_orange_ubergange_schreitend_gleitend_federnd_gleitend",
+    "week": null,
+    "name": "Übergänge schreitend-gleitend/federnd-gleitend",
+    "label": "Übergänge schreitend-gleitend/federnd-gleitend",
+    "category": "Kampfstellung/Fortbewegung",
+    "guertel": "Orange",
+    "zielgruppe": "Erwachsener"
+  },
+  {
+    "id": "erwachsener_orange_schattenkickboxen_in_alle_raumrichtungen",
+    "week": null,
+    "name": "Schattenkickboxen in alle Raumrichtungen",
+    "label": "Schattenkickboxen in alle Raumrichtungen",
+    "category": "Kampfstellung/Fortbewegung",
+    "guertel": "Orange",
+    "zielgruppe": "Erwachsener"
+  },
+  {
+    "id": "erwachsener_orange_vorderer_haken_hook",
+    "week": null,
+    "name": "vorderer Haken (hook)",
+    "label": "vorderer Haken (hook)",
+    "category": "Handtechniken",
+    "guertel": "Orange",
+    "zielgruppe": "Erwachsener"
+  },
+  {
+    "id": "erwachsener_orange_hinterer_haken_hook",
+    "week": null,
+    "name": "hinterer Haken (hook)",
+    "label": "hinterer Haken (hook)",
+    "category": "Handtechniken",
+    "guertel": "Orange",
+    "zielgruppe": "Erwachsener"
+  },
+  {
+    "id": "erwachsener_orange_vordere_gerade_hinterer_haken",
+    "week": null,
+    "name": "vordere Gerade - hinterer Haken",
+    "label": "vordere Gerade - hinterer Haken",
+    "category": "Kombinationen Hand",
+    "guertel": "Orange",
+    "zielgruppe": "Erwachsener"
+  },
+  {
+    "id": "erwachsener_orange_vorderer_haken_hintere_gerade",
+    "week": null,
+    "name": "vorderer Haken - hintere Gerade",
+    "label": "vorderer Haken - hintere Gerade",
+    "category": "Kombinationen Hand",
+    "guertel": "Orange",
+    "zielgruppe": "Erwachsener"
+  },
+  {
+    "id": "erwachsener_orange_hintere_gerade_vorderer_haken",
+    "week": null,
+    "name": "hintere Gerade - vorderer Haken",
+    "label": "hintere Gerade - vorderer Haken",
+    "category": "Kombinationen Hand",
+    "guertel": "Orange",
+    "zielgruppe": "Erwachsener"
+  },
+  {
+    "id": "erwachsener_orange_vorderer_haken_hinterer_haken",
+    "week": null,
+    "name": "vorderer Haken - hinterer Haken",
+    "label": "vorderer Haken - hinterer Haken",
+    "category": "Kombinationen Hand",
+    "guertel": "Orange",
+    "zielgruppe": "Erwachsener"
+  },
+  {
+    "id": "erwachsener_orange_hinterer_haken_vorderer_haken",
+    "week": null,
+    "name": "hinterer Haken - vorderer Haken",
+    "label": "hinterer Haken - vorderer Haken",
+    "category": "Kombinationen Hand",
+    "guertel": "Orange",
+    "zielgruppe": "Erwachsener"
+  },
+  {
+    "id": "erwachsener_orange_halbkreistritt_vorderes_bein_roundhousekick",
+    "week": null,
+    "name": "Halbkreistritt vorderes Bein (roundhousekick)",
+    "label": "Halbkreistritt vorderes Bein (roundhousekick)",
+    "category": "Fußtechniken",
+    "guertel": "Orange",
+    "zielgruppe": "Erwachsener"
+  },
+  {
+    "id": "erwachsener_orange_halbkreistritt_hinteres_bein_roundhousekick",
+    "week": null,
+    "name": "Halbkreistritt hinteres Bein (roundhousekick)",
+    "label": "Halbkreistritt hinteres Bein (roundhousekick)",
+    "category": "Fußtechniken",
+    "guertel": "Orange",
+    "zielgruppe": "Erwachsener"
+  },
+  {
+    "id": "erwachsener_orange_vordere_gerade_hintere_gerade_halbkreistritt_vorderes_bein",
+    "week": null,
+    "name": "vordere Gerade - hintere Gerade - Halbkreistritt vorderes Bein",
+    "label": "vordere Gerade - hintere Gerade - Halbkreistritt vorderes Bein",
+    "category": "Kombinationen Hand-Fuß",
+    "guertel": "Orange",
+    "zielgruppe": "Erwachsener"
+  },
+  {
+    "id": "erwachsener_orange_halbkreistritt_vorderes_bein_hintere_gerade_vorderer_haken",
+    "week": null,
+    "name": "Halbkreistritt vorderes Bein - hintere Gerade - vorderer Haken",
+    "label": "Halbkreistritt vorderes Bein - hintere Gerade - vorderer Haken",
+    "category": "Kombinationen Hand-Fuß",
+    "guertel": "Orange",
+    "zielgruppe": "Erwachsener"
+  },
+  {
+    "id": "erwachsener_orange_vordere_gerade_hintere_gerade_halbkreistritt_hinteres_bein",
+    "week": null,
+    "name": "vordere Gerade - hintere Gerade - Halbkreistritt hinteres Bein",
+    "label": "vordere Gerade - hintere Gerade - Halbkreistritt hinteres Bein",
+    "category": "Kombinationen Hand-Fuß",
+    "guertel": "Orange",
+    "zielgruppe": "Erwachsener"
+  },
+  {
+    "id": "erwachsener_orange_abwehr_gegen_vorderen_haken",
+    "week": null,
+    "name": "Abwehr gegen vorderen Haken",
+    "label": "Abwehr gegen vorderen Haken",
+    "category": "Abwehrkombinationen",
+    "guertel": "Orange",
+    "zielgruppe": "Erwachsener"
+  },
+  {
+    "id": "erwachsener_orange_abwehr_gegen_hinteren_haken",
+    "week": null,
+    "name": "Abwehr gegen hinteren Haken",
+    "label": "Abwehr gegen hinteren Haken",
+    "category": "Abwehrkombinationen",
+    "guertel": "Orange",
+    "zielgruppe": "Erwachsener"
+  },
+  {
+    "id": "erwachsener_orange_abwehr_gegen_halbkreistritt_vorderes_bein",
+    "week": null,
+    "name": "Abwehr gegen Halbkreistritt vorderes Bein",
+    "label": "Abwehr gegen Halbkreistritt vorderes Bein",
+    "category": "Abwehrkombinationen",
+    "guertel": "Orange",
+    "zielgruppe": "Erwachsener"
+  },
+  {
+    "id": "erwachsener_orange_abwehr_gegen_halbkreistritt_hinteres_bein",
+    "week": null,
+    "name": "Abwehr gegen Halbkreistritt hinteres Bein",
+    "label": "Abwehr gegen Halbkreistritt hinteres Bein",
+    "category": "Abwehrkombinationen",
+    "guertel": "Orange",
+    "zielgruppe": "Erwachsener"
+  },
+  {
+    "id": "erwachsener_orange_sturz_vorwarts_und_ruckwarts",
+    "week": null,
+    "name": "Sturz vorwärts und rückwärts",
+    "label": "Sturz vorwärts und rückwärts",
+    "category": "Selbstverteidigung/Fallschule",
+    "guertel": "Orange",
+    "zielgruppe": "Erwachsener"
+  },
+  {
+    "id": "erwachsener_orange_schwitzkasten_von_der_seite_und_von_vorne",
+    "week": null,
+    "name": "Schwitzkasten von der Seite und von vorne",
+    "label": "Schwitzkasten von der Seite und von vorne",
+    "category": "Selbstverteidigung/Fallschule",
+    "guertel": "Orange",
+    "zielgruppe": "Erwachsener"
+  },
+  {
+    "id": "erwachsener_orange_unterarmwurgen_von_hinten",
+    "week": null,
+    "name": "Unterarmwürgen von hinten",
+    "label": "Unterarmwürgen von hinten",
+    "category": "Selbstverteidigung/Fallschule",
+    "guertel": "Orange",
+    "zielgruppe": "Erwachsener"
+  },
+  {
+    "id": "erwachsener_orange_nelson",
+    "week": null,
+    "name": "Nelson",
+    "label": "Nelson",
+    "category": "Selbstverteidigung/Fallschule",
+    "guertel": "Orange",
+    "zielgruppe": "Erwachsener"
+  },
+  {
+    "id": "erwachsener_orange_handgelenk_fassen_und_befreien",
+    "week": null,
+    "name": "Handgelenk fassen und befreien",
+    "label": "Handgelenk fassen und befreien",
+    "category": "Selbstverteidigung/Fallschule",
+    "guertel": "Orange",
+    "zielgruppe": "Erwachsener"
+  },
+  {
+    "id": "erwachsener_orange_pointfighting_pf_regelkunde",
+    "week": null,
+    "name": "Pointfighting (PF) Regelkunde",
+    "label": "Pointfighting (PF) Regelkunde",
+    "category": "Theorie",
+    "guertel": "Orange",
+    "zielgruppe": "Erwachsener"
+  },
+  {
+    "id": "erwachsener_grun_vorderer_aufwartshaken_uppercut",
+    "week": null,
+    "name": "vorderer Aufwärtshaken (uppercut)",
+    "label": "vorderer Aufwärtshaken (uppercut)",
+    "category": "Handtechniken",
+    "guertel": "Grün",
+    "zielgruppe": "Erwachsener"
+  },
+  {
+    "id": "erwachsener_grun_hinterer_aufwartshaken_uppercut",
+    "week": null,
+    "name": "hinterer Aufwärtshaken (uppercut)",
+    "label": "hinterer Aufwärtshaken (uppercut)",
+    "category": "Handtechniken",
+    "guertel": "Grün",
+    "zielgruppe": "Erwachsener"
+  },
+  {
+    "id": "erwachsener_grun_vordere_gerade_hinterer_aufwartshaken",
+    "week": null,
+    "name": "vordere Gerade - hinterer Aufwärtshaken",
+    "label": "vordere Gerade - hinterer Aufwärtshaken",
+    "category": "Kombinationen Hand",
+    "guertel": "Grün",
+    "zielgruppe": "Erwachsener"
+  },
+  {
+    "id": "erwachsener_grun_vorderer_aufwartshaken_hinterer_haken",
+    "week": null,
+    "name": "vorderer Aufwärtshaken - hinterer Haken",
+    "label": "vorderer Aufwärtshaken - hinterer Haken",
+    "category": "Kombinationen Hand",
+    "guertel": "Grün",
+    "zielgruppe": "Erwachsener"
+  },
+  {
+    "id": "erwachsener_grun_hinterer_haken_vorderer_aufwartshaken",
+    "week": null,
+    "name": "hinterer Haken - vorderer Aufwärtshaken",
+    "label": "hinterer Haken - vorderer Aufwärtshaken",
+    "category": "Kombinationen Hand",
+    "guertel": "Grün",
+    "zielgruppe": "Erwachsener"
+  },
+  {
+    "id": "erwachsener_grun_vorderer_haken_hinterer_aufwartshaken",
+    "week": null,
+    "name": "vorderer Haken - hinterer Aufwärtshaken",
+    "label": "vorderer Haken - hinterer Aufwärtshaken",
+    "category": "Kombinationen Hand",
+    "guertel": "Grün",
+    "zielgruppe": "Erwachsener"
+  },
+  {
+    "id": "erwachsener_grun_hinterer_aufwartshaken_vorderer_haken",
+    "week": null,
+    "name": "hinterer Aufwärtshaken - vorderer Haken",
+    "label": "hinterer Aufwärtshaken - vorderer Haken",
+    "category": "Kombinationen Hand",
+    "guertel": "Grün",
+    "zielgruppe": "Erwachsener"
+  },
+  {
+    "id": "erwachsener_grun_hinterer_aufwartshaken_vordere_gerade",
+    "week": null,
+    "name": "hinterer Aufwärtshaken - vordere Gerade",
+    "label": "hinterer Aufwärtshaken - vordere Gerade",
+    "category": "Kombinationen Hand",
+    "guertel": "Grün",
+    "zielgruppe": "Erwachsener"
+  },
+  {
+    "id": "erwachsener_grun_seitwartstritt_vorderes_bein_sidekick",
+    "week": null,
+    "name": "Seitwärtstritt vorderes Bein (sidekick)",
+    "label": "Seitwärtstritt vorderes Bein (sidekick)",
+    "category": "Fußtechniken",
+    "guertel": "Grün",
+    "zielgruppe": "Erwachsener"
+  },
+  {
+    "id": "erwachsener_grun_seitwartstritt_hinteres_bein_sidekick",
+    "week": null,
+    "name": "Seitwärtstritt hinteres Bein (sidekick)",
+    "label": "Seitwärtstritt hinteres Bein (sidekick)",
+    "category": "Fußtechniken",
+    "guertel": "Grün",
+    "zielgruppe": "Erwachsener"
+  },
+  {
+    "id": "erwachsener_grun_seitwartstritt_aus_der_drehung",
+    "week": null,
+    "name": "Seitwärtstritt aus der Drehung",
+    "label": "Seitwärtstritt aus der Drehung",
+    "category": "Fußtechniken",
+    "guertel": "Grün",
+    "zielgruppe": "Erwachsener"
+  },
+  {
+    "id": "erwachsener_grun_faustruckenschlag_seitwartstritt_vorderes_bein",
+    "week": null,
+    "name": "Faustrückenschlag - Seitwärtstritt vorderes Bein",
+    "label": "Faustrückenschlag - Seitwärtstritt vorderes Bein",
+    "category": "Kombinationen Hand-Fuß",
+    "guertel": "Grün",
+    "zielgruppe": "Erwachsener"
+  },
+  {
+    "id": "erwachsener_grun_seitwartstritt_vorderes_bein_vordere_gerade_hintere_gerade_vordere_gerade",
+    "week": null,
+    "name": "Seitwärtstritt vorderes Bein - vordere Gerade - hintere Gerade - vordere Gerade",
+    "label": "Seitwärtstritt vorderes Bein - vordere Gerade - hintere Gerade - vordere Gerade",
+    "category": "Kombinationen Hand-Fuß",
+    "guertel": "Grün",
+    "zielgruppe": "Erwachsener"
+  },
+  {
+    "id": "erwachsener_grun_vordere_gerade_hintere_gerade_vordere_gerade_seitwartstritt_aus_der_drehung",
+    "week": null,
+    "name": "vordere Gerade - hintere Gerade - vordere Gerade - Seitwärtstritt aus der Drehung",
+    "label": "vordere Gerade - hintere Gerade - vordere Gerade - Seitwärtstritt aus der Drehung",
+    "category": "Kombinationen Hand-Fuß",
+    "guertel": "Grün",
+    "zielgruppe": "Erwachsener"
+  },
+  {
+    "id": "erwachsener_grun_seitwartstritt_vorderes_bein_seitwartstritt_aus_der_drehung",
+    "week": null,
+    "name": "Seitwärtstritt vorderes Bein - Seitwärtstritt aus der Drehung",
+    "label": "Seitwärtstritt vorderes Bein - Seitwärtstritt aus der Drehung",
+    "category": "Kombinationen Hand-Fuß",
+    "guertel": "Grün",
+    "zielgruppe": "Erwachsener"
+  },
+  {
+    "id": "erwachsener_grun_abwehr_gegen_vorderen_aufwartshaken",
+    "week": null,
+    "name": "Abwehr gegen vorderen Aufwärtshaken",
+    "label": "Abwehr gegen vorderen Aufwärtshaken",
+    "category": "Abwehrkombinationen",
+    "guertel": "Grün",
+    "zielgruppe": "Erwachsener"
+  },
+  {
+    "id": "erwachsener_grun_abwehr_gegen_hinteren_aufwartshaken",
+    "week": null,
+    "name": "Abwehr gegen hinteren Aufwärtshaken",
+    "label": "Abwehr gegen hinteren Aufwärtshaken",
+    "category": "Abwehrkombinationen",
+    "guertel": "Grün",
+    "zielgruppe": "Erwachsener"
+  },
+  {
+    "id": "erwachsener_grun_abwehr_gegen_seitwartstritt_vorderes_bein",
+    "week": null,
+    "name": "Abwehr gegen Seitwärtstritt vorderes Bein",
+    "label": "Abwehr gegen Seitwärtstritt vorderes Bein",
+    "category": "Abwehrkombinationen",
+    "guertel": "Grün",
+    "zielgruppe": "Erwachsener"
+  },
+  {
+    "id": "erwachsener_grun_abwehr_gegen_seitwartstritt_hinteres_bein",
+    "week": null,
+    "name": "Abwehr gegen Seitwärtstritt hinteres Bein",
+    "label": "Abwehr gegen Seitwärtstritt hinteres Bein",
+    "category": "Abwehrkombinationen",
+    "guertel": "Grün",
+    "zielgruppe": "Erwachsener"
+  },
+  {
+    "id": "erwachsener_grun_abwehr_gegen_seitwartstritt_aus_der_drehung",
+    "week": null,
+    "name": "Abwehr gegen Seitwärtstritt aus der Drehung",
+    "label": "Abwehr gegen Seitwärtstritt aus der Drehung",
+    "category": "Abwehrkombinationen",
+    "guertel": "Grün",
+    "zielgruppe": "Erwachsener"
+  },
+  {
+    "id": "erwachsener_grun_modellsparring_gegen_angriffe_der_stufen_1_3",
+    "week": null,
+    "name": "Modellsparring gegen Angriffe der Stufen 1-3",
+    "label": "Modellsparring gegen Angriffe der Stufen 1-3",
+    "category": "Modellsparring",
+    "guertel": "Grün",
+    "zielgruppe": "Erwachsener"
+  },
+  {
+    "id": "erwachsener_grun_fallen_seitlich_links_und_rechts",
+    "week": null,
+    "name": "Fallen seitlich (links und rechts)",
+    "label": "Fallen seitlich (links und rechts)",
+    "category": "Selbstverteidigung/Fallschule",
+    "guertel": "Grün",
+    "zielgruppe": "Erwachsener"
+  },
+  {
+    "id": "erwachsener_grun_umklammern_unter_den_armen_von_vorne_und_hinten",
+    "week": null,
+    "name": "Umklammern unter den Armen (von vorne und hinten)",
+    "label": "Umklammern unter den Armen (von vorne und hinten)",
+    "category": "Selbstverteidigung/Fallschule",
+    "guertel": "Grün",
+    "zielgruppe": "Erwachsener"
+  },
+  {
+    "id": "erwachsener_grun_umklammern_uber_den_armen_von_vorne_und_hinten",
+    "week": null,
+    "name": "Umklammern über den Armen (von vorne und hinten)",
+    "label": "Umklammern über den Armen (von vorne und hinten)",
+    "category": "Selbstverteidigung/Fallschule",
+    "guertel": "Grün",
+    "zielgruppe": "Erwachsener"
+  },
+  {
+    "id": "erwachsener_grun_umklammern_von_der_seite",
+    "week": null,
+    "name": "Umklammern von der Seite",
+    "label": "Umklammern von der Seite",
+    "category": "Selbstverteidigung/Fallschule",
+    "guertel": "Grün",
+    "zielgruppe": "Erwachsener"
+  },
+  {
+    "id": "erwachsener_grun_leichtkontakt_lk_und_vollkontakt_vk_regelkunde",
+    "week": null,
+    "name": "Leichtkontakt (LK) und Vollkontakt (VK) Regelkunde",
+    "label": "Leichtkontakt (LK) und Vollkontakt (VK) Regelkunde",
+    "category": "Theorie",
+    "guertel": "Grün",
+    "zielgruppe": "Erwachsener"
+  },
+  {
+    "id": "erwachsener_blau_vordere_gerade_vordere_gerade",
+    "week": null,
+    "name": "vordere Gerade - vordere Gerade",
+    "label": "vordere Gerade - vordere Gerade",
+    "category": "Kombinationen Hand (Dubletten)",
+    "guertel": "Blau",
+    "zielgruppe": "Erwachsener"
+  },
+  {
+    "id": "erwachsener_blau_vordere_gerade_vorderer_haken",
+    "week": null,
+    "name": "vordere Gerade - vorderer Haken",
+    "label": "vordere Gerade - vorderer Haken",
+    "category": "Kombinationen Hand (Dubletten)",
+    "guertel": "Blau",
+    "zielgruppe": "Erwachsener"
+  },
+  {
+    "id": "erwachsener_blau_vorderer_aufwartshaken_vorderer_haken",
+    "week": null,
+    "name": "vorderer Aufwärtshaken - vorderer Haken",
+    "label": "vorderer Aufwärtshaken - vorderer Haken",
+    "category": "Kombinationen Hand (Dubletten)",
+    "guertel": "Blau",
+    "zielgruppe": "Erwachsener"
+  },
+  {
+    "id": "erwachsener_blau_hinterer_aufwartshaken_hinterer_haken_vordere_gerade_losen",
+    "week": null,
+    "name": "hinterer Aufwärtshaken - hinterer Haken - vordere Gerade (lösen)",
+    "label": "hinterer Aufwärtshaken - hinterer Haken - vordere Gerade (lösen)",
+    "category": "Kombinationen Hand (Dubletten)",
+    "guertel": "Blau",
+    "zielgruppe": "Erwachsener"
+  },
+  {
+    "id": "erwachsener_blau_au_enristtritt_vorderes_bein_crescentkick",
+    "week": null,
+    "name": "Außenristtritt vorderes Bein (crescentkick)",
+    "label": "Außenristtritt vorderes Bein (crescentkick)",
+    "category": "Fußtechniken",
+    "guertel": "Blau",
+    "zielgruppe": "Erwachsener"
+  },
+  {
+    "id": "erwachsener_blau_au_enristtritt_hinteres_bein_crescentkick",
+    "week": null,
+    "name": "Außenristtritt hinteres Bein (crescentkick)",
+    "label": "Außenristtritt hinteres Bein (crescentkick)",
+    "category": "Fußtechniken",
+    "guertel": "Blau",
+    "zielgruppe": "Erwachsener"
+  },
+  {
+    "id": "erwachsener_blau_au_enristtritt_aus_der_drehung",
+    "week": null,
+    "name": "Außenristtritt aus der Drehung",
+    "label": "Außenristtritt aus der Drehung",
+    "category": "Fußtechniken",
+    "guertel": "Blau",
+    "zielgruppe": "Erwachsener"
+  },
+  {
+    "id": "erwachsener_blau_axttritt_vorderes_bein_axekick",
+    "week": null,
+    "name": "Axttritt vorderes Bein (axekick)",
+    "label": "Axttritt vorderes Bein (axekick)",
+    "category": "Fußtechniken",
+    "guertel": "Blau",
+    "zielgruppe": "Erwachsener"
+  },
+  {
+    "id": "erwachsener_blau_axttritt_hinteres_bein_axekick",
+    "week": null,
+    "name": "Axttritt hinteres Bein (axekick)",
+    "label": "Axttritt hinteres Bein (axekick)",
+    "category": "Fußtechniken",
+    "guertel": "Blau",
+    "zielgruppe": "Erwachsener"
+  },
+  {
+    "id": "erwachsener_blau_axttritt_vorderes_bein_hintere_gerade",
+    "week": null,
+    "name": "Axttritt vorderes Bein - hintere Gerade",
+    "label": "Axttritt vorderes Bein - hintere Gerade",
+    "category": "Kombinationen Hand-Fuß",
+    "guertel": "Blau",
+    "zielgruppe": "Erwachsener"
+  },
+  {
+    "id": "erwachsener_blau_axttritt_hinteres_bein_seitwartstritt_gleiches_bein",
+    "week": null,
+    "name": "Axttritt hinteres Bein - Seitwärtstritt (gleiches Bein)",
+    "label": "Axttritt hinteres Bein - Seitwärtstritt (gleiches Bein)",
+    "category": "Kombinationen Hand-Fuß",
+    "guertel": "Blau",
+    "zielgruppe": "Erwachsener"
+  },
+  {
+    "id": "erwachsener_blau_vordere_gerade_hintere_gerade_au_enristtritt_aus_der_drehung",
+    "week": null,
+    "name": "vordere Gerade - hintere Gerade - Außenristtritt aus der Drehung",
+    "label": "vordere Gerade - hintere Gerade - Außenristtritt aus der Drehung",
+    "category": "Kombinationen Hand-Fuß",
+    "guertel": "Blau",
+    "zielgruppe": "Erwachsener"
+  },
+  {
+    "id": "erwachsener_blau_abwehr_gegen_au_enristtritt_vorderes_bein",
+    "week": null,
+    "name": "Abwehr gegen Außenristtritt vorderes Bein",
+    "label": "Abwehr gegen Außenristtritt vorderes Bein",
+    "category": "Abwehrkombinationen",
+    "guertel": "Blau",
+    "zielgruppe": "Erwachsener"
+  },
+  {
+    "id": "erwachsener_blau_abwehr_gegen_au_enristtritt_hinteres_bein",
+    "week": null,
+    "name": "Abwehr gegen Außenristtritt hinteres Bein",
+    "label": "Abwehr gegen Außenristtritt hinteres Bein",
+    "category": "Abwehrkombinationen",
+    "guertel": "Blau",
+    "zielgruppe": "Erwachsener"
+  },
+  {
+    "id": "erwachsener_blau_abwehr_gegen_au_enristtritt_aus_der_drehung",
+    "week": null,
+    "name": "Abwehr gegen Außenristtritt aus der Drehung",
+    "label": "Abwehr gegen Außenristtritt aus der Drehung",
+    "category": "Abwehrkombinationen",
+    "guertel": "Blau",
+    "zielgruppe": "Erwachsener"
+  },
+  {
+    "id": "erwachsener_blau_abwehr_gegen_axttritt_vorderes_bein",
+    "week": null,
+    "name": "Abwehr gegen Axttritt vorderes Bein",
+    "label": "Abwehr gegen Axttritt vorderes Bein",
+    "category": "Abwehrkombinationen",
+    "guertel": "Blau",
+    "zielgruppe": "Erwachsener"
+  },
+  {
+    "id": "erwachsener_blau_abwehr_gegen_axttritt_hinteres_bein",
+    "week": null,
+    "name": "Abwehr gegen Axttritt hinteres Bein",
+    "label": "Abwehr gegen Axttritt hinteres Bein",
+    "category": "Abwehrkombinationen",
+    "guertel": "Blau",
+    "zielgruppe": "Erwachsener"
+  },
+  {
+    "id": "erwachsener_blau_fallen_uber_hindernis_ruckwarts",
+    "week": null,
+    "name": "Fallen über Hindernis (rückwärts)",
+    "label": "Fallen über Hindernis (rückwärts)",
+    "category": "Selbstverteidigung/Fallschule",
+    "guertel": "Blau",
+    "zielgruppe": "Erwachsener"
+  },
+  {
+    "id": "erwachsener_blau_stockangriff_von_oben_innen_au_en_stich",
+    "week": null,
+    "name": "Stockangriff (von oben, innen, außen, Stich)",
+    "label": "Stockangriff (von oben, innen, außen, Stich)",
+    "category": "Selbstverteidigung/Fallschule",
+    "guertel": "Blau",
+    "zielgruppe": "Erwachsener"
+  },
+  {
+    "id": "erwachsener_blau_selbstverteidigung_im_kreis",
+    "week": null,
+    "name": "Selbstverteidigung im Kreis",
+    "label": "Selbstverteidigung im Kreis",
+    "category": "Selbstverteidigung/Fallschule",
+    "guertel": "Blau",
+    "zielgruppe": "Erwachsener"
+  },
+  {
+    "id": "erwachsener_blau_formen_fo_regelkunde",
+    "week": null,
+    "name": "Formen (FO) Regelkunde",
+    "label": "Formen (FO) Regelkunde",
+    "category": "Theorie",
+    "guertel": "Blau",
+    "zielgruppe": "Erwachsener"
+  },
+  {
+    "id": "erwachsener_blau_geschichte_des_kickboxen",
+    "week": null,
+    "name": "Geschichte des Kickboxen",
+    "label": "Geschichte des Kickboxen",
+    "category": "Theorie",
+    "guertel": "Blau",
+    "zielgruppe": "Erwachsener"
+  },
+  {
+    "id": "erwachsener_braun_fu_feger_innen_footsweep",
+    "week": null,
+    "name": "Fußfeger innen (footsweep)",
+    "label": "Fußfeger innen (footsweep)",
+    "category": "Fußtechniken",
+    "guertel": "Braun",
+    "zielgruppe": "Erwachsener"
+  },
+  {
+    "id": "erwachsener_braun_fu_feger_au_en_footsweep",
+    "week": null,
+    "name": "Fußfeger außen (footsweep)",
+    "label": "Fußfeger außen (footsweep)",
+    "category": "Fußtechniken",
+    "guertel": "Braun",
+    "zielgruppe": "Erwachsener"
+  },
+  {
+    "id": "erwachsener_braun_hakentritt_vorderes_bein_hookkick",
+    "week": null,
+    "name": "Hakentritt vorderes Bein (hookkick)",
+    "label": "Hakentritt vorderes Bein (hookkick)",
+    "category": "Fußtechniken",
+    "guertel": "Braun",
+    "zielgruppe": "Erwachsener"
+  },
+  {
+    "id": "erwachsener_braun_hakentritt_hinteres_bein_hookkick",
+    "week": null,
+    "name": "Hakentritt hinteres Bein (hookkick)",
+    "label": "Hakentritt hinteres Bein (hookkick)",
+    "category": "Fußtechniken",
+    "guertel": "Braun",
+    "zielgruppe": "Erwachsener"
+  },
+  {
+    "id": "erwachsener_braun_hakentritt_aus_der_drehung",
+    "week": null,
+    "name": "Hakentritt aus der Drehung",
+    "label": "Hakentritt aus der Drehung",
+    "category": "Fußtechniken",
+    "guertel": "Braun",
+    "zielgruppe": "Erwachsener"
+  },
+  {
+    "id": "erwachsener_braun_vordere_gerade_fu_feger_innen",
+    "week": null,
+    "name": "vordere Gerade - Fußfeger innen",
+    "label": "vordere Gerade - Fußfeger innen",
+    "category": "Kombinationen Hand-Fuß",
+    "guertel": "Braun",
+    "zielgruppe": "Erwachsener"
+  },
+  {
+    "id": "erwachsener_braun_vordere_gerade_hintere_gerade_fu_feger_au_en",
+    "week": null,
+    "name": "vordere Gerade - hintere Gerade - Fußfeger außen",
+    "label": "vordere Gerade - hintere Gerade - Fußfeger außen",
+    "category": "Kombinationen Hand-Fuß",
+    "guertel": "Braun",
+    "zielgruppe": "Erwachsener"
+  },
+  {
+    "id": "erwachsener_braun_vordere_gerade_hintere_gerade_hakentritt_vorderes_bein",
+    "week": null,
+    "name": "vordere Gerade - hintere Gerade - Hakentritt vorderes Bein",
+    "label": "vordere Gerade - hintere Gerade - Hakentritt vorderes Bein",
+    "category": "Kombinationen Hand-Fuß",
+    "guertel": "Braun",
+    "zielgruppe": "Erwachsener"
+  },
+  {
+    "id": "erwachsener_braun_vordere_gerade_hintere_gerade_hakentritt_hinteres_bein",
+    "week": null,
+    "name": "vordere Gerade - hintere Gerade - Hakentritt hinteres Bein",
+    "label": "vordere Gerade - hintere Gerade - Hakentritt hinteres Bein",
+    "category": "Kombinationen Hand-Fuß",
+    "guertel": "Braun",
+    "zielgruppe": "Erwachsener"
+  },
+  {
+    "id": "erwachsener_braun_vordere_gerade_hintere_gerade_vordere_gerade_hakentritt_aus_der_drehung",
+    "week": null,
+    "name": "vordere Gerade - hintere Gerade - vordere Gerade - Hakentritt aus der Drehung",
+    "label": "vordere Gerade - hintere Gerade - vordere Gerade - Hakentritt aus der Drehung",
+    "category": "Kombinationen Hand-Fuß",
+    "guertel": "Braun",
+    "zielgruppe": "Erwachsener"
+  },
+  {
+    "id": "erwachsener_braun_abwehr_gegen_fu_feger_innen_und_au_en",
+    "week": null,
+    "name": "Abwehr gegen Fußfeger innen und außen",
+    "label": "Abwehr gegen Fußfeger innen und außen",
+    "category": "Abwehrkombinationen",
+    "guertel": "Braun",
+    "zielgruppe": "Erwachsener"
+  },
+  {
+    "id": "erwachsener_braun_abwehr_gegen_hakentritt_vorderes_bein",
+    "week": null,
+    "name": "Abwehr gegen Hakentritt vorderes Bein",
+    "label": "Abwehr gegen Hakentritt vorderes Bein",
+    "category": "Abwehrkombinationen",
+    "guertel": "Braun",
+    "zielgruppe": "Erwachsener"
+  },
+  {
+    "id": "erwachsener_braun_abwehr_gegen_hakentritt_hinteres_bein",
+    "week": null,
+    "name": "Abwehr gegen Hakentritt hinteres Bein",
+    "label": "Abwehr gegen Hakentritt hinteres Bein",
+    "category": "Abwehrkombinationen",
+    "guertel": "Braun",
+    "zielgruppe": "Erwachsener"
+  },
+  {
+    "id": "erwachsener_braun_abwehr_gegen_hakentritt_aus_der_drehung",
+    "week": null,
+    "name": "Abwehr gegen Hakentritt aus der Drehung",
+    "label": "Abwehr gegen Hakentritt aus der Drehung",
+    "category": "Abwehrkombinationen",
+    "guertel": "Braun",
+    "zielgruppe": "Erwachsener"
+  },
+  {
+    "id": "erwachsener_braun_fallschule_als_vorfuhrung",
+    "week": null,
+    "name": "Fallschule als Vorführung",
+    "label": "Fallschule als Vorführung",
+    "category": "Selbstverteidigung/Fallschule",
+    "guertel": "Braun",
+    "zielgruppe": "Erwachsener"
+  },
+  {
+    "id": "erwachsener_braun_messerangriff_von_oben_innen_au_en_stich",
+    "week": null,
+    "name": "Messerangriff (von oben, innen, außen, Stich)",
+    "label": "Messerangriff (von oben, innen, außen, Stich)",
+    "category": "Selbstverteidigung/Fallschule",
+    "guertel": "Braun",
+    "zielgruppe": "Erwachsener"
+  },
+  {
+    "id": "erwachsener_braun_lehrbeispiel_technikvermittlung",
+    "week": null,
+    "name": "Lehrbeispiel Technikvermittlung",
+    "label": "Lehrbeispiel Technikvermittlung",
+    "category": "Theorie",
+    "guertel": "Braun",
+    "zielgruppe": "Erwachsener"
+  },
+  {
+    "id": "erwachsener_schwarz_vorwartstritt_im_sprung",
+    "week": null,
+    "name": "Vorwärtstritt im Sprung",
+    "label": "Vorwärtstritt im Sprung",
+    "category": "Fußtechniken im Sprung",
+    "guertel": "Schwarz",
+    "zielgruppe": "Erwachsener"
+  },
+  {
+    "id": "erwachsener_schwarz_halbkreistritt_im_sprung",
+    "week": null,
+    "name": "Halbkreistritt im Sprung",
+    "label": "Halbkreistritt im Sprung",
+    "category": "Fußtechniken im Sprung",
+    "guertel": "Schwarz",
+    "zielgruppe": "Erwachsener"
+  },
+  {
+    "id": "erwachsener_schwarz_seitwartstritt_im_sprung",
+    "week": null,
+    "name": "Seitwärtstritt im Sprung",
+    "label": "Seitwärtstritt im Sprung",
+    "category": "Fußtechniken im Sprung",
+    "guertel": "Schwarz",
+    "zielgruppe": "Erwachsener"
+  },
+  {
+    "id": "erwachsener_schwarz_hakentritt_im_sprung",
+    "week": null,
+    "name": "Hakentritt im Sprung",
+    "label": "Hakentritt im Sprung",
+    "category": "Fußtechniken im Sprung",
+    "guertel": "Schwarz",
+    "zielgruppe": "Erwachsener"
+  },
+  {
+    "id": "erwachsener_schwarz_vorwartstritt_halbkreistritt_gleiches_bein_ohne_absetzen",
+    "week": null,
+    "name": "Vorwärtstritt - Halbkreistritt (gleiches Bein ohne Absetzen)",
+    "label": "Vorwärtstritt - Halbkreistritt (gleiches Bein ohne Absetzen)",
+    "category": "Doppelfußtechniken am Partner",
+    "guertel": "Schwarz",
+    "zielgruppe": "Erwachsener"
+  },
+  {
+    "id": "erwachsener_schwarz_halbkreistritt_halbkreistritt_gleiches_bein_ohne_absetzen",
+    "week": null,
+    "name": "Halbkreistritt - Halbkreistritt (gleiches Bein ohne Absetzen)",
+    "label": "Halbkreistritt - Halbkreistritt (gleiches Bein ohne Absetzen)",
+    "category": "Doppelfußtechniken am Partner",
+    "guertel": "Schwarz",
+    "zielgruppe": "Erwachsener"
+  },
+  {
+    "id": "erwachsener_schwarz_seitwartstritt_halbkreistritt_gleiches_bein_ohne_absetzen",
+    "week": null,
+    "name": "Seitwärtstritt - Halbkreistritt (gleiches Bein ohne Absetzen)",
+    "label": "Seitwärtstritt - Halbkreistritt (gleiches Bein ohne Absetzen)",
+    "category": "Doppelfußtechniken am Partner",
+    "guertel": "Schwarz",
+    "zielgruppe": "Erwachsener"
+  },
+  {
+    "id": "erwachsener_schwarz_wurgen_am_boden",
+    "week": null,
+    "name": "Würgen am Boden",
+    "label": "Würgen am Boden",
+    "category": "Selbstverteidigung/Fallschule",
+    "guertel": "Schwarz",
+    "zielgruppe": "Erwachsener"
+  },
+  {
+    "id": "erwachsener_schwarz_schlag_mit_stock_verteidiger_am_boden",
+    "week": null,
+    "name": "Schlag mit Stock (Verteidiger am Boden)",
+    "label": "Schlag mit Stock (Verteidiger am Boden)",
+    "category": "Selbstverteidigung/Fallschule",
+    "guertel": "Schwarz",
+    "zielgruppe": "Erwachsener"
+  },
+  {
+    "id": "erwachsener_schwarz_tritt_verteidiger_am_boden",
+    "week": null,
+    "name": "Tritt (Verteidiger am Boden)",
+    "label": "Tritt (Verteidiger am Boden)",
+    "category": "Selbstverteidigung/Fallschule",
+    "guertel": "Schwarz",
+    "zielgruppe": "Erwachsener"
+  },
+  {
+    "id": "erwachsener_schwarz_erste_hilfe_tageslehrgang",
+    "week": null,
+    "name": "Erste Hilfe (Tageslehrgang)",
+    "label": "Erste Hilfe (Tageslehrgang)",
+    "category": "Theorie",
+    "guertel": "Schwarz",
+    "zielgruppe": "Erwachsener"
+  },
+  {
+    "id": "erwachsener_schwarz_drei_kickboxspezifische_lehrgange_in_der_vorbereitungszeit_davon_ein_kampfrichterlehrgang",
+    "week": null,
+    "name": "Drei kickboxspezifische Lehrgänge in der Vorbereitungszeit (davon ein Kampfrichterlehrgang)",
+    "label": "Drei kickboxspezifische Lehrgänge in der Vorbereitungszeit (davon ein Kampfrichterlehrgang)",
+    "category": "Theorie",
+    "guertel": "Schwarz",
+    "zielgruppe": "Erwachsener"
+  }
+]

@@ -1,0 +1,1022 @@
+{
+  "Gelb": [
+    {
+      "woche": 1,
+      "schwerpunkt": "Kampfstellung/Fortbewegung",
+      "technik": "Gehen in der Kampfstellung (schreitend-gleitend)",
+      "anwendung": "Partnerübung",
+      "spiel": "Reaktionsspiel"
+    },
+    {
+      "woche": 2,
+      "schwerpunkt": "Kampfstellung/Fortbewegung",
+      "technik": "Beinarbeit (federnd-gleitend)",
+      "anwendung": "Pratzenarbeit",
+      "spiel": "Fangspiel"
+    },
+    {
+      "woche": 3,
+      "schwerpunkt": "Handtechniken",
+      "technik": "vordere Gerade (jab)",
+      "anwendung": "Übung am Sandsack",
+      "spiel": "Distanzspiel"
+    },
+    {
+      "woche": 4,
+      "schwerpunkt": "Handtechniken",
+      "technik": "hintere Gerade (punch)",
+      "anwendung": "Spiegelübung mit Partner",
+      "spiel": "Bewegungsspiel"
+    },
+    {
+      "woche": 5,
+      "schwerpunkt": "Handtechniken",
+      "technik": "Faustrückenschlag (backfist)",
+      "anwendung": "Wiederholung in Bewegung",
+      "spiel": "„Trainer sagt“"
+    },
+    {
+      "woche": 6,
+      "schwerpunkt": "Kombinationen Hand",
+      "technik": "vordere Gerade - hintere Gerade",
+      "anwendung": "Technik gegen leichten Widerstand",
+      "spiel": "Spiegelspiel"
+    },
+    {
+      "woche": 7,
+      "schwerpunkt": "Kombinationen Hand",
+      "technik": "hintere Gerade - vordere Gerade",
+      "anwendung": "Partnerübung",
+      "spiel": "Partnerwettkampf (spielerisch)"
+    },
+    {
+      "woche": 8,
+      "schwerpunkt": "Kombinationen Hand",
+      "technik": "vordere Gerade - hintere Gerade - vordere Gerade",
+      "anwendung": "Pratzenarbeit",
+      "spiel": "Reaktionsspiel"
+    },
+    {
+      "woche": 9,
+      "schwerpunkt": "Kombinationen Hand",
+      "technik": "Faustrückenschlag - hintere Gerade",
+      "anwendung": "Übung am Sandsack",
+      "spiel": "Fangspiel"
+    },
+    {
+      "woche": 10,
+      "schwerpunkt": "Fußtechniken",
+      "technik": "Vorwärtstritt vorderes Bein (frontkick)",
+      "anwendung": "Spiegelübung mit Partner",
+      "spiel": "Distanzspiel"
+    },
+    {
+      "woche": 11,
+      "schwerpunkt": "Fußtechniken",
+      "technik": "Vorwärtstritt hinteres Bein (frontkick)",
+      "anwendung": "Wiederholung in Bewegung",
+      "spiel": "Bewegungsspiel"
+    },
+    {
+      "woche": 12,
+      "schwerpunkt": "Kombinationen Hand-Fuß",
+      "technik": "vordere Gerade - hintere Gerade - Vorwärtstritt hinteres Bein",
+      "anwendung": "Technik gegen leichten Widerstand",
+      "spiel": "„Trainer sagt“"
+    },
+    {
+      "woche": 13,
+      "schwerpunkt": "Kombinationen Hand-Fuß",
+      "technik": "Vorwärtstritt vorderes Bein - vordere Gerade - hintere Gerade - vordere Gerade",
+      "anwendung": "Partnerübung",
+      "spiel": "Spiegelspiel"
+    },
+    {
+      "woche": 14,
+      "schwerpunkt": "Kombinationen Hand-Fuß",
+      "technik": "vordere Gerade - hintere Gerade - vordere Gerade - Vorwärtstritt vorderes Bein",
+      "anwendung": "Pratzenarbeit",
+      "spiel": "Partnerwettkampf (spielerisch)"
+    },
+    {
+      "woche": 15,
+      "schwerpunkt": "Abwehrkombinationen",
+      "technik": "Abwehr gegen vordere Gerade",
+      "anwendung": "Übung am Sandsack",
+      "spiel": "Reaktionsspiel"
+    },
+    {
+      "woche": 16,
+      "schwerpunkt": "Abwehrkombinationen",
+      "technik": "Abwehr gegen hintere Gerade",
+      "anwendung": "Spiegelübung mit Partner",
+      "spiel": "Fangspiel"
+    },
+    {
+      "woche": 17,
+      "schwerpunkt": "Abwehrkombinationen",
+      "technik": "Abwehr gegen Faustrückenschlag",
+      "anwendung": "Wiederholung in Bewegung",
+      "spiel": "Distanzspiel"
+    },
+    {
+      "woche": 18,
+      "schwerpunkt": "Abwehrkombinationen",
+      "technik": "Abwehr gegen Vorwärtstritt vorderes Bein",
+      "anwendung": "Technik gegen leichten Widerstand",
+      "spiel": "Bewegungsspiel"
+    },
+    {
+      "woche": 19,
+      "schwerpunkt": "Abwehrkombinationen",
+      "technik": "Abwehr gegen Vorwärtstritt hinteres Bein",
+      "anwendung": "Partnerübung",
+      "spiel": "„Trainer sagt“"
+    },
+    {
+      "woche": 20,
+      "schwerpunkt": "Selbstverteidigung/Fallschule",
+      "technik": "Rolle vorwärts und rückwärts",
+      "anwendung": "Pratzenarbeit",
+      "spiel": "Spiegelspiel"
+    },
+    {
+      "woche": 21,
+      "schwerpunkt": "Kombination & Wiederholung",
+      "technik": "Kombination & Wiederholung aller Inhalte dieser Stufe",
+      "anwendung": "Übung am Sandsack",
+      "spiel": "Partnerwettkampf (spielerisch)"
+    },
+    {
+      "woche": 22,
+      "schwerpunkt": "Kombination & Wiederholung",
+      "technik": "Kombination & Wiederholung aller Inhalte dieser Stufe",
+      "anwendung": "Spiegelübung mit Partner",
+      "spiel": "Reaktionsspiel"
+    },
+    {
+      "woche": 23,
+      "schwerpunkt": "Kombination & Wiederholung",
+      "technik": "Kombination & Wiederholung aller Inhalte dieser Stufe",
+      "anwendung": "Wiederholung in Bewegung",
+      "spiel": "Fangspiel"
+    },
+    {
+      "woche": 24,
+      "schwerpunkt": "Kombination & Wiederholung",
+      "technik": "Kombination & Wiederholung aller Inhalte dieser Stufe",
+      "anwendung": "Technik gegen leichten Widerstand",
+      "spiel": "Distanzspiel"
+    }
+  ],
+  "Orange": [
+    {
+      "woche": 1,
+      "schwerpunkt": "Kampfstellung/Fortbewegung",
+      "technik": "Übergänge schreitend-gleitend/federnd-gleitend",
+      "anwendung": "Partnerübung",
+      "spiel": "Reaktionsspiel"
+    },
+    {
+      "woche": 2,
+      "schwerpunkt": "Kampfstellung/Fortbewegung",
+      "technik": "Schattenkickboxen in alle Raumrichtungen",
+      "anwendung": "Pratzenarbeit",
+      "spiel": "Fangspiel"
+    },
+    {
+      "woche": 3,
+      "schwerpunkt": "Handtechniken",
+      "technik": "vorderer Haken (hook)",
+      "anwendung": "Übung am Sandsack",
+      "spiel": "Distanzspiel"
+    },
+    {
+      "woche": 4,
+      "schwerpunkt": "Handtechniken",
+      "technik": "hinterer Haken (hook)",
+      "anwendung": "Spiegelübung mit Partner",
+      "spiel": "Bewegungsspiel"
+    },
+    {
+      "woche": 5,
+      "schwerpunkt": "Kombinationen Hand",
+      "technik": "vordere Gerade - hinterer Haken",
+      "anwendung": "Wiederholung in Bewegung",
+      "spiel": "„Trainer sagt“"
+    },
+    {
+      "woche": 6,
+      "schwerpunkt": "Kombinationen Hand",
+      "technik": "vorderer Haken - hintere Gerade",
+      "anwendung": "Technik gegen leichten Widerstand",
+      "spiel": "Spiegelspiel"
+    },
+    {
+      "woche": 7,
+      "schwerpunkt": "Kombinationen Hand",
+      "technik": "hintere Gerade - vorderer Haken",
+      "anwendung": "Partnerübung",
+      "spiel": "Partnerwettkampf (spielerisch)"
+    },
+    {
+      "woche": 8,
+      "schwerpunkt": "Kombinationen Hand",
+      "technik": "vorderer Haken - hinterer Haken",
+      "anwendung": "Pratzenarbeit",
+      "spiel": "Reaktionsspiel"
+    },
+    {
+      "woche": 9,
+      "schwerpunkt": "Kombinationen Hand",
+      "technik": "hinterer Haken - vorderer Haken",
+      "anwendung": "Übung am Sandsack",
+      "spiel": "Fangspiel"
+    },
+    {
+      "woche": 10,
+      "schwerpunkt": "Fußtechniken",
+      "technik": "Halbkreistritt vorderes Bein (roundhousekick)",
+      "anwendung": "Spiegelübung mit Partner",
+      "spiel": "Distanzspiel"
+    },
+    {
+      "woche": 11,
+      "schwerpunkt": "Fußtechniken",
+      "technik": "Halbkreistritt hinteres Bein (roundhousekick)",
+      "anwendung": "Wiederholung in Bewegung",
+      "spiel": "Bewegungsspiel"
+    },
+    {
+      "woche": 12,
+      "schwerpunkt": "Kombinationen Hand-Fuß",
+      "technik": "vordere Gerade - hintere Gerade - Halbkreistritt vorderes Bein",
+      "anwendung": "Technik gegen leichten Widerstand",
+      "spiel": "„Trainer sagt“"
+    },
+    {
+      "woche": 13,
+      "schwerpunkt": "Kombinationen Hand-Fuß",
+      "technik": "Halbkreistritt vorderes Bein - hintere Gerade - vorderer Haken",
+      "anwendung": "Partnerübung",
+      "spiel": "Spiegelspiel"
+    },
+    {
+      "woche": 14,
+      "schwerpunkt": "Kombinationen Hand-Fuß",
+      "technik": "vordere Gerade - hintere Gerade - Halbkreistritt hinteres Bein",
+      "anwendung": "Pratzenarbeit",
+      "spiel": "Partnerwettkampf (spielerisch)"
+    },
+    {
+      "woche": 15,
+      "schwerpunkt": "Abwehrkombinationen",
+      "technik": "Abwehr gegen vorderen Haken",
+      "anwendung": "Übung am Sandsack",
+      "spiel": "Reaktionsspiel"
+    },
+    {
+      "woche": 16,
+      "schwerpunkt": "Abwehrkombinationen",
+      "technik": "Abwehr gegen hinteren Haken",
+      "anwendung": "Spiegelübung mit Partner",
+      "spiel": "Fangspiel"
+    },
+    {
+      "woche": 17,
+      "schwerpunkt": "Abwehrkombinationen",
+      "technik": "Abwehr gegen Halbkreistritt vorderes Bein",
+      "anwendung": "Wiederholung in Bewegung",
+      "spiel": "Distanzspiel"
+    },
+    {
+      "woche": 18,
+      "schwerpunkt": "Abwehrkombinationen",
+      "technik": "Abwehr gegen Halbkreistritt hinteres Bein",
+      "anwendung": "Technik gegen leichten Widerstand",
+      "spiel": "Bewegungsspiel"
+    },
+    {
+      "woche": 19,
+      "schwerpunkt": "Selbstverteidigung/Fallschule",
+      "technik": "Sturz vorwärts und rückwärts",
+      "anwendung": "Partnerübung",
+      "spiel": "„Trainer sagt“"
+    },
+    {
+      "woche": 20,
+      "schwerpunkt": "Selbstverteidigung/Fallschule",
+      "technik": "Schwitzkasten von der Seite und von vorne",
+      "anwendung": "Pratzenarbeit",
+      "spiel": "Spiegelspiel"
+    },
+    {
+      "woche": 21,
+      "schwerpunkt": "Kombination & Wiederholung",
+      "technik": "Kombination & Wiederholung aller Inhalte dieser Stufe",
+      "anwendung": "Übung am Sandsack",
+      "spiel": "Partnerwettkampf (spielerisch)"
+    },
+    {
+      "woche": 22,
+      "schwerpunkt": "Kombination & Wiederholung",
+      "technik": "Kombination & Wiederholung aller Inhalte dieser Stufe",
+      "anwendung": "Spiegelübung mit Partner",
+      "spiel": "Reaktionsspiel"
+    },
+    {
+      "woche": 23,
+      "schwerpunkt": "Kombination & Wiederholung",
+      "technik": "Kombination & Wiederholung aller Inhalte dieser Stufe",
+      "anwendung": "Wiederholung in Bewegung",
+      "spiel": "Fangspiel"
+    },
+    {
+      "woche": 24,
+      "schwerpunkt": "Kombination & Wiederholung",
+      "technik": "Kombination & Wiederholung aller Inhalte dieser Stufe",
+      "anwendung": "Technik gegen leichten Widerstand",
+      "spiel": "Distanzspiel"
+    }
+  ],
+  "Grün": [
+    {
+      "woche": 1,
+      "schwerpunkt": "Handtechniken",
+      "technik": "vorderer Aufwärtshaken (uppercut)",
+      "anwendung": "Partnerübung",
+      "spiel": "Reaktionsspiel"
+    },
+    {
+      "woche": 2,
+      "schwerpunkt": "Handtechniken",
+      "technik": "hinterer Aufwärtshaken (uppercut)",
+      "anwendung": "Pratzenarbeit",
+      "spiel": "Fangspiel"
+    },
+    {
+      "woche": 3,
+      "schwerpunkt": "Kombinationen Hand",
+      "technik": "vordere Gerade - hinterer Aufwärtshaken",
+      "anwendung": "Übung am Sandsack",
+      "spiel": "Distanzspiel"
+    },
+    {
+      "woche": 4,
+      "schwerpunkt": "Kombinationen Hand",
+      "technik": "vorderer Aufwärtshaken - hinterer Haken",
+      "anwendung": "Spiegelübung mit Partner",
+      "spiel": "Bewegungsspiel"
+    },
+    {
+      "woche": 5,
+      "schwerpunkt": "Kombinationen Hand",
+      "technik": "hinterer Haken - vorderer Aufwärtshaken",
+      "anwendung": "Wiederholung in Bewegung",
+      "spiel": "„Trainer sagt“"
+    },
+    {
+      "woche": 6,
+      "schwerpunkt": "Kombinationen Hand",
+      "technik": "vorderer Haken - hinterer Aufwärtshaken",
+      "anwendung": "Technik gegen leichten Widerstand",
+      "spiel": "Spiegelspiel"
+    },
+    {
+      "woche": 7,
+      "schwerpunkt": "Kombinationen Hand",
+      "technik": "hinterer Aufwärtshaken - vorderer Haken",
+      "anwendung": "Partnerübung",
+      "spiel": "Partnerwettkampf (spielerisch)"
+    },
+    {
+      "woche": 8,
+      "schwerpunkt": "Kombinationen Hand",
+      "technik": "hinterer Aufwärtshaken - vordere Gerade",
+      "anwendung": "Pratzenarbeit",
+      "spiel": "Reaktionsspiel"
+    },
+    {
+      "woche": 9,
+      "schwerpunkt": "Fußtechniken",
+      "technik": "Seitwärtstritt vorderes Bein (sidekick)",
+      "anwendung": "Übung am Sandsack",
+      "spiel": "Fangspiel"
+    },
+    {
+      "woche": 10,
+      "schwerpunkt": "Fußtechniken",
+      "technik": "Seitwärtstritt hinteres Bein (sidekick)",
+      "anwendung": "Spiegelübung mit Partner",
+      "spiel": "Distanzspiel"
+    },
+    {
+      "woche": 11,
+      "schwerpunkt": "Fußtechniken",
+      "technik": "Seitwärtstritt aus der Drehung",
+      "anwendung": "Wiederholung in Bewegung",
+      "spiel": "Bewegungsspiel"
+    },
+    {
+      "woche": 12,
+      "schwerpunkt": "Kombinationen Hand-Fuß",
+      "technik": "Faustrückenschlag - Seitwärtstritt vorderes Bein",
+      "anwendung": "Technik gegen leichten Widerstand",
+      "spiel": "„Trainer sagt“"
+    },
+    {
+      "woche": 13,
+      "schwerpunkt": "Kombinationen Hand-Fuß",
+      "technik": "Seitwärtstritt vorderes Bein - vordere Gerade - hintere Gerade - vordere Gerade",
+      "anwendung": "Partnerübung",
+      "spiel": "Spiegelspiel"
+    },
+    {
+      "woche": 14,
+      "schwerpunkt": "Kombinationen Hand-Fuß",
+      "technik": "vordere Gerade - hintere Gerade - vordere Gerade - Seitwärtstritt aus der Drehung",
+      "anwendung": "Pratzenarbeit",
+      "spiel": "Partnerwettkampf (spielerisch)"
+    },
+    {
+      "woche": 15,
+      "schwerpunkt": "Kombinationen Hand-Fuß",
+      "technik": "Seitwärtstritt vorderes Bein - Seitwärtstritt aus der Drehung",
+      "anwendung": "Übung am Sandsack",
+      "spiel": "Reaktionsspiel"
+    },
+    {
+      "woche": 16,
+      "schwerpunkt": "Abwehrkombinationen",
+      "technik": "Abwehr gegen vorderen Aufwärtshaken",
+      "anwendung": "Spiegelübung mit Partner",
+      "spiel": "Fangspiel"
+    },
+    {
+      "woche": 17,
+      "schwerpunkt": "Abwehrkombinationen",
+      "technik": "Abwehr gegen hinteren Aufwärtshaken",
+      "anwendung": "Wiederholung in Bewegung",
+      "spiel": "Distanzspiel"
+    },
+    {
+      "woche": 18,
+      "schwerpunkt": "Abwehrkombinationen",
+      "technik": "Abwehr gegen Seitwärtstritt vorderes Bein",
+      "anwendung": "Technik gegen leichten Widerstand",
+      "spiel": "Bewegungsspiel"
+    },
+    {
+      "woche": 19,
+      "schwerpunkt": "Abwehrkombinationen",
+      "technik": "Abwehr gegen Seitwärtstritt hinteres Bein",
+      "anwendung": "Partnerübung",
+      "spiel": "„Trainer sagt“"
+    },
+    {
+      "woche": 20,
+      "schwerpunkt": "Abwehrkombinationen",
+      "technik": "Abwehr gegen Seitwärtstritt aus der Drehung",
+      "anwendung": "Pratzenarbeit",
+      "spiel": "Spiegelspiel"
+    },
+    {
+      "woche": 21,
+      "schwerpunkt": "Kombination & Wiederholung",
+      "technik": "Kombination & Wiederholung aller Inhalte dieser Stufe",
+      "anwendung": "Übung am Sandsack",
+      "spiel": "Partnerwettkampf (spielerisch)"
+    },
+    {
+      "woche": 22,
+      "schwerpunkt": "Kombination & Wiederholung",
+      "technik": "Kombination & Wiederholung aller Inhalte dieser Stufe",
+      "anwendung": "Spiegelübung mit Partner",
+      "spiel": "Reaktionsspiel"
+    },
+    {
+      "woche": 23,
+      "schwerpunkt": "Kombination & Wiederholung",
+      "technik": "Kombination & Wiederholung aller Inhalte dieser Stufe",
+      "anwendung": "Wiederholung in Bewegung",
+      "spiel": "Fangspiel"
+    },
+    {
+      "woche": 24,
+      "schwerpunkt": "Kombination & Wiederholung",
+      "technik": "Kombination & Wiederholung aller Inhalte dieser Stufe",
+      "anwendung": "Technik gegen leichten Widerstand",
+      "spiel": "Distanzspiel"
+    }
+  ],
+  "Blau": [
+    {
+      "woche": 1,
+      "schwerpunkt": "Kombinationen Hand (Dubletten)",
+      "technik": "vordere Gerade - vordere Gerade",
+      "anwendung": "Partnerübung",
+      "spiel": "Reaktionsspiel"
+    },
+    {
+      "woche": 2,
+      "schwerpunkt": "Kombinationen Hand (Dubletten)",
+      "technik": "vordere Gerade - vorderer Haken",
+      "anwendung": "Pratzenarbeit",
+      "spiel": "Fangspiel"
+    },
+    {
+      "woche": 3,
+      "schwerpunkt": "Kombinationen Hand (Dubletten)",
+      "technik": "vorderer Aufwärtshaken - vorderer Haken",
+      "anwendung": "Übung am Sandsack",
+      "spiel": "Distanzspiel"
+    },
+    {
+      "woche": 4,
+      "schwerpunkt": "Kombinationen Hand (Dubletten)",
+      "technik": "hinterer Aufwärtshaken - hinterer Haken - vordere Gerade (lösen)",
+      "anwendung": "Spiegelübung mit Partner",
+      "spiel": "Bewegungsspiel"
+    },
+    {
+      "woche": 5,
+      "schwerpunkt": "Fußtechniken",
+      "technik": "Außenristtritt vorderes Bein (crescentkick)",
+      "anwendung": "Wiederholung in Bewegung",
+      "spiel": "„Trainer sagt“"
+    },
+    {
+      "woche": 6,
+      "schwerpunkt": "Fußtechniken",
+      "technik": "Außenristtritt hinteres Bein (crescentkick)",
+      "anwendung": "Technik gegen leichten Widerstand",
+      "spiel": "Spiegelspiel"
+    },
+    {
+      "woche": 7,
+      "schwerpunkt": "Fußtechniken",
+      "technik": "Außenristtritt aus der Drehung",
+      "anwendung": "Partnerübung",
+      "spiel": "Partnerwettkampf (spielerisch)"
+    },
+    {
+      "woche": 8,
+      "schwerpunkt": "Fußtechniken",
+      "technik": "Axttritt vorderes Bein (axekick)",
+      "anwendung": "Pratzenarbeit",
+      "spiel": "Reaktionsspiel"
+    },
+    {
+      "woche": 9,
+      "schwerpunkt": "Fußtechniken",
+      "technik": "Axttritt hinteres Bein (axekick)",
+      "anwendung": "Übung am Sandsack",
+      "spiel": "Fangspiel"
+    },
+    {
+      "woche": 10,
+      "schwerpunkt": "Kombinationen Hand-Fuß",
+      "technik": "Axttritt vorderes Bein - hintere Gerade",
+      "anwendung": "Spiegelübung mit Partner",
+      "spiel": "Distanzspiel"
+    },
+    {
+      "woche": 11,
+      "schwerpunkt": "Kombinationen Hand-Fuß",
+      "technik": "Axttritt hinteres Bein - Seitwärtstritt (gleiches Bein)",
+      "anwendung": "Wiederholung in Bewegung",
+      "spiel": "Bewegungsspiel"
+    },
+    {
+      "woche": 12,
+      "schwerpunkt": "Kombinationen Hand-Fuß",
+      "technik": "vordere Gerade - hintere Gerade - Außenristtritt aus der Drehung",
+      "anwendung": "Technik gegen leichten Widerstand",
+      "spiel": "„Trainer sagt“"
+    },
+    {
+      "woche": 13,
+      "schwerpunkt": "Abwehrkombinationen",
+      "technik": "Abwehr gegen Außenristtritt vorderes Bein",
+      "anwendung": "Partnerübung",
+      "spiel": "Spiegelspiel"
+    },
+    {
+      "woche": 14,
+      "schwerpunkt": "Abwehrkombinationen",
+      "technik": "Abwehr gegen Außenristtritt hinteres Bein",
+      "anwendung": "Pratzenarbeit",
+      "spiel": "Partnerwettkampf (spielerisch)"
+    },
+    {
+      "woche": 15,
+      "schwerpunkt": "Abwehrkombinationen",
+      "technik": "Abwehr gegen Außenristtritt aus der Drehung",
+      "anwendung": "Übung am Sandsack",
+      "spiel": "Reaktionsspiel"
+    },
+    {
+      "woche": 16,
+      "schwerpunkt": "Abwehrkombinationen",
+      "technik": "Abwehr gegen Axttritt vorderes Bein",
+      "anwendung": "Spiegelübung mit Partner",
+      "spiel": "Fangspiel"
+    },
+    {
+      "woche": 17,
+      "schwerpunkt": "Abwehrkombinationen",
+      "technik": "Abwehr gegen Axttritt hinteres Bein",
+      "anwendung": "Wiederholung in Bewegung",
+      "spiel": "Distanzspiel"
+    },
+    {
+      "woche": 18,
+      "schwerpunkt": "Selbstverteidigung/Fallschule",
+      "technik": "Fallen über Hindernis (rückwärts)",
+      "anwendung": "Technik gegen leichten Widerstand",
+      "spiel": "Bewegungsspiel"
+    },
+    {
+      "woche": 19,
+      "schwerpunkt": "Selbstverteidigung/Fallschule",
+      "technik": "Stockangriff (von oben, innen, außen, Stich)",
+      "anwendung": "Partnerübung",
+      "spiel": "„Trainer sagt“"
+    },
+    {
+      "woche": 20,
+      "schwerpunkt": "Selbstverteidigung/Fallschule",
+      "technik": "Selbstverteidigung im Kreis",
+      "anwendung": "Pratzenarbeit",
+      "spiel": "Spiegelspiel"
+    },
+    {
+      "woche": 21,
+      "schwerpunkt": "Kombination & Wiederholung",
+      "technik": "Kombination & Wiederholung aller Inhalte dieser Stufe",
+      "anwendung": "Übung am Sandsack",
+      "spiel": "Partnerwettkampf (spielerisch)"
+    },
+    {
+      "woche": 22,
+      "schwerpunkt": "Kombination & Wiederholung",
+      "technik": "Kombination & Wiederholung aller Inhalte dieser Stufe",
+      "anwendung": "Spiegelübung mit Partner",
+      "spiel": "Reaktionsspiel"
+    },
+    {
+      "woche": 23,
+      "schwerpunkt": "Kombination & Wiederholung",
+      "technik": "Kombination & Wiederholung aller Inhalte dieser Stufe",
+      "anwendung": "Wiederholung in Bewegung",
+      "spiel": "Fangspiel"
+    },
+    {
+      "woche": 24,
+      "schwerpunkt": "Kombination & Wiederholung",
+      "technik": "Kombination & Wiederholung aller Inhalte dieser Stufe",
+      "anwendung": "Technik gegen leichten Widerstand",
+      "spiel": "Distanzspiel"
+    }
+  ],
+  "Braun": [
+    {
+      "woche": 1,
+      "schwerpunkt": "Fußtechniken",
+      "technik": "Fußfeger innen (footsweep)",
+      "anwendung": "Partnerübung",
+      "spiel": "Reaktionsspiel"
+    },
+    {
+      "woche": 2,
+      "schwerpunkt": "Fußtechniken",
+      "technik": "Fußfeger außen (footsweep)",
+      "anwendung": "Pratzenarbeit",
+      "spiel": "Fangspiel"
+    },
+    {
+      "woche": 3,
+      "schwerpunkt": "Fußtechniken",
+      "technik": "Hakentritt vorderes Bein (hookkick)",
+      "anwendung": "Übung am Sandsack",
+      "spiel": "Distanzspiel"
+    },
+    {
+      "woche": 4,
+      "schwerpunkt": "Fußtechniken",
+      "technik": "Hakentritt hinteres Bein (hookkick)",
+      "anwendung": "Spiegelübung mit Partner",
+      "spiel": "Bewegungsspiel"
+    },
+    {
+      "woche": 5,
+      "schwerpunkt": "Fußtechniken",
+      "technik": "Hakentritt aus der Drehung",
+      "anwendung": "Wiederholung in Bewegung",
+      "spiel": "„Trainer sagt“"
+    },
+    {
+      "woche": 6,
+      "schwerpunkt": "Kombinationen Hand-Fuß",
+      "technik": "vordere Gerade - Fußfeger innen",
+      "anwendung": "Technik gegen leichten Widerstand",
+      "spiel": "Spiegelspiel"
+    },
+    {
+      "woche": 7,
+      "schwerpunkt": "Kombinationen Hand-Fuß",
+      "technik": "vordere Gerade - hintere Gerade - Fußfeger außen",
+      "anwendung": "Partnerübung",
+      "spiel": "Partnerwettkampf (spielerisch)"
+    },
+    {
+      "woche": 8,
+      "schwerpunkt": "Kombinationen Hand-Fuß",
+      "technik": "vordere Gerade - hintere Gerade - Hakentritt vorderes Bein",
+      "anwendung": "Pratzenarbeit",
+      "spiel": "Reaktionsspiel"
+    },
+    {
+      "woche": 9,
+      "schwerpunkt": "Kombinationen Hand-Fuß",
+      "technik": "vordere Gerade - hintere Gerade - Hakentritt hinteres Bein",
+      "anwendung": "Übung am Sandsack",
+      "spiel": "Fangspiel"
+    },
+    {
+      "woche": 10,
+      "schwerpunkt": "Kombinationen Hand-Fuß",
+      "technik": "vordere Gerade - hintere Gerade - vordere Gerade - Hakentritt aus der Drehung",
+      "anwendung": "Spiegelübung mit Partner",
+      "spiel": "Distanzspiel"
+    },
+    {
+      "woche": 11,
+      "schwerpunkt": "Abwehrkombinationen",
+      "technik": "Abwehr gegen Fußfeger innen und außen",
+      "anwendung": "Wiederholung in Bewegung",
+      "spiel": "Bewegungsspiel"
+    },
+    {
+      "woche": 12,
+      "schwerpunkt": "Abwehrkombinationen",
+      "technik": "Abwehr gegen Hakentritt vorderes Bein",
+      "anwendung": "Technik gegen leichten Widerstand",
+      "spiel": "„Trainer sagt“"
+    },
+    {
+      "woche": 13,
+      "schwerpunkt": "Abwehrkombinationen",
+      "technik": "Abwehr gegen Hakentritt hinteres Bein",
+      "anwendung": "Partnerübung",
+      "spiel": "Spiegelspiel"
+    },
+    {
+      "woche": 14,
+      "schwerpunkt": "Abwehrkombinationen",
+      "technik": "Abwehr gegen Hakentritt aus der Drehung",
+      "anwendung": "Pratzenarbeit",
+      "spiel": "Partnerwettkampf (spielerisch)"
+    },
+    {
+      "woche": 15,
+      "schwerpunkt": "Selbstverteidigung/Fallschule",
+      "technik": "Fallschule als Vorführung",
+      "anwendung": "Übung am Sandsack",
+      "spiel": "Reaktionsspiel"
+    },
+    {
+      "woche": 16,
+      "schwerpunkt": "Selbstverteidigung/Fallschule",
+      "technik": "Messerangriff (von oben, innen, außen, Stich)",
+      "anwendung": "Spiegelübung mit Partner",
+      "spiel": "Fangspiel"
+    },
+    {
+      "woche": 17,
+      "schwerpunkt": "Selbstverteidigung/Fallschule",
+      "technik": "Selbstverteidigung im Kreis",
+      "anwendung": "Wiederholung in Bewegung",
+      "spiel": "Distanzspiel"
+    },
+    {
+      "woche": 18,
+      "schwerpunkt": "Theorie",
+      "technik": "Lehrbeispiel Technikvermittlung",
+      "anwendung": "Technik gegen leichten Widerstand",
+      "spiel": "Bewegungsspiel"
+    },
+    {
+      "woche": 19,
+      "schwerpunkt": "Wiederholung",
+      "technik": "Wiederholung der bisherigen Technik dieser Stufe",
+      "anwendung": "Partnerübung",
+      "spiel": "„Trainer sagt“"
+    },
+    {
+      "woche": 20,
+      "schwerpunkt": "Wiederholung",
+      "technik": "Wiederholung der bisherigen Technik dieser Stufe",
+      "anwendung": "Pratzenarbeit",
+      "spiel": "Spiegelspiel"
+    },
+    {
+      "woche": 21,
+      "schwerpunkt": "Kombination & Wiederholung",
+      "technik": "Kombination & Wiederholung aller Inhalte dieser Stufe",
+      "anwendung": "Übung am Sandsack",
+      "spiel": "Partnerwettkampf (spielerisch)"
+    },
+    {
+      "woche": 22,
+      "schwerpunkt": "Kombination & Wiederholung",
+      "technik": "Kombination & Wiederholung aller Inhalte dieser Stufe",
+      "anwendung": "Spiegelübung mit Partner",
+      "spiel": "Reaktionsspiel"
+    },
+    {
+      "woche": 23,
+      "schwerpunkt": "Kombination & Wiederholung",
+      "technik": "Kombination & Wiederholung aller Inhalte dieser Stufe",
+      "anwendung": "Wiederholung in Bewegung",
+      "spiel": "Fangspiel"
+    },
+    {
+      "woche": 24,
+      "schwerpunkt": "Kombination & Wiederholung",
+      "technik": "Kombination & Wiederholung aller Inhalte dieser Stufe",
+      "anwendung": "Technik gegen leichten Widerstand",
+      "spiel": "Distanzspiel"
+    }
+  ],
+  "Schwarz": [
+    {
+      "woche": 1,
+      "schwerpunkt": "Fußtechniken im Sprung",
+      "technik": "Vorwärtstritt im Sprung",
+      "anwendung": "Partnerübung",
+      "spiel": "Reaktionsspiel"
+    },
+    {
+      "woche": 2,
+      "schwerpunkt": "Fußtechniken im Sprung",
+      "technik": "Halbkreistritt im Sprung",
+      "anwendung": "Pratzenarbeit",
+      "spiel": "Fangspiel"
+    },
+    {
+      "woche": 3,
+      "schwerpunkt": "Fußtechniken im Sprung",
+      "technik": "Seitwärtstritt im Sprung",
+      "anwendung": "Übung am Sandsack",
+      "spiel": "Distanzspiel"
+    },
+    {
+      "woche": 4,
+      "schwerpunkt": "Fußtechniken im Sprung",
+      "technik": "Hakentritt im Sprung",
+      "anwendung": "Spiegelübung mit Partner",
+      "spiel": "Bewegungsspiel"
+    },
+    {
+      "woche": 5,
+      "schwerpunkt": "Doppelfußtechniken am Partner",
+      "technik": "Vorwärtstritt - Halbkreistritt (gleiches Bein ohne Absetzen)",
+      "anwendung": "Wiederholung in Bewegung",
+      "spiel": "„Trainer sagt“"
+    },
+    {
+      "woche": 6,
+      "schwerpunkt": "Doppelfußtechniken am Partner",
+      "technik": "Halbkreistritt - Halbkreistritt (gleiches Bein ohne Absetzen)",
+      "anwendung": "Technik gegen leichten Widerstand",
+      "spiel": "Spiegelspiel"
+    },
+    {
+      "woche": 7,
+      "schwerpunkt": "Doppelfußtechniken am Partner",
+      "technik": "Seitwärtstritt - Halbkreistritt (gleiches Bein ohne Absetzen)",
+      "anwendung": "Partnerübung",
+      "spiel": "Partnerwettkampf (spielerisch)"
+    },
+    {
+      "woche": 8,
+      "schwerpunkt": "Selbstverteidigung/Fallschule",
+      "technik": "Fallschule als Vorführung",
+      "anwendung": "Pratzenarbeit",
+      "spiel": "Reaktionsspiel"
+    },
+    {
+      "woche": 9,
+      "schwerpunkt": "Selbstverteidigung/Fallschule",
+      "technik": "Würgen am Boden",
+      "anwendung": "Übung am Sandsack",
+      "spiel": "Fangspiel"
+    },
+    {
+      "woche": 10,
+      "schwerpunkt": "Selbstverteidigung/Fallschule",
+      "technik": "Schlag mit Stock (Verteidiger am Boden)",
+      "anwendung": "Spiegelübung mit Partner",
+      "spiel": "Distanzspiel"
+    },
+    {
+      "woche": 11,
+      "schwerpunkt": "Selbstverteidigung/Fallschule",
+      "technik": "Tritt (Verteidiger am Boden)",
+      "anwendung": "Wiederholung in Bewegung",
+      "spiel": "Bewegungsspiel"
+    },
+    {
+      "woche": 12,
+      "schwerpunkt": "Theorie",
+      "technik": "Erste Hilfe (Tageslehrgang)",
+      "anwendung": "Technik gegen leichten Widerstand",
+      "spiel": "„Trainer sagt“"
+    },
+    {
+      "woche": 13,
+      "schwerpunkt": "Theorie",
+      "technik": "Drei kickboxspezifische Lehrgänge in der Vorbereitungszeit (davon ein Kampfrichterlehrgang)",
+      "anwendung": "Partnerübung",
+      "spiel": "Spiegelspiel"
+    },
+    {
+      "woche": 14,
+      "schwerpunkt": "Wiederholung",
+      "technik": "Wiederholung der bisherigen Technik dieser Stufe",
+      "anwendung": "Pratzenarbeit",
+      "spiel": "Partnerwettkampf (spielerisch)"
+    },
+    {
+      "woche": 15,
+      "schwerpunkt": "Wiederholung",
+      "technik": "Wiederholung der bisherigen Technik dieser Stufe",
+      "anwendung": "Übung am Sandsack",
+      "spiel": "Reaktionsspiel"
+    },
+    {
+      "woche": 16,
+      "schwerpunkt": "Wiederholung",
+      "technik": "Wiederholung der bisherigen Technik dieser Stufe",
+      "anwendung": "Spiegelübung mit Partner",
+      "spiel": "Fangspiel"
+    },
+    {
+      "woche": 17,
+      "schwerpunkt": "Wiederholung",
+      "technik": "Wiederholung der bisherigen Technik dieser Stufe",
+      "anwendung": "Wiederholung in Bewegung",
+      "spiel": "Distanzspiel"
+    },
+    {
+      "woche": 18,
+      "schwerpunkt": "Wiederholung",
+      "technik": "Wiederholung der bisherigen Technik dieser Stufe",
+      "anwendung": "Technik gegen leichten Widerstand",
+      "spiel": "Bewegungsspiel"
+    },
+    {
+      "woche": 19,
+      "schwerpunkt": "Wiederholung",
+      "technik": "Wiederholung der bisherigen Technik dieser Stufe",
+      "anwendung": "Partnerübung",
+      "spiel": "„Trainer sagt“"
+    },
+    {
+      "woche": 20,
+      "schwerpunkt": "Wiederholung",
+      "technik": "Wiederholung der bisherigen Technik dieser Stufe",
+      "anwendung": "Pratzenarbeit",
+      "spiel": "Spiegelspiel"
+    },
+    {
+      "woche": 21,
+      "schwerpunkt": "Kombination & Wiederholung",
+      "technik": "Kombination & Wiederholung aller Inhalte dieser Stufe",
+      "anwendung": "Übung am Sandsack",
+      "spiel": "Partnerwettkampf (spielerisch)"
+    },
+    {
+      "woche": 22,
+      "schwerpunkt": "Kombination & Wiederholung",
+      "technik": "Kombination & Wiederholung aller Inhalte dieser Stufe",
+      "anwendung": "Spiegelübung mit Partner",
+      "spiel": "Reaktionsspiel"
+    },
+    {
+      "woche": 23,
+      "schwerpunkt": "Kombination & Wiederholung",
+      "technik": "Kombination & Wiederholung aller Inhalte dieser Stufe",
+      "anwendung": "Wiederholung in Bewegung",
+      "spiel": "Fangspiel"
+    },
+    {
+      "woche": 24,
+      "schwerpunkt": "Kombination & Wiederholung",
+      "technik": "Kombination & Wiederholung aller Inhalte dieser Stufe",
+      "anwendung": "Technik gegen leichten Widerstand",
+      "spiel": "Distanzspiel"
+    }
+  ]
+}

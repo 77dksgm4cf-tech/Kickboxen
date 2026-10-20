@@ -1,0 +1,12 @@
+{
+  "name": "kickbox-tracker-online",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Kickbox Fortschritts-Tracker als reine Client-App (GitHub Pages, localStorage)",
+  "scripts": {
+    "generate-static-data": "node scripts/generate-static-data.js"
+  },
+  "devDependencies": {
+    "xlsx": "^0.18.5"
+  }
+}
