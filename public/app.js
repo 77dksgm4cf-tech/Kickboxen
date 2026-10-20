@@ -84,6 +84,14 @@ function renderMemberList(scope) {
   const filtered = getActiveFilteredMembers().filter(
     (m) => m.typ === scope.typ && memberFullName(m).toLowerCase().includes(search)
   );
+  filtered.sort((a, b) => {
+    const ageA = currentAlter(a);
+    const ageB = currentAlter(b);
+    if (ageA == null && ageB == null) return 0;
+    if (ageA == null) return 1;
+    if (ageB == null) return -1;
+    return ageA - ageB;
+  });
   for (const m of filtered) {
     const btn = document.createElement('button');
     btn.className =
