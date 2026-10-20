@@ -614,17 +614,18 @@ function importMembersEditFromExcel(arrayBuffer) {
     const wettkaempfer = String(row[cols.wettkaempfer] || '').trim();
     const sparring = String(row[cols.sparring] || '').trim();
 
+    const rawAlter = alterInput === '' ? null : Number(alterInput);
+    const alter = Number.isNaN(rawAlter) ? null : rawAlter;
+    // Alter ist zuverlässiger als der Trainingsgruppe-Text (der z.B. aus
+    // einem früheren, falsch zugeordneten Export stammen kann) - wenn
+    // vorhanden, hat es Vorrang bei der Kind/Erwachsener-Entscheidung.
+    const typFromTrainingsgruppe =
+      trainingsgruppe === 'Kindertraining' ? 'Kind' : trainingsgruppe === 'Erwachsenentraining' ? 'Erwachsener' : null;
+    const typ = alter != null ? defaultTypForAge(alter) : typFromTrainingsgruppe;
+
     let member = byId.get(memberId);
     const isNew = !member;
     if (isNew) {
-      const rawAlter = alterInput === '' ? null : Number(alterInput);
-      const alter = Number.isNaN(rawAlter) ? null : rawAlter;
-      const typ =
-        trainingsgruppe === 'Kindertraining'
-          ? 'Kind'
-          : trainingsgruppe === 'Erwachsenentraining'
-            ? 'Erwachsener'
-            : defaultTypForAge(alter);
       member = {
         id: memberId,
         vorname,
@@ -633,8 +634,8 @@ function importMembersEditFromExcel(arrayBuffer) {
         alter,
         austrittsdatum: null,
         active: true,
-        guertel: beltLevelsFor(typ)[0],
-        typ,
+        guertel: beltLevelsFor(typ || 'Kind')[0],
+        typ: typ || 'Kind',
         gekuendigt: false,
         ausgetreten: false,
         wettkaempfer: false,
@@ -645,10 +646,8 @@ function importMembersEditFromExcel(arrayBuffer) {
     }
 
     member.active = status.toLowerCase() === 'inaktiv' ? false : true;
-    // Trainingsgruppe-Text nicht eindeutig "Kindertraining"/"Erwachsenentraining":
-    // bestehenden bzw. (bei Neuanlage) altersbasierten typ unverändert lassen.
-    if (trainingsgruppe === 'Kindertraining') member.typ = 'Kind';
-    else if (trainingsgruppe === 'Erwachsenentraining') member.typ = 'Erwachsener';
+    if (typ) member.typ = typ;
+    if (alter != null) member.alter = alter;
 
     if (beltLevelsFor(member.typ).includes(guertelInput)) {
       member.guertel = guertelInput;
