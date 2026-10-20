@@ -68,6 +68,18 @@ function defaultTypForAge(alter) {
   return alter != null && alter < 15 ? 'Kind' : 'Erwachsener';
 }
 
+function calcAlterFromGeburtsdatum(geburtsdatum) {
+  if (!geburtsdatum) return null;
+  const birth = new Date(geburtsdatum);
+  if (Number.isNaN(birth.getTime())) return null;
+  const now = new Date();
+  let alter = now.getFullYear() - birth.getFullYear();
+  if (now.getMonth() < birth.getMonth() || (now.getMonth() === birth.getMonth() && now.getDate() < birth.getDate())) {
+    alter--;
+  }
+  return alter;
+}
+
 function sortMembersByGraduierung(list) {
   return [...list].sort((a, b) => {
     const groupDiff = kindGruppeRank(a) - kindGruppeRank(b);
@@ -226,15 +238,7 @@ function generateMemberId() {
 
 function createMember({ vorname, nachname, geburtsdatum, typ }) {
   const resolvedTyp = MEMBER_TYPEN.includes(typ) ? typ : 'Kind';
-  let alter = null;
-  if (geburtsdatum) {
-    const birth = new Date(geburtsdatum);
-    const now = new Date();
-    alter = now.getFullYear() - birth.getFullYear();
-    if (now.getMonth() < birth.getMonth() || (now.getMonth() === birth.getMonth() && now.getDate() < birth.getDate())) {
-      alter--;
-    }
-  }
+  const alter = calcAlterFromGeburtsdatum(geburtsdatum);
   const member = {
     id: generateMemberId(),
     vorname: vorname || '',
@@ -361,91 +365,11 @@ function getAttendanceSummary(typ) {
   };
 }
 
-// ---------- Excel: Mitglieder aktualisieren (Mitglieder.xlsx) ----------
-
 function excelDateToIso(serial) {
   if (!serial || Number.isNaN(Number(serial))) return null;
   const utcDays = Math.floor(Number(serial) - 25569);
   const date = new Date(utcDays * 86400 * 1000);
   return date.toISOString().slice(0, 10);
-}
-
-function syncMembersFromExcel(arrayBuffer) {
-  const wb = XLSX.read(arrayBuffer, { type: 'array' });
-  const sheet = wb.Sheets[wb.SheetNames[0]];
-  const rows = XLSX.utils.sheet_to_json(sheet, { header: 1, defval: '' });
-
-  const headerIdx = rows.findIndex((r) => String(r[0]).trim() === 'Nr.');
-  if (headerIdx === -1) {
-    throw new Error('Konnte die Mitgliedertabelle in der Excel-Datei nicht finden (Spalte "Nr." fehlt).');
-  }
-
-  const importedById = new Map();
-  for (let i = headerIdx + 1; i < rows.length; i++) {
-    const row = rows[i];
-    const memberNr = String(row[1] || '').trim();
-    if (!memberNr) continue;
-    importedById.set(memberNr, {
-      id: memberNr,
-      vorname: String(row[2] || '').trim(),
-      nachname: String(row[3] || '').trim(),
-      geburtsdatum: excelDateToIso(row[4]),
-      alter: row[5] === '' ? null : Number(row[5]),
-      austrittsdatum: excelDateToIso(row[6]),
-      status: String(row[7] || '').trim(),
-      trainingsgruppe: String(row[8] || '').trim(),
-    });
-  }
-
-  const existingById = new Map(members.map((m) => [m.id, m]));
-  let added = 0;
-  let rejoined = 0;
-  let ausgetreten = 0;
-
-  for (const [id, imported] of importedById) {
-    const current = existingById.get(id);
-    if (!current) {
-      const typ =
-        imported.trainingsgruppe === 'Kindertraining'
-          ? 'Kind'
-          : imported.trainingsgruppe === 'Erwachsenentraining'
-            ? 'Erwachsener'
-            : defaultTypForAge(imported.alter);
-      const active = imported.status.toLowerCase() === 'inaktiv' ? false : true;
-      existingById.set(id, {
-        id: imported.id,
-        vorname: imported.vorname,
-        nachname: imported.nachname,
-        geburtsdatum: imported.geburtsdatum,
-        alter: imported.alter,
-        austrittsdatum: imported.austrittsdatum,
-        active,
-        ausgetreten: false,
-        guertel: beltLevelsFor(typ)[0],
-        typ,
-        gekuendigt: Boolean(imported.austrittsdatum),
-        wettkaempfer: false,
-        sparring: false,
-        kindGruppe: DEFAULT_KIND_GRUPPE,
-      });
-      added++;
-    } else if (current.ausgetreten) {
-      current.ausgetreten = false;
-      rejoined++;
-    }
-  }
-
-  for (const [id, current] of existingById) {
-    if (!importedById.has(id) && !current.ausgetreten) {
-      current.ausgetreten = true;
-      current.active = false;
-      ausgetreten++;
-    }
-  }
-
-  members = Array.from(existingById.values());
-  persistMembers();
-  return { added, rejoined, ausgetreten };
 }
 
 // ---------- Excel: Offline-Checkliste exportieren/importieren ----------
@@ -524,30 +448,33 @@ function importChecklistFromExcel(arrayBuffer) {
 
 // ---------- Excel: Mitgliederliste für Massenänderung ----------
 
-function exportMembersForEdit() {
+function exportMembersList() {
   const list = sortMembersByGraduierung(members.filter((m) => !m.ausgetreten));
   const header = [
-    'Mitgl.-Nr.', 'Nachname', 'Vorname', 'Alter', 'Status', 'Trainingsgruppe',
-    'Gürtel', 'Wettkämpfer', 'Sparring', 'Kindergruppe',
+    'Nr.', 'Vorname', 'Nachname', 'Geburtsdatum', 'Alter', 'Austrittsdatum', 'Status',
+    'Trainingsgruppe', 'Gürtel', 'Wettkämpfer', 'Sparring', 'Kindergruppe',
   ];
-  const dataRows = list.map((m) => [
-    m.id, m.nachname, m.vorname, m.alter ?? '',
-    m.active ? 'Aktiv' : 'Inaktiv',
-    m.typ === 'Kind' ? 'Kindertraining' : 'Erwachsenentraining',
-    m.guertel,
-    m.wettkaempfer ? 'Ja' : 'Nein',
-    m.sparring ? 'Ja' : 'Nein',
-    m.typ === 'Kind' ? m.kindGruppe || DEFAULT_KIND_GRUPPE : '',
-  ]);
+  const dataRows = list.map((m) => {
+    const alter = m.geburtsdatum ? calcAlterFromGeburtsdatum(m.geburtsdatum) : m.alter ?? '';
+    return [
+      m.id, m.vorname, m.nachname, m.geburtsdatum || '', alter, m.austrittsdatum || '',
+      m.active ? 'Aktiv' : 'Inaktiv',
+      m.typ === 'Kind' ? 'Kindertraining' : 'Erwachsenentraining',
+      m.guertel,
+      m.wettkaempfer ? 'Ja' : 'Nein',
+      m.sparring ? 'Ja' : 'Nein',
+      m.typ === 'Kind' ? m.kindGruppe || DEFAULT_KIND_GRUPPE : '',
+    ];
+  });
   const ws = XLSX.utils.aoa_to_sheet([header, ...dataRows]);
   ws['!cols'] = [
-    { wch: 10 }, { wch: 16 }, { wch: 16 }, { wch: 8 }, { wch: 10 },
+    { wch: 10 }, { wch: 16 }, { wch: 16 }, { wch: 12 }, { wch: 8 }, { wch: 12 }, { wch: 10 },
     { wch: 18 }, { wch: 14 }, { wch: 12 }, { wch: 10 }, { wch: 16 },
   ];
   const wb = XLSX.utils.book_new();
-  XLSX.utils.book_append_sheet(wb, ws, 'Massenänderung');
+  XLSX.utils.book_append_sheet(wb, ws, 'Mitgliederliste');
   const wbout = XLSX.write(wb, { type: 'array', bookType: 'xlsx' });
-  downloadBlob(new Blob([wbout], { type: 'application/octet-stream' }), 'Mitgliederliste-Massenaenderung.xlsx');
+  downloadBlob(new Blob([wbout], { type: 'application/octet-stream' }), 'Mitgliederliste.xlsx');
 }
 
 function normalizeHeader(text) {
@@ -560,11 +487,13 @@ function normalizeHeader(text) {
 
 // Spaltennamen statt fester Position auswerten - robust gegenüber
 // abweichender Spaltenreihenfolge/-schreibweise in importierten Dateien.
-const MEMBER_EDIT_COLUMN_ALIASES = {
-  id: ['mitglnr', 'mitgliedsnr', 'nr', 'id'],
-  nachname: ['nachname'],
+const MEMBER_LIST_COLUMN_ALIASES = {
+  id: ['nr', 'mitglnr', 'mitgliedsnr', 'id'],
   vorname: ['vorname'],
+  nachname: ['nachname'],
+  geburtsdatum: ['geburtsdatum'],
   alter: ['alter'],
+  austrittsdatum: ['austrittsdatum'],
   status: ['status'],
   trainingsgruppe: ['trainingsgruppe'],
   guertel: ['gurtel'],
@@ -572,41 +501,56 @@ const MEMBER_EDIT_COLUMN_ALIASES = {
   sparring: ['sparring'],
   kindGruppe: ['kindergruppe', 'kindgruppe'],
 };
-const MEMBER_EDIT_COLUMN_DEFAULTS = {
-  id: 0, nachname: 1, vorname: 2, alter: 3, status: 4,
-  trainingsgruppe: 5, guertel: 6, wettkaempfer: 7, sparring: 8, kindGruppe: 9,
+const MEMBER_LIST_COLUMN_DEFAULTS = {
+  id: 0, vorname: 1, nachname: 2, geburtsdatum: 3, alter: 4, austrittsdatum: 5, status: 6,
+  trainingsgruppe: 7, guertel: 8, wettkaempfer: 9, sparring: 10, kindGruppe: 11,
 };
 
-function resolveMemberEditColumns(headerRow) {
+function resolveMemberListColumns(headerRow) {
   const normalized = headerRow.map(normalizeHeader);
   const cols = {};
-  for (const [key, aliases] of Object.entries(MEMBER_EDIT_COLUMN_ALIASES)) {
+  for (const [key, aliases] of Object.entries(MEMBER_LIST_COLUMN_ALIASES)) {
     const idx = normalized.findIndex((h) => aliases.includes(h));
-    cols[key] = idx !== -1 ? idx : MEMBER_EDIT_COLUMN_DEFAULTS[key];
+    cols[key] = idx !== -1 ? idx : MEMBER_LIST_COLUMN_DEFAULTS[key];
   }
   return cols;
 }
 
-function importMembersEditFromExcel(arrayBuffer) {
+function parseDatumCell(value) {
+  if (value === '' || value == null) return null;
+  if (value instanceof Date) return toIso(value);
+  if (typeof value === 'number') return excelDateToIso(value);
+  const text = String(value).trim();
+  if (!text) return null;
+  if (/^\d{4}-\d{2}-\d{2}$/.test(text)) return text;
+  const parsed = new Date(text);
+  return Number.isNaN(parsed.getTime()) ? null : toIso(parsed);
+}
+
+function importMembersListFromExcel(arrayBuffer) {
   const wb = XLSX.read(arrayBuffer, { type: 'array' });
   const sheet = wb.Sheets[wb.SheetNames[0]];
   const rows = XLSX.utils.sheet_to_json(sheet, { header: 1, defval: '' });
   if (rows.length < 2) throw new Error('Die Datei enthält keine Daten.');
 
-  const cols = resolveMemberEditColumns(rows[0]);
+  const cols = resolveMemberListColumns(rows[0]);
   const byId = new Map(members.map((m) => [m.id, m]));
+  const importedIds = new Set();
   let created = 0;
   let updated = 0;
-  let skipped = 0;
+  let ausgetreten = 0;
   const warnings = [];
 
   for (let i = 1; i < rows.length; i++) {
     const row = rows[i];
     const memberId = String(row[cols.id] || '').trim();
     if (!memberId) continue;
+    importedIds.add(memberId);
 
-    const nachname = String(row[cols.nachname] || '').trim();
     const vorname = String(row[cols.vorname] || '').trim();
+    const nachname = String(row[cols.nachname] || '').trim();
+    const geburtsdatum = parseDatumCell(row[cols.geburtsdatum]);
+    const austrittsdatum = parseDatumCell(row[cols.austrittsdatum]);
     const alterInput = String(row[cols.alter] || '').trim();
     const status = String(row[cols.status] || '').trim();
     const trainingsgruppe = String(row[cols.trainingsgruppe] || '').trim();
@@ -615,10 +559,13 @@ function importMembersEditFromExcel(arrayBuffer) {
     const sparring = String(row[cols.sparring] || '').trim();
 
     const rawAlter = alterInput === '' ? null : Number(alterInput);
-    const alter = Number.isNaN(rawAlter) ? null : rawAlter;
-    // Alter ist zuverlässiger als der Trainingsgruppe-Text (der z.B. aus
-    // einem früheren, falsch zugeordneten Export stammen kann) - wenn
-    // vorhanden, hat es Vorrang bei der Kind/Erwachsener-Entscheidung.
+    const alterFromSpalte = Number.isNaN(rawAlter) ? null : rawAlter;
+    // Das Geburtsdatum ist zuverlässiger als die Spalte "Alter" (die seit
+    // dem letzten Geburtstag veraltet sein kann) oder der Trainingsgruppe-
+    // Text (der z.B. aus einem früheren, falsch zugeordneten Export stammen
+    // kann) - wenn vorhanden, hat es Vorrang bei der Kind/Erwachsener-
+    // Entscheidung.
+    const alter = geburtsdatum ? calcAlterFromGeburtsdatum(geburtsdatum) : alterFromSpalte;
     const typFromTrainingsgruppe =
       trainingsgruppe === 'Kindertraining' ? 'Kind' : trainingsgruppe === 'Erwachsenentraining' ? 'Erwachsener' : null;
     const typ = alter != null ? defaultTypForAge(alter) : typFromTrainingsgruppe;
@@ -630,19 +577,23 @@ function importMembersEditFromExcel(arrayBuffer) {
         id: memberId,
         vorname,
         nachname,
-        geburtsdatum: null,
+        geburtsdatum: geburtsdatum || null,
         alter,
-        austrittsdatum: null,
+        austrittsdatum: austrittsdatum || null,
         active: true,
         guertel: beltLevelsFor(typ || 'Kind')[0],
         typ: typ || 'Kind',
-        gekuendigt: false,
+        gekuendigt: Boolean(austrittsdatum),
         ausgetreten: false,
         wettkaempfer: false,
         sparring: false,
         kindGruppe: DEFAULT_KIND_GRUPPE,
       };
       byId.set(memberId, member);
+    } else {
+      member.ausgetreten = false;
+      if (geburtsdatum) member.geburtsdatum = geburtsdatum;
+      member.austrittsdatum = austrittsdatum || null;
     }
 
     member.active = status.toLowerCase() === 'inaktiv' ? false : true;
@@ -669,9 +620,17 @@ function importMembersEditFromExcel(arrayBuffer) {
     else updated++;
   }
 
+  for (const [id, current] of byId) {
+    if (!importedIds.has(id) && !current.ausgetreten) {
+      current.ausgetreten = true;
+      current.active = false;
+      ausgetreten++;
+    }
+  }
+
   members = Array.from(byId.values());
   persistMembers();
-  return { created, updated, skipped, warnings };
+  return { created, updated, ausgetreten, warnings };
 }
 
 // ---------- JSON-Archivierung (Backup) ----------

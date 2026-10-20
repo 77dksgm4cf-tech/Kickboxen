@@ -567,21 +567,6 @@ function readFileAsArrayBuffer(file) {
   });
 }
 
-document.getElementById('syncMembersFile').addEventListener('change', async (e) => {
-  const file = e.target.files[0];
-  if (!file) return;
-  showStatus('Aktualisiere Mitglieder…');
-  try {
-    const buffer = await readFileAsArrayBuffer(file);
-    const result = syncMembersFromExcel(buffer);
-    renderAll();
-    showStatus(`Mitglieder aktualisiert: +${result.added} neu, ${result.rejoined} wieder eingetreten, ${result.ausgetreten} ausgetreten.`);
-  } catch (err) {
-    showStatus('Fehler beim Aktualisieren: ' + err.message, true);
-  }
-  e.target.value = '';
-});
-
 document.getElementById('btnExportChecklist').onclick = () => {
   try {
     exportChecklist();
@@ -610,7 +595,7 @@ document.getElementById('importChecklistFile').addEventListener('change', async 
 
 document.getElementById('btnExportMembers').onclick = () => {
   try {
-    exportMembersForEdit();
+    exportMembersList();
   } catch (err) {
     showStatus('Fehler beim Export: ' + err.message, true);
   }
@@ -622,9 +607,9 @@ document.getElementById('importMembersFile').addEventListener('change', async (e
   showStatus('Importiere Mitgliederliste…');
   try {
     const buffer = await readFileAsArrayBuffer(file);
-    const result = importMembersEditFromExcel(buffer);
+    const result = importMembersListFromExcel(buffer);
     renderAll();
-    let msg = `Mitgliederliste importiert: ${result.created} neu angelegt, ${result.updated} aktualisiert, ${result.skipped} übersprungen.`;
+    let msg = `Mitgliederliste importiert: ${result.created} neu angelegt, ${result.updated} aktualisiert, ${result.ausgetreten} ausgetreten.`;
     if (result.warnings.length) msg += ` ${result.warnings.length} Warnung(en), siehe Konsole.`;
     showStatus(msg, result.warnings.length > 0);
     if (result.warnings.length) console.warn(result.warnings.join('\n'));
