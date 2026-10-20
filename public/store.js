@@ -550,12 +550,50 @@ function exportMembersForEdit() {
   downloadBlob(new Blob([wbout], { type: 'application/octet-stream' }), 'Mitgliederliste-Massenaenderung.xlsx');
 }
 
+function normalizeHeader(text) {
+  return String(text || '')
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[̀-ͯ]/g, '')
+    .replace(/[^a-z0-9]/g, '');
+}
+
+// Spaltennamen statt fester Position auswerten - robust gegenüber
+// abweichender Spaltenreihenfolge/-schreibweise in importierten Dateien.
+const MEMBER_EDIT_COLUMN_ALIASES = {
+  id: ['mitglnr', 'mitgliedsnr', 'nr', 'id'],
+  nachname: ['nachname'],
+  vorname: ['vorname'],
+  alter: ['alter'],
+  status: ['status'],
+  trainingsgruppe: ['trainingsgruppe'],
+  guertel: ['gurtel'],
+  wettkaempfer: ['wettkampfer'],
+  sparring: ['sparring'],
+  kindGruppe: ['kindergruppe', 'kindgruppe'],
+};
+const MEMBER_EDIT_COLUMN_DEFAULTS = {
+  id: 0, nachname: 1, vorname: 2, alter: 3, status: 4,
+  trainingsgruppe: 5, guertel: 6, wettkaempfer: 7, sparring: 8, kindGruppe: 9,
+};
+
+function resolveMemberEditColumns(headerRow) {
+  const normalized = headerRow.map(normalizeHeader);
+  const cols = {};
+  for (const [key, aliases] of Object.entries(MEMBER_EDIT_COLUMN_ALIASES)) {
+    const idx = normalized.findIndex((h) => aliases.includes(h));
+    cols[key] = idx !== -1 ? idx : MEMBER_EDIT_COLUMN_DEFAULTS[key];
+  }
+  return cols;
+}
+
 function importMembersEditFromExcel(arrayBuffer) {
   const wb = XLSX.read(arrayBuffer, { type: 'array' });
   const sheet = wb.Sheets[wb.SheetNames[0]];
   const rows = XLSX.utils.sheet_to_json(sheet, { header: 1, defval: '' });
   if (rows.length < 2) throw new Error('Die Datei enthält keine Daten.');
 
+  const cols = resolveMemberEditColumns(rows[0]);
   const byId = new Map(members.map((m) => [m.id, m]));
   let created = 0;
   let updated = 0;
@@ -564,17 +602,17 @@ function importMembersEditFromExcel(arrayBuffer) {
 
   for (let i = 1; i < rows.length; i++) {
     const row = rows[i];
-    const memberId = String(row[0] || '').trim();
+    const memberId = String(row[cols.id] || '').trim();
     if (!memberId) continue;
 
-    const nachname = String(row[1] || '').trim();
-    const vorname = String(row[2] || '').trim();
-    const alterInput = String(row[3] || '').trim();
-    const status = String(row[4] || '').trim();
-    const trainingsgruppe = String(row[5] || '').trim();
-    const guertelInput = String(row[6] || '').trim();
-    const wettkaempfer = String(row[7] || '').trim();
-    const sparring = String(row[8] || '').trim();
+    const nachname = String(row[cols.nachname] || '').trim();
+    const vorname = String(row[cols.vorname] || '').trim();
+    const alterInput = String(row[cols.alter] || '').trim();
+    const status = String(row[cols.status] || '').trim();
+    const trainingsgruppe = String(row[cols.trainingsgruppe] || '').trim();
+    const guertelInput = String(row[cols.guertel] || '').trim();
+    const wettkaempfer = String(row[cols.wettkaempfer] || '').trim();
+    const sparring = String(row[cols.sparring] || '').trim();
 
     let member = byId.get(memberId);
     const isNew = !member;
@@ -607,6 +645,8 @@ function importMembersEditFromExcel(arrayBuffer) {
     }
 
     member.active = status.toLowerCase() === 'inaktiv' ? false : true;
+    // Trainingsgruppe-Text nicht eindeutig "Kindertraining"/"Erwachsenentraining":
+    // bestehenden bzw. (bei Neuanlage) altersbasierten typ unverändert lassen.
     if (trainingsgruppe === 'Kindertraining') member.typ = 'Kind';
     else if (trainingsgruppe === 'Erwachsenentraining') member.typ = 'Erwachsener';
 
@@ -622,7 +662,7 @@ function importMembersEditFromExcel(arrayBuffer) {
     member.sparring = sparring.toLowerCase() === 'ja';
 
     if (member.typ === 'Kind') {
-      const kindGruppeInput = String(row[9] || '').trim();
+      const kindGruppeInput = String(row[cols.kindGruppe] || '').trim();
       member.kindGruppe = KIND_GRUPPEN.includes(kindGruppeInput) ? kindGruppeInput : DEFAULT_KIND_GRUPPE;
     }
 
