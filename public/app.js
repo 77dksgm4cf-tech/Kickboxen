@@ -23,8 +23,14 @@ function escapeHtml(text) {
   return div.innerHTML;
 }
 
-function memberName(m) {
+function memberFullName(m) {
   return `${m.vorname} ${m.nachname}`;
+}
+
+function memberName(m) {
+  const initial = m.nachname ? `${m.nachname.trim().charAt(0).toUpperCase()}.` : '';
+  const alter = currentAlter(m);
+  return [m.vorname, initial, alter != null ? String(alter) : null].filter(Boolean).join(' ');
 }
 
 async function init() {
@@ -76,7 +82,7 @@ function renderMemberList(scope) {
   const list = document.getElementById(`${scope.prefix}List`);
   list.innerHTML = '';
   const filtered = getActiveFilteredMembers().filter(
-    (m) => m.typ === scope.typ && memberName(m).toLowerCase().includes(search)
+    (m) => m.typ === scope.typ && memberFullName(m).toLowerCase().includes(search)
   );
   for (const m of filtered) {
     const btn = document.createElement('button');
@@ -106,7 +112,8 @@ function renderMemberDetail(scope) {
     return;
   }
   detail.classList.remove('hidden');
-  document.getElementById(`${scope.prefix}Age`).textContent = member.alter != null ? `${member.alter} Jahre` : '';
+  const alter = currentAlter(member);
+  document.getElementById(`${scope.prefix}Age`).textContent = alter != null ? `${alter} Jahre` : '';
 
   if (member.gekuendigt) {
     gekuendigtInfo.textContent = `Gekündigt zum ${member.austrittsdatum}`;

@@ -80,6 +80,13 @@ function calcAlterFromGeburtsdatum(geburtsdatum) {
   return alter;
 }
 
+// Alter wird bei jedem Aufruf live aus dem Geburtsdatum berechnet, damit es
+// sich automatisch mit jedem Geburtstag aktualisiert. Das gespeicherte
+// member.alter dient nur als Fallback für Mitglieder ohne Geburtsdatum.
+function currentAlter(member) {
+  return member.geburtsdatum ? calcAlterFromGeburtsdatum(member.geburtsdatum) : member.alter;
+}
+
 function sortMembersByGraduierung(list) {
   return [...list].sort((a, b) => {
     const groupDiff = kindGruppeRank(a) - kindGruppeRank(b);
@@ -382,7 +389,7 @@ function exportMembersList() {
     'Trainingsgruppe', 'Gürtel', 'Wettkämpfer', 'Sparring', 'Kindergruppe',
   ];
   const dataRows = list.map((m) => {
-    const alter = m.geburtsdatum ? calcAlterFromGeburtsdatum(m.geburtsdatum) : m.alter ?? '';
+    const alter = currentAlter(m) ?? '';
     return [
       m.id, m.vorname, m.nachname, m.geburtsdatum || '', alter, m.austrittsdatum || '',
       m.active ? 'Aktiv' : 'Inaktiv',
