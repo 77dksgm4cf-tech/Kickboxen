@@ -98,7 +98,8 @@ function renderMemberList(scope) {
       'pill' +
       (m.id === selected[scope.typ] ? ' selected' : '') +
       (m.gekuendigt ? ' gekuendigt' : '') +
-      (m.ausgetreten ? ' ausgetreten' : '');
+      (m.ausgetreten ? ' ausgetreten' : '') +
+      (m.probetraining ? ' probetraining' : '');
     btn.textContent = memberName(m);
     btn.onclick = () => {
       selected[scope.typ] = m.id;
@@ -138,12 +139,14 @@ function renderMemberDetail(scope) {
     renderOverviewMatrix();
   };
 
-  for (const field of ['wettkaempfer', 'sparring']) {
-    const checkbox = document.getElementById(`${scope.prefix}${field === 'wettkaempfer' ? 'Wettkaempfer' : 'Sparring'}`);
+  const FLAG_ID_SUFFIX = { wettkaempfer: 'Wettkaempfer', sparring: 'Sparring', probetraining: 'Probetraining' };
+  for (const field of ['wettkaempfer', 'sparring', 'probetraining']) {
+    const checkbox = document.getElementById(`${scope.prefix}${FLAG_ID_SUFFIX[field]}`);
     checkbox.checked = !!member[field];
     checkbox.onchange = () => {
       setMemberFlag(member.id, field, checkbox.checked);
       renderMemberList(scope);
+      renderMemberTechniques(scope);
       renderOverviewMatrix();
     };
   }
@@ -263,7 +266,11 @@ function renderTechniqueMembers() {
     const done = isDone(m.id, selectedTechniqueId);
     const row = document.createElement('div');
     row.className =
-      'memberItem' + (done ? ' done' : '') + (m.gekuendigt ? ' gekuendigt' : '') + (m.ausgetreten ? ' ausgetreten' : '');
+      'memberItem' +
+      (done ? ' done' : '') +
+      (m.gekuendigt ? ' gekuendigt' : '') +
+      (m.ausgetreten ? ' ausgetreten' : '') +
+      (m.probetraining ? ' probetraining' : '');
     const checkboxId = `mchk_${m.id}`;
     row.innerHTML = `
       <input type="checkbox" id="${checkboxId}" ${done ? 'checked' : ''} />
@@ -323,7 +330,10 @@ function renderOverviewMatrix() {
     const row = document.createElement('tr');
     const nameCell = document.createElement('th');
     nameCell.className =
-      'matrixRowHead' + (m.gekuendigt ? ' gekuendigt' : '') + (m.ausgetreten ? ' ausgetreten' : '');
+      'matrixRowHead' +
+      (m.gekuendigt ? ' gekuendigt' : '') +
+      (m.ausgetreten ? ' ausgetreten' : '') +
+      (m.probetraining ? ' probetraining' : '');
     nameCell.textContent = memberName(m);
     row.appendChild(nameCell);
 
@@ -466,7 +476,7 @@ function renderAttendanceList() {
     const pct = allDates.length ? Math.round((attendedCount / allDates.length) * 100) : 0;
 
     const row = document.createElement('div');
-    row.className = 'memberItem' + (present ? ' done' : '');
+    row.className = 'memberItem' + (present ? ' done' : '') + (m.probetraining ? ' probetraining' : '');
     const checkboxId = `att_${m.id}`;
     row.innerHTML = `
       <input type="checkbox" id="${checkboxId}" ${present ? 'checked' : ''} />
@@ -514,7 +524,7 @@ function renderAttendanceSummary() {
   for (const m of summary.members) {
     const row = document.createElement('tr');
     const nameCell = document.createElement('th');
-    nameCell.className = 'matrixRowHead';
+    nameCell.className = 'matrixRowHead' + (m.probetraining ? ' probetraining' : '');
     nameCell.textContent = `${m.vorname} ${m.nachname}`;
     row.appendChild(nameCell);
     for (const month of summary.months) {

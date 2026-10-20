@@ -104,6 +104,9 @@ body {
   opacity: 0.5;
   text-decoration: line-through;
 }
+.pill.probetraining { color: #ffd60a; }
+.pill.probetraining.selected { color: #111; }
+.memberItem.probetraining label, .matrixRowHead.probetraining { color: #ffd60a; }
 
 .categoryTitle {
   font-size: 0.8rem;

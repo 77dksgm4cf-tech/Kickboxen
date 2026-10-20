@@ -250,6 +250,7 @@ function createMember({ vorname, nachname, geburtsdatum, typ }) {
     ausgetreten: false,
     wettkaempfer: false,
     sparring: false,
+    probetraining: true,
     kindGruppe: DEFAULT_KIND_GRUPPE,
   };
   members.push(member);
@@ -357,7 +358,7 @@ function getAttendanceSummary(typ) {
           pct: totalByMonth[month] ? Math.round((attended / totalByMonth[month]) * 100) : 0,
         };
       }
-      return { id: m.id, vorname: m.vorname, nachname: m.nachname, byMonth };
+      return { id: m.id, vorname: m.vorname, nachname: m.nachname, probetraining: m.probetraining, byMonth };
     }),
   };
 }
@@ -521,6 +522,7 @@ function importMembersListFromExcel(arrayBuffer) {
         ausgetreten: false,
         wettkaempfer: false,
         sparring: false,
+        probetraining: false,
         kindGruppe: DEFAULT_KIND_GRUPPE,
       };
       byId.set(memberId, member);
