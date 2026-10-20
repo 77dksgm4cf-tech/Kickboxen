@@ -556,7 +556,7 @@ function bulkMarkAttendance(present) {
   renderAttendanceList();
 }
 
-// ---------- Excel: Mitglieder aktualisieren / Checkliste / Massenänderung ----------
+// ---------- Excel: Mitgliederliste exportieren/importieren ----------
 
 function readFileAsArrayBuffer(file) {
   return new Promise((resolve, reject) => {
@@ -566,32 +566,6 @@ function readFileAsArrayBuffer(file) {
     reader.readAsArrayBuffer(file);
   });
 }
-
-document.getElementById('btnExportChecklist').onclick = () => {
-  try {
-    exportChecklist();
-  } catch (err) {
-    showStatus('Fehler beim Export: ' + err.message, true);
-  }
-};
-
-document.getElementById('importChecklistFile').addEventListener('change', async (e) => {
-  const file = e.target.files[0];
-  if (!file) return;
-  showStatus('Importiere Offline-Liste…');
-  try {
-    const buffer = await readFileAsArrayBuffer(file);
-    const result = importChecklistFromExcel(buffer);
-    renderMemberTechniques(SCOPES.Kind);
-    renderMemberTechniques(SCOPES.Erwachsener);
-    renderTechniqueMembers();
-    renderOverviewMatrix();
-    showStatus(`Import fertig: ${result.cellsMarked} neu markiert, ${result.cellsUnmarked} entfernt.`);
-  } catch (err) {
-    showStatus('Fehler beim Import: ' + err.message, true);
-  }
-  e.target.value = '';
-});
 
 document.getElementById('btnExportMembers').onclick = () => {
   try {

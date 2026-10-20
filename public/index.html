@@ -28,16 +28,6 @@
   </header>
 
   <div class="toolbar">
-    <button id="btnExportChecklist">⬇️ Offline-Liste exportieren</button>
-    <label class="fileLabel">
-      ⬆️ Offline-Liste importieren
-      <input type="file" id="importChecklistFile" accept=".xlsx" hidden />
-    </label>
-    <button id="btnExportMembers">⬇️ Mitgliederliste exportieren</button>
-    <label class="fileLabel">
-      ⬆️ Mitgliederliste importieren
-      <input type="file" id="importMembersFile" accept=".xlsx" hidden />
-    </label>
     <select id="activeFilter">
       <option value="active">Nur aktive</option>
       <option value="inactive">Nur inaktive</option>
@@ -161,6 +151,20 @@
       <button id="btnClearAll">🗑️ Alle lokalen Daten löschen</button>
     </div>
     <p id="backupInfo" class="childNextInfo"></p>
+
+    <h3>Mitgliederliste (Excel)</h3>
+    <p>
+      Export/Import der Mitgliederliste als Excel-Datei (Nr., Vorname, Nachname,
+      Geburtsdatum, Alter, Austrittsdatum, Status, Trainingsgruppe, Gürtel,
+      Wettkämpfer, Sparring, Kindergruppe) — z.B. zum Abgleich mit der Vereinssoftware.
+    </p>
+    <div class="planControls">
+      <button id="btnExportMembers">⬇️ Mitgliederliste exportieren</button>
+      <label class="fileLabel">
+        ⬆️ Mitgliederliste importieren
+        <input type="file" id="importMembersFile" accept=".xlsx" hidden />
+      </label>
+    </div>
   </main>
 
   <script src="store.js"></script>

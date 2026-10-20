@@ -90,16 +90,6 @@ function sortMembersByGraduierung(list) {
   });
 }
 
-function sortMembersForExport(list) {
-  return [...list].sort((a, b) => {
-    const diff = beltRank(a.guertel, a.typ) - beltRank(b.guertel, b.typ);
-    if (diff !== 0) return diff;
-    const ageDiff = (a.alter ?? Infinity) - (b.alter ?? Infinity);
-    if (ageDiff !== 0) return ageDiff;
-    return (a.nachname + a.vorname).localeCompare(b.nachname + b.vorname, 'de');
-  });
-}
-
 function sortTechniquesByGraduierung(list) {
   return [...list].sort((a, b) => {
     const diff = beltRank(a.guertel, a.zielgruppe) - beltRank(b.guertel, b.zielgruppe);
@@ -365,14 +355,14 @@ function getAttendanceSummary(typ) {
   };
 }
 
+// ---------- Excel: Mitgliederliste exportieren/importieren ----------
+
 function excelDateToIso(serial) {
   if (!serial || Number.isNaN(Number(serial))) return null;
   const utcDays = Math.floor(Number(serial) - 25569);
   const date = new Date(utcDays * 86400 * 1000);
   return date.toISOString().slice(0, 10);
 }
-
-// ---------- Excel: Offline-Checkliste exportieren/importieren ----------
 
 function downloadBlob(blob, filename) {
   const url = URL.createObjectURL(blob);
@@ -384,69 +374,6 @@ function downloadBlob(blob, filename) {
   a.remove();
   URL.revokeObjectURL(url);
 }
-
-function exportChecklist() {
-  const activeMembers = members.filter((m) => m.active);
-  const header = ['Mitgl.-Nr.', 'Nachname', 'Vorname', 'Alter', 'Typ', 'Gürtel', ...techniques.map((t) => t.label)];
-  const dataRows = sortMembersForExport(activeMembers).map((m) => {
-    const row = [m.id, m.nachname, m.vorname, m.alter ?? '', m.typ, m.guertel];
-    for (const t of techniques) {
-      row.push(progress[m.id] && progress[m.id][t.id] ? 'X' : '');
-    }
-    return row;
-  });
-
-  const ws = XLSX.utils.aoa_to_sheet([header, ...dataRows]);
-  ws['!cols'] = [
-    { wch: 10 }, { wch: 16 }, { wch: 16 }, { wch: 8 }, { wch: 12 }, { wch: 12 },
-    ...techniques.map(() => ({ wch: 22 })),
-  ];
-  const wb = XLSX.utils.book_new();
-  XLSX.utils.book_append_sheet(wb, ws, 'Checkliste');
-  const wbout = XLSX.write(wb, { type: 'array', bookType: 'xlsx' });
-  downloadBlob(new Blob([wbout], { type: 'application/octet-stream' }), 'Checkliste-Offline.xlsx');
-}
-
-function importChecklistFromExcel(arrayBuffer) {
-  const wb = XLSX.read(arrayBuffer, { type: 'array' });
-  const sheet = wb.Sheets[wb.SheetNames[0]];
-  const rows = XLSX.utils.sheet_to_json(sheet, { header: 1, defval: '' });
-  if (rows.length < 2) throw new Error('Die Datei enthält keine Daten.');
-
-  const header = rows[0];
-  const labelToId = new Map(techniques.map((t) => [t.label, t.id]));
-  const knownMemberIds = new Set(members.map((m) => m.id));
-  const columnTechniqueIds = header.map((label) => labelToId.get(String(label).trim()) || null);
-
-  let cellsMarked = 0;
-  let cellsUnmarked = 0;
-
-  for (let i = 1; i < rows.length; i++) {
-    const row = rows[i];
-    const memberId = String(row[0] || '').trim();
-    if (!memberId || !knownMemberIds.has(memberId)) continue;
-    if (!progress[memberId]) progress[memberId] = {};
-
-    for (let c = 0; c < header.length; c++) {
-      const techniqueId = columnTechniqueIds[c];
-      if (!techniqueId) continue;
-      const cell = String(row[c] || '').trim().toLowerCase();
-      const checked = cell === 'x' || cell === '1' || cell === 'ja' || cell === 'true';
-      if (checked) {
-        if (!progress[memberId][techniqueId]) cellsMarked++;
-        progress[memberId][techniqueId] = true;
-      } else if (progress[memberId][techniqueId]) {
-        delete progress[memberId][techniqueId];
-        cellsUnmarked++;
-      }
-    }
-  }
-
-  saveJson(STORAGE_KEYS.progress, progress);
-  return { cellsMarked, cellsUnmarked };
-}
-
-// ---------- Excel: Mitgliederliste für Massenänderung ----------
 
 function exportMembersList() {
   const list = sortMembersByGraduierung(members.filter((m) => !m.ausgetreten));
