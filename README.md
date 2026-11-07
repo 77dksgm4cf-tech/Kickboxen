@@ -24,8 +24,10 @@ regelmäßig ein Archiv exportieren!
   Wettkämpfer/Sparring-Flags pflegen, Techniken für die nächste Graduierung
   abhaken. Über "➕ Neues … anlegen" lassen sich auch ohne Excel-Import neue
   Mitglieder erfassen.
-- **Nach Technik:** eine Technik wählen, dann für die ganze (gefilterte)
-  Gruppe abhaken.
+- **Graduierung:** Ziel-Gürtel wählen, dann erscheinen alle Mitglieder der
+  gewählten Kategorie, die auf diesen Gürtel hinarbeiten, als aufklappbare
+  Karten mit Fortschritt (z. B. 8/13). Aufgeklappt lassen sich die geforderten
+  Techniken direkt abhaken.
 - **Übersicht:** Matrix aller Mitglieder x Techniken, anklickbar.
 - **Trainingsplan:** 24-Wochen-Plan je Gürtelfarbe (Kind/Erwachsener),
   statischer Inhalt ohne Personendaten.

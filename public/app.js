@@ -1,6 +1,8 @@
 // UI-Logik. Datenhaltung kommt komplett aus store.js (localStorage).
 
-let selectedTechniqueId = null;
+const GRADUATION_BELT_KEY = 'kickbox_graduation_belt';
+let selectedGraduationBelt = localStorage.getItem(GRADUATION_BELT_KEY);
+const expandedGraduation = new Set();
 let belts = { Kind: KIDS_BELT_LEVELS, Erwachsener: ADULT_BELT_LEVELS };
 
 const SCOPES = {
@@ -87,6 +89,7 @@ function setCategory(next) {
   for (const typ of Object.keys(selected)) {
     if (selected[typ] && !visibleIds.has(selected[typ])) selected[typ] = null;
   }
+  selectedGraduationBelt = null;
   updateCategoryUI();
   renderAll();
   setView(currentView);
@@ -113,7 +116,7 @@ function renderAll() {
   renderMemberList(SCOPES.Erwachsener);
   renderMemberDetail(SCOPES.Erwachsener);
   renderMemberTechniques(SCOPES.Erwachsener);
-  renderTechniqueSelect();
+  renderGraduation();
   renderOverviewMatrix();
 }
 
@@ -247,18 +250,22 @@ function renderMemberTechniques(scope) {
   nextInfo.classList.remove('hidden');
 
   const relevant = techniques.filter((t) => t.zielgruppe === member.typ && t.guertel === next);
-  const categories = [...new Set(relevant.map((t) => t.category))];
+  appendTechniqueChecklist(container, memberId, relevant, `chk_${scope.prefix}`, renderOverviewMatrix);
+}
+
+function appendTechniqueChecklist(container, memberId, techs, idPrefix, onToggle) {
+  const categories = [...new Set(techs.map((t) => t.category))];
   for (const cat of categories) {
     const title = document.createElement('div');
     title.className = 'categoryTitle';
     title.textContent = cat;
     container.appendChild(title);
 
-    for (const t of relevant.filter((x) => x.category === cat)) {
+    for (const t of techs.filter((x) => x.category === cat)) {
       const done = isDone(memberId, t.id);
       const row = document.createElement('div');
       row.className = 'techItem' + (done ? ' done' : '');
-      const checkboxId = `chk_${scope.prefix}_${t.id}`;
+      const checkboxId = `${idPrefix}_${t.id}`;
       row.innerHTML = `
         <input type="checkbox" id="${checkboxId}" ${done ? 'checked' : ''} />
         <label for="${checkboxId}">${escapeHtml(t.name)}<span class="techLabelSmall">${escapeHtml(t.label)}</span></label>
@@ -266,7 +273,7 @@ function renderMemberTechniques(scope) {
       row.querySelector('input').addEventListener('change', (e) => {
         toggleProgress(memberId, t.id, e.target.checked);
         row.classList.toggle('done', e.target.checked);
-        renderOverviewMatrix();
+        onToggle();
       });
       container.appendChild(row);
     }
@@ -292,62 +299,111 @@ function addMember(typ) {
 document.getElementById('btnAddChild').onclick = () => addMember('Kind');
 document.getElementById('btnAddAdult').onclick = () => addMember('Erwachsener');
 
-// ---------- Nach-Technik-Ansicht ----------
+// ---------- Graduierung (Ziel-Gürtel wählen, Mitglieder mit Techniken) ----------
 
-function renderTechniqueSelect() {
-  const select = document.getElementById('techniqueSelect');
+function graduationBelts() {
+  const present = new Set(categoryTechniques().map((t) => t.guertel));
+  return beltLevelsFor(categoryTyp()).filter((b) => present.has(b));
+}
+
+function renderGraduation() {
+  const select = document.getElementById('graduationBelt');
+  const container = document.getElementById('graduationList');
+  const candidates = getFilteredMembers();
+  const targetBelts = graduationBelts();
+  const countFor = (belt) => candidates.filter((m) => nextGuertel(m) === belt).length;
+
+  if (!targetBelts.includes(selectedGraduationBelt)) {
+    selectedGraduationBelt = targetBelts.find((b) => countFor(b) > 0) || targetBelts[0] || null;
+  }
+
   select.innerHTML = '';
-  const list = categoryTechniques();
-  for (const t of list) {
+  for (const belt of targetBelts) {
     const opt = document.createElement('option');
-    opt.value = t.id;
-    opt.textContent = `${t.label} — ${t.name}`;
+    opt.value = belt;
+    opt.textContent = `${belt} (${countFor(belt)})`;
     select.appendChild(opt);
   }
-  if (!list.some((t) => String(t.id) === String(selectedTechniqueId))) {
-    selectedTechniqueId = list.length ? list[0].id : null;
-  }
-  select.value = selectedTechniqueId == null ? '' : selectedTechniqueId;
-  renderTechniqueMembers();
-}
-
-function renderTechniqueMembers() {
-  const container = document.getElementById('techniqueMembers');
+  select.value = selectedGraduationBelt || '';
   container.innerHTML = '';
-  if (!selectedTechniqueId) return;
 
-  for (const m of getFilteredMembers()) {
-    const done = isDone(m.id, selectedTechniqueId);
-    const row = document.createElement('div');
-    row.className =
-      'memberItem' +
-      (done ? ' done' : '') +
-      (m.gekuendigt ? ' gekuendigt' : '') +
-      (m.ausgetreten ? ' ausgetreten' : '') +
-      (m.probetraining ? ' probetraining' : '');
-    const checkboxId = `mchk_${m.id}`;
-    row.innerHTML = `
-      <input type="checkbox" id="${checkboxId}" ${done ? 'checked' : ''} />
-      <label for="${checkboxId}">${escapeHtml(memberName(m))}</label>
-    `;
-    row.querySelector('input').addEventListener('change', (e) => {
-      toggleProgress(m.id, selectedTechniqueId, e.target.checked);
-      row.classList.toggle('done', e.target.checked);
-      renderOverviewMatrix();
-    });
-    container.appendChild(row);
+  if (!selectedGraduationBelt) {
+    container.innerHTML = '<p class="childNextInfo">Für diese Kategorie sind keine Techniken hinterlegt.</p>';
+    return;
   }
+  localStorage.setItem(GRADUATION_BELT_KEY, selectedGraduationBelt);
+
+  const techs = categoryTechniques().filter((t) => t.guertel === selectedGraduationBelt);
+  const list = candidates.filter((m) => nextGuertel(m) === selectedGraduationBelt);
+  if (!list.length) {
+    container.innerHTML = `<p class="childNextInfo">Kein Mitglied arbeitet derzeit auf ${escapeHtml(selectedGraduationBelt)} hin.</p>`;
+    return;
+  }
+  for (const m of list) container.appendChild(buildGraduationCard(m, techs));
 }
+
+function buildGraduationCard(m, techs) {
+  const card = document.createElement('div');
+  card.className =
+    'gradCard' +
+    (m.gekuendigt ? ' gekuendigt' : '') +
+    (m.ausgetreten ? ' ausgetreten' : '') +
+    (m.probetraining ? ' probetraining' : '');
+
+  const head = document.createElement('button');
+  head.type = 'button';
+  head.className = 'gradHead';
+  head.innerHTML = `
+    <span class="gradName">${escapeHtml(memberName(m))}</span>
+    <span class="gradCount"></span>
+    <span class="gradBar"><span class="gradBarFill"></span></span>
+  `;
+  const countEl = head.querySelector('.gradCount');
+  const fillEl = head.querySelector('.gradBarFill');
+  const body = document.createElement('div');
+  body.className = 'gradBody';
+
+  const updateHead = () => {
+    const done = techs.filter((t) => isDone(m.id, t.id)).length;
+    countEl.textContent = `${done}/${techs.length}`;
+    fillEl.style.width = techs.length ? `${Math.round((done / techs.length) * 100)}%` : '0%';
+    card.classList.toggle('complete', techs.length > 0 && done === techs.length);
+  };
+
+  const setOpen = (open) => {
+    card.classList.toggle('open', open);
+    head.setAttribute('aria-expanded', String(open));
+    if (open) {
+      expandedGraduation.add(m.id);
+      if (!body.hasChildNodes()) {
+        appendTechniqueChecklist(body, m.id, techs, `grad_${m.id}`, () => {
+          updateHead();
+          renderOverviewMatrix();
+        });
+      }
+    } else {
+      expandedGraduation.delete(m.id);
+    }
+  };
+
+  head.onclick = () => setOpen(!card.classList.contains('open'));
+  card.appendChild(head);
+  card.appendChild(body);
+  updateHead();
+  if (expandedGraduation.has(m.id)) setOpen(true);
+  return card;
+}
+
+document.getElementById('graduationBelt').addEventListener('change', (e) => {
+  selectedGraduationBelt = e.target.value;
+  renderGraduation();
+});
 
 document.getElementById('activeFilter').addEventListener('change', renderAll);
 document.getElementById('filterWettkaempfer').addEventListener('change', renderAll);
 document.getElementById('filterSparring').addEventListener('change', renderAll);
 document.getElementById('childSearch').addEventListener('input', () => renderMemberList(SCOPES.Kind));
 document.getElementById('adultSearch').addEventListener('input', () => renderMemberList(SCOPES.Erwachsener));
-document.getElementById('techniqueSelect').addEventListener('change', (e) => {
-  selectedTechniqueId = e.target.value;
-  renderTechniqueMembers();
-});
 
 // ---------- Übersicht (Matrix) ----------
 
@@ -702,7 +758,7 @@ document.getElementById('btnClearAll').onclick = () => {
 // ---------- View-Umschaltung ----------
 
 const VIEW_CONTAINERS = {
-  technique: 'viewTechnique',
+  graduation: 'viewGraduation',
   overview: 'viewOverview',
   plan: 'viewPlan',
   attendance: 'viewAttendance',
@@ -713,12 +769,12 @@ const ALL_VIEW_IDS = ['viewChild', 'viewAdult', ...Object.values(VIEW_CONTAINERS
 const NAV_BUTTONS = {
   members: 'btnViewMembers',
   attendance: 'btnViewAttendance',
-  technique: 'btnViewTechnique',
+  graduation: 'btnViewGraduation',
   more: 'btnViewMore',
 };
 const MORE_VIEWS = ['overview', 'plan', 'backup', 'more'];
-const CATEGORY_VIEWS = ['members', 'attendance', 'technique', 'overview'];
-const FILTER_VIEWS = ['members', 'technique', 'overview'];
+const CATEGORY_VIEWS = ['members', 'attendance', 'graduation', 'overview'];
+const FILTER_VIEWS = ['members', 'graduation', 'overview'];
 
 function setView(view) {
   currentView = view;
@@ -736,9 +792,13 @@ function setView(view) {
   document.getElementById('filterBox').classList.toggle('hidden', !FILTER_VIEWS.includes(view));
 }
 
-document.getElementById('btnViewMembers').onclick = () => setView('members');
+document.getElementById('btnViewMembers').onclick = () => {
+  setView('members');
+  renderMemberTechniques(SCOPES.Kind);
+  renderMemberTechniques(SCOPES.Erwachsener);
+};
 document.getElementById('btnViewMore').onclick = () => setView('more');
-document.getElementById('btnViewTechnique').onclick = () => setView('technique');
+document.getElementById('btnViewGraduation').onclick = () => { setView('graduation'); renderGraduation(); };
 document.getElementById('btnViewOverview').onclick = () => { setView('overview'); renderOverviewMatrix(); };
 document.getElementById('btnViewPlan').onclick = () => { setView('plan'); renderPlanTable(); };
 document.getElementById('btnViewAttendance').onclick = () => { setView('attendance'); loadAttendanceView(); };

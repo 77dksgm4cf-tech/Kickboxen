@@ -1,7 +1,7 @@
 // Nur wirksam, wenn die App über http(s):// geladen wird. Netzwerk-first:
 // immer die aktuelle Version vom Server holen, der Cache dient nur als
 // Fallback, wenn kein Netz verfügbar ist (Offline-Nutzung).
-const CACHE_NAME = 'kickbox-online-v3';
+const CACHE_NAME = 'kickbox-online-v4';
 const ASSETS = [
   './',
   './index.html',

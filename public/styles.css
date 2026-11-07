@@ -73,6 +73,48 @@ body {
 }
 .navIcon { font-size: 1.2rem; line-height: 1; }
 
+.fieldLabel { display: block; font-size: 0.8rem; color: #9aa4b2; margin-bottom: 4px; }
+
+.gradCard {
+  background: #1a1e24;
+  border: 1px solid #333a45;
+  border-radius: 12px;
+  margin-bottom: 8px;
+  overflow: hidden;
+}
+.gradCard.complete { border-color: #2f7d46; }
+.gradHead {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 6px 10px;
+  align-items: center;
+  width: 100%;
+  min-height: 56px;
+  padding: 10px 14px;
+  text-align: left;
+  border: none;
+  background: transparent;
+  color: #f2f2f2;
+  font-size: 1rem;
+}
+.gradName { font-weight: 600; }
+.gradCount { font-size: 0.85rem; color: #9aa4b2; }
+.gradCard.complete .gradCount { color: #7ee787; }
+.gradBar {
+  grid-column: 1 / -1;
+  height: 6px;
+  border-radius: 3px;
+  background: #262b33;
+  overflow: hidden;
+}
+.gradBarFill { display: block; height: 100%; width: 0; background: #ffb703; }
+.gradCard.complete .gradBarFill { background: #7ee787; }
+.gradBody { display: none; padding: 0 10px 10px; }
+.gradCard.open .gradBody { display: block; }
+.gradCard.gekuendigt .gradName { color: #ff6b6b; }
+.gradCard.ausgetreten .gradName { opacity: 0.5; text-decoration: line-through; }
+.gradCard.probetraining .gradName { color: #ffd60a; }
+
 .moreList { display: flex; flex-direction: column; gap: 10px; margin-top: 8px; }
 .moreItem {
   display: flex;
@@ -136,7 +178,7 @@ body {
 .view { padding: 0 16px; }
 .view.hidden { display: none; }
 
-#childSearch, #adultSearch, #attendanceSearch, #techniqueSelect {
+#childSearch, #adultSearch, #attendanceSearch, #graduationBelt {
   width: 100%;
   padding: 12px;
   font-size: 1rem;
