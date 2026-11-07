@@ -33,11 +33,77 @@ function memberName(m) {
   return [m.vorname, initial, alter != null ? String(alter) : null].filter(Boolean).join(' ');
 }
 
+const nameCollator = new Intl.Collator('de', { sensitivity: 'base' });
+
+function compareMembers(a, b) {
+  return nameCollator.compare(a.vorname || '', b.vorname || '') ||
+    nameCollator.compare(a.nachname || '', b.nachname || '');
+}
+
+// ---------- Kategorie (Erwachsene / Kinder Anfänger / Kinder Fortgeschrittene) ----------
+
+const CATEGORY_KEY = 'kickbox_category';
+const CATEGORIES = {
+  adult: { typ: 'Erwachsener', kindGruppe: null },
+  kidBeginner: { typ: 'Kind', kindGruppe: 'Anfänger' },
+  kidAdvanced: { typ: 'Kind', kindGruppe: 'Fortgeschrittene' },
+};
+let category = localStorage.getItem(CATEGORY_KEY);
+if (!CATEGORIES[category]) category = 'kidBeginner';
+let currentView = 'members';
+
+function categoryTyp() {
+  return CATEGORIES[category].typ;
+}
+
+function categoryKindGruppe() {
+  return CATEGORIES[category].kindGruppe;
+}
+
+function memberInCategory(m) {
+  const cat = CATEGORIES[category];
+  if (m.typ !== cat.typ) return false;
+  return cat.kindGruppe === null || (m.kindGruppe || DEFAULT_KIND_GRUPPE) === cat.kindGruppe;
+}
+
+function categoryTechniques() {
+  return techniques.filter((t) => t.zielgruppe === categoryTyp());
+}
+
+function updateCategoryUI() {
+  for (const btn of document.querySelectorAll('#categorySwitch .seg')) {
+    btn.classList.toggle('active', btn.dataset.category === category);
+  }
+}
+
+function setCategory(next) {
+  if (!CATEGORIES[next] || next === category) return;
+  category = next;
+  localStorage.setItem(CATEGORY_KEY, category);
+  for (const id of ['childSearch', 'adultSearch', 'attendanceSearch']) {
+    document.getElementById(id).value = '';
+  }
+  const visibleIds = new Set(getFilteredMembers().map((m) => m.id));
+  for (const typ of Object.keys(selected)) {
+    if (selected[typ] && !visibleIds.has(selected[typ])) selected[typ] = null;
+  }
+  updateCategoryUI();
+  renderAll();
+  setView(currentView);
+  if (currentView === 'attendance') loadAttendanceView();
+}
+
+for (const btn of document.querySelectorAll('#categorySwitch .seg')) {
+  btn.addEventListener('click', () => setCategory(btn.dataset.category));
+}
+
 async function init() {
   await loadStaticData();
   reloadFromStorage();
+  updateCategoryUI();
   renderAll();
   initPlanTypOptions();
+  setView('members');
 }
 
 function renderAll() {
@@ -51,28 +117,18 @@ function renderAll() {
   renderOverviewMatrix();
 }
 
-function getActiveFilteredMembers() {
+function getFilteredMembers() {
   const filter = document.getElementById('activeFilter').value;
   let result;
   if (filter === 'ausgetreten') result = members.filter((m) => m.ausgetreten);
-  else if (filter === 'all') result = members;
+  else if (filter === 'all') result = members.slice();
   else if (filter === 'inactive') result = members.filter((m) => !m.active && !m.ausgetreten);
   else result = members.filter((m) => m.active && !m.ausgetreten);
 
   if (document.getElementById('filterWettkaempfer').checked) result = result.filter((m) => m.wettkaempfer);
   if (document.getElementById('filterSparring').checked) result = result.filter((m) => m.sparring);
 
-  const kindGruppe = document.getElementById('kindGruppeFilter').value;
-  if (kindGruppe !== 'all') result = result.filter((m) => m.typ === 'Kind' && m.kindGruppe === kindGruppe);
-
-  return result;
-}
-
-function getFilteredMembers() {
-  const typ = document.getElementById('typFilter').value;
-  const base = getActiveFilteredMembers();
-  if (typ === 'all') return base;
-  return base.filter((m) => m.typ === typ);
+  return result.filter(memberInCategory).sort(compareMembers);
 }
 
 // ---------- Mitglieder-Ansichten (Kind / Erwachsene) ----------
@@ -81,17 +137,9 @@ function renderMemberList(scope) {
   const search = document.getElementById(`${scope.prefix}Search`).value.trim().toLowerCase();
   const list = document.getElementById(`${scope.prefix}List`);
   list.innerHTML = '';
-  const filtered = getActiveFilteredMembers().filter(
+  const filtered = getFilteredMembers().filter(
     (m) => m.typ === scope.typ && memberFullName(m).toLowerCase().includes(search)
   );
-  filtered.sort((a, b) => {
-    const ageA = currentAlter(a);
-    const ageB = currentAlter(b);
-    if (ageA == null && ageB == null) return 0;
-    if (ageA == null) return 1;
-    if (ageB == null) return -1;
-    return ageA - ageB;
-  });
   for (const m of filtered) {
     const btn = document.createElement('button');
     btn.className =
@@ -232,6 +280,9 @@ function addMember(typ) {
   if (nachname === null) return;
   const geburtsdatum = prompt('Geburtsdatum (JJJJ-MM-TT, optional)?') || null;
   const member = createMember({ vorname: vorname.trim(), nachname: nachname.trim(), geburtsdatum, typ });
+  if (member.typ === 'Kind' && categoryKindGruppe()) {
+    setMemberKindGruppe(member.id, categoryKindGruppe());
+  }
   const scope = SCOPES[member.typ];
   selected[scope.typ] = member.id;
   renderAll();
@@ -246,14 +297,17 @@ document.getElementById('btnAddAdult').onclick = () => addMember('Erwachsener');
 function renderTechniqueSelect() {
   const select = document.getElementById('techniqueSelect');
   select.innerHTML = '';
-  for (const t of techniques) {
+  const list = categoryTechniques();
+  for (const t of list) {
     const opt = document.createElement('option');
     opt.value = t.id;
     opt.textContent = `${t.label} — ${t.name}`;
     select.appendChild(opt);
   }
-  if (!selectedTechniqueId && techniques.length) selectedTechniqueId = techniques[0].id;
-  select.value = selectedTechniqueId;
+  if (!list.some((t) => String(t.id) === String(selectedTechniqueId))) {
+    selectedTechniqueId = list.length ? list[0].id : null;
+  }
+  select.value = selectedTechniqueId == null ? '' : selectedTechniqueId;
   renderTechniqueMembers();
 }
 
@@ -286,10 +340,8 @@ function renderTechniqueMembers() {
 }
 
 document.getElementById('activeFilter').addEventListener('change', renderAll);
-document.getElementById('typFilter').addEventListener('change', renderAll);
 document.getElementById('filterWettkaempfer').addEventListener('change', renderAll);
 document.getElementById('filterSparring').addEventListener('change', renderAll);
-document.getElementById('kindGruppeFilter').addEventListener('change', renderAll);
 document.getElementById('childSearch').addEventListener('input', () => renderMemberList(SCOPES.Kind));
 document.getElementById('adultSearch').addEventListener('input', () => renderMemberList(SCOPES.Erwachsener));
 document.getElementById('techniqueSelect').addEventListener('change', (e) => {
@@ -304,10 +356,11 @@ function renderOverviewMatrix() {
   if (!container) return;
   container.innerHTML = '';
   const visibleMembers = getFilteredMembers();
-  if (!visibleMembers.length || !techniques.length) return;
+  const categoryTechs = categoryTechniques();
+  if (!visibleMembers.length || !categoryTechs.length) return;
 
   const filterMissing = document.getElementById('filterMissing').checked;
-  const visibleTechniques = techniques.filter(
+  const visibleTechniques = categoryTechs.filter(
     (t) => !filterMissing || !visibleMembers.every((m) => isDone(m.id, t.id))
   );
 
@@ -413,8 +466,12 @@ function initPlanTypOptions() {
 
 let attendanceData = {};
 
+function attendanceMembers() {
+  return members.filter((m) => memberInCategory(m) && m.active && !m.ausgetreten).sort(compareMembers);
+}
+
 function loadAttendanceView() {
-  const typ = document.getElementById('attendanceTyp').value;
+  const typ = categoryTyp();
   attendanceData = getFullAttendance()[typ] || {};
 
   const today = new Date().toISOString().slice(0, 10);
@@ -449,7 +506,7 @@ function loadAttendanceView() {
 }
 
 function renderAttendanceList() {
-  const typ = document.getElementById('attendanceTyp').value;
+  const typ = categoryTyp();
   const date = document.getElementById('attendanceSessionSelect').value;
   const container = document.getElementById('attendanceList');
   const quickActions = document.getElementById('attendanceQuickActions');
@@ -463,12 +520,8 @@ function renderAttendanceList() {
 
   const sessionMap = attendanceData[date] || {};
   const allDates = Object.keys(attendanceData);
-  const kindGruppe = document.getElementById('kindGruppeFilter').value;
-
-  let relevant = members.filter((m) => m.typ === typ && m.active && !m.ausgetreten);
-  if (typ === 'Kind' && kindGruppe !== 'all') {
-    relevant = relevant.filter((m) => m.kindGruppe === kindGruppe);
-  }
+  const search = document.getElementById('attendanceSearch').value.trim().toLowerCase();
+  const relevant = attendanceMembers().filter((m) => memberFullName(m).toLowerCase().includes(search));
 
   for (const m of relevant) {
     const present = !!sessionMap[m.id];
@@ -491,7 +544,7 @@ function renderAttendanceList() {
 }
 
 function renderAttendanceSummary() {
-  const typ = document.getElementById('attendanceTyp').value;
+  const typ = categoryTyp();
   const container = document.getElementById('attendanceSummary');
   container.innerHTML = '';
 
@@ -501,11 +554,8 @@ function renderAttendanceSummary() {
     return;
   }
 
-  const kindGruppe = document.getElementById('kindGruppeFilter').value;
-  if (typ === 'Kind' && kindGruppe !== 'all') {
-    const idsInGruppe = new Set(members.filter((m) => m.kindGruppe === kindGruppe).map((m) => m.id));
-    summary.members = summary.members.filter((m) => idsInGruppe.has(m.id));
-  }
+  const idsInCategory = new Set(members.filter(memberInCategory).map((m) => m.id));
+  summary.members = summary.members.filter((m) => idsInCategory.has(m.id)).sort(compareMembers);
 
   const table = document.createElement('table');
   table.className = 'matrixTable';
@@ -539,11 +589,11 @@ function renderAttendanceSummary() {
   container.appendChild(table);
 }
 
-document.getElementById('attendanceTyp').addEventListener('change', loadAttendanceView);
 document.getElementById('attendanceSessionSelect').addEventListener('change', renderAttendanceList);
+document.getElementById('attendanceSearch').addEventListener('input', renderAttendanceList);
 
 document.getElementById('btnCreateSession').onclick = () => {
-  const typ = document.getElementById('attendanceTyp').value;
+  const typ = categoryTyp();
   const date = document.getElementById('attendanceDate').value;
   if (!date) {
     showStatus('Bitte ein Datum wählen.', true);
@@ -556,7 +606,7 @@ document.getElementById('btnCreateSession').onclick = () => {
 };
 
 document.getElementById('btnDeleteSession').onclick = () => {
-  const typ = document.getElementById('attendanceTyp').value;
+  const typ = categoryTyp();
   const date = document.getElementById('attendanceSessionSelect').value;
   if (!date) return;
   deleteSession(typ, date, attendanceData);
@@ -567,15 +617,10 @@ document.getElementById('btnMarkAllPresent').onclick = () => bulkMarkAttendance(
 document.getElementById('btnMarkAllAbsent').onclick = () => bulkMarkAttendance(false);
 
 function bulkMarkAttendance(present) {
-  const typ = document.getElementById('attendanceTyp').value;
+  const typ = categoryTyp();
   const date = document.getElementById('attendanceSessionSelect').value;
   if (!date) return;
-  const kindGruppe = document.getElementById('kindGruppeFilter').value;
-  let relevant = members.filter((m) => m.typ === typ && m.active && !m.ausgetreten);
-  if (typ === 'Kind' && kindGruppe !== 'all') {
-    relevant = relevant.filter((m) => m.kindGruppe === kindGruppe);
-  }
-  for (const m of relevant) {
+  for (const m of attendanceMembers()) {
     setAttendance(typ, date, m.id, present, attendanceData);
   }
   renderAttendanceList();
@@ -656,25 +701,43 @@ document.getElementById('btnClearAll').onclick = () => {
 
 // ---------- View-Umschaltung ----------
 
+const VIEW_CONTAINERS = {
+  technique: 'viewTechnique',
+  overview: 'viewOverview',
+  plan: 'viewPlan',
+  attendance: 'viewAttendance',
+  backup: 'viewBackup',
+  more: 'viewMore',
+};
+const ALL_VIEW_IDS = ['viewChild', 'viewAdult', ...Object.values(VIEW_CONTAINERS)];
+const NAV_BUTTONS = {
+  members: 'btnViewMembers',
+  attendance: 'btnViewAttendance',
+  technique: 'btnViewTechnique',
+  more: 'btnViewMore',
+};
+const MORE_VIEWS = ['overview', 'plan', 'backup', 'more'];
+const CATEGORY_VIEWS = ['members', 'attendance', 'technique', 'overview'];
+const FILTER_VIEWS = ['members', 'technique', 'overview'];
+
 function setView(view) {
-  document.getElementById('viewChild').classList.toggle('hidden', view !== 'child');
-  document.getElementById('viewAdult').classList.toggle('hidden', view !== 'adult');
-  document.getElementById('viewTechnique').classList.toggle('hidden', view !== 'technique');
-  document.getElementById('viewOverview').classList.toggle('hidden', view !== 'overview');
-  document.getElementById('viewPlan').classList.toggle('hidden', view !== 'plan');
-  document.getElementById('viewAttendance').classList.toggle('hidden', view !== 'attendance');
-  document.getElementById('viewBackup').classList.toggle('hidden', view !== 'backup');
-  document.getElementById('btnViewChild').classList.toggle('active', view === 'child');
-  document.getElementById('btnViewAdult').classList.toggle('active', view === 'adult');
-  document.getElementById('btnViewTechnique').classList.toggle('active', view === 'technique');
-  document.getElementById('btnViewOverview').classList.toggle('active', view === 'overview');
-  document.getElementById('btnViewPlan').classList.toggle('active', view === 'plan');
-  document.getElementById('btnViewAttendance').classList.toggle('active', view === 'attendance');
-  document.getElementById('btnViewBackup').classList.toggle('active', view === 'backup');
+  currentView = view;
+  const visibleId = view === 'members'
+    ? (categoryTyp() === 'Kind' ? 'viewChild' : 'viewAdult')
+    : VIEW_CONTAINERS[view];
+  for (const id of ALL_VIEW_IDS) {
+    document.getElementById(id).classList.toggle('hidden', id !== visibleId);
+  }
+  const activeNav = MORE_VIEWS.includes(view) ? 'more' : view;
+  for (const [navView, btnId] of Object.entries(NAV_BUTTONS)) {
+    document.getElementById(btnId).classList.toggle('active', navView === activeNav);
+  }
+  document.getElementById('categorySwitch').classList.toggle('hidden', !CATEGORY_VIEWS.includes(view));
+  document.getElementById('filterBox').classList.toggle('hidden', !FILTER_VIEWS.includes(view));
 }
 
-document.getElementById('btnViewChild').onclick = () => setView('child');
-document.getElementById('btnViewAdult').onclick = () => setView('adult');
+document.getElementById('btnViewMembers').onclick = () => setView('members');
+document.getElementById('btnViewMore').onclick = () => setView('more');
 document.getElementById('btnViewTechnique').onclick = () => setView('technique');
 document.getElementById('btnViewOverview').onclick = () => { setView('overview'); renderOverviewMatrix(); };
 document.getElementById('btnViewPlan').onclick = () => { setView('plan'); renderPlanTable(); };

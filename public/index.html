@@ -16,37 +16,26 @@
 <body>
   <header class="topbar">
     <h1>🥋 Kickbox Fortschritt</h1>
-    <div class="view-switch">
-      <button id="btnViewChild" class="tab active">Kind</button>
-      <button id="btnViewAdult" class="tab">Erwachsene</button>
-      <button id="btnViewTechnique" class="tab">Technik</button>
-      <button id="btnViewOverview" class="tab">Übersicht</button>
-      <button id="btnViewPlan" class="tab">Trainingsplan</button>
-      <button id="btnViewAttendance" class="tab">Anwesenheit</button>
-      <button id="btnViewBackup" class="tab">Daten/Archiv</button>
+    <div id="categorySwitch" class="categorySwitch">
+      <button type="button" class="seg" data-category="adult">Erwachsene</button>
+      <button type="button" class="seg" data-category="kidBeginner">Kinder Anfänger</button>
+      <button type="button" class="seg" data-category="kidAdvanced">Kinder Fortgeschr.</button>
     </div>
   </header>
 
-  <div class="toolbar">
-    <select id="activeFilter">
-      <option value="active">Nur aktive</option>
-      <option value="inactive">Nur inaktive</option>
-      <option value="ausgetreten">Ausgetreten</option>
-      <option value="all">Alle</option>
-    </select>
-    <select id="typFilter">
-      <option value="all">Kind + Erwachsene</option>
-      <option value="Kind">Nur Kindertraining</option>
-      <option value="Erwachsener">Nur Erwachsenentraining</option>
-    </select>
-    <label class="activeToggle"><input type="checkbox" id="filterWettkaempfer" /> Nur Wettkämpfer</label>
-    <label class="activeToggle"><input type="checkbox" id="filterSparring" /> Nur Sparring</label>
-    <select id="kindGruppeFilter">
-      <option value="all">Anfänger + Fortgeschrittene</option>
-      <option value="Anfänger">Nur Anfänger</option>
-      <option value="Fortgeschrittene">Nur Fortgeschrittene</option>
-    </select>
-  </div>
+  <details id="filterBox" class="filterBox">
+    <summary>Filter</summary>
+    <div class="toolbar">
+      <select id="activeFilter">
+        <option value="active">Nur aktive</option>
+        <option value="inactive">Nur inaktive</option>
+        <option value="ausgetreten">Ausgetreten</option>
+        <option value="all">Alle</option>
+      </select>
+      <label class="activeToggle"><input type="checkbox" id="filterWettkaempfer" /> Nur Wettkämpfer</label>
+      <label class="activeToggle"><input type="checkbox" id="filterSparring" /> Nur Sparring</label>
+    </div>
+  </details>
 
   <div id="status" class="status"></div>
 
@@ -113,11 +102,8 @@
   </main>
 
   <main id="viewAttendance" class="view hidden">
+    <input type="search" id="attendanceSearch" placeholder="Mitglied suchen (Vor- oder Nachname)…" />
     <div class="planControls">
-      <select id="attendanceTyp">
-        <option value="Kind">Kind</option>
-        <option value="Erwachsener">Erwachsener</option>
-      </select>
       <input type="date" id="attendanceDate" />
       <button id="btnCreateSession">➕ Training anlegen</button>
       <select id="attendanceSessionSelect"></select>
@@ -132,6 +118,14 @@
 
     <h3>Trainingsübersicht (pro Monat)</h3>
     <div id="attendanceSummary" class="matrixWrap"></div>
+  </main>
+
+  <main id="viewMore" class="view hidden">
+    <div class="moreList">
+      <button type="button" id="btnViewOverview" class="moreItem">📊 Übersicht<span>Matrix aller Techniken pro Mitglied</span></button>
+      <button type="button" id="btnViewPlan" class="moreItem">📅 Trainingsplan<span>Wochenplan je Graduierung</span></button>
+      <button type="button" id="btnViewBackup" class="moreItem">💾 Daten / Archiv<span>Sichern, Wiederherstellen, Excel</span></button>
+    </div>
   </main>
 
   <main id="viewBackup" class="view hidden">
@@ -168,6 +162,13 @@
       </label>
     </div>
   </main>
+
+  <nav class="bottomNav">
+    <button type="button" id="btnViewMembers" class="tab active"><span class="navIcon">👥</span>Mitglieder</button>
+    <button type="button" id="btnViewAttendance" class="tab"><span class="navIcon">✅</span>Anwesenheit</button>
+    <button type="button" id="btnViewTechnique" class="tab"><span class="navIcon">🥊</span>Technik</button>
+    <button type="button" id="btnViewMore" class="tab"><span class="navIcon">⋯</span>Mehr</button>
+  </nav>
 
   <script src="store.js"></script>
   <script src="app.js"></script>

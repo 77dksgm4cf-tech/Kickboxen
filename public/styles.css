@@ -4,7 +4,7 @@ body {
   font-family: -apple-system, system-ui, sans-serif;
   background: #111418;
   color: #f2f2f2;
-  padding-bottom: 40px;
+  padding-bottom: calc(96px + env(safe-area-inset-bottom));
 }
 
 .topbar {
@@ -19,7 +19,77 @@ body {
   margin: 0 0 10px;
 }
 
-.view-switch { display: flex; gap: 8px; flex-wrap: wrap; }
+.categorySwitch { display: flex; gap: 6px; padding-bottom: 10px; }
+.categorySwitch.hidden { display: none; }
+.seg {
+  flex: 1;
+  min-height: 44px;
+  padding: 8px 4px;
+  font-size: 0.85rem;
+  border: none;
+  border-radius: 10px;
+  background: #262b33;
+  color: #f2f2f2;
+}
+.seg.active { background: #ffb703; color: #111; font-weight: 600; }
+
+.filterBox { margin: 0 16px; }
+.filterBox.hidden { display: none; }
+.filterBox summary {
+  cursor: pointer;
+  padding: 10px 0;
+  font-size: 0.85rem;
+  color: #9aa4b2;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+}
+.filterBox summary::before { content: '▸'; margin-right: 6px; }
+.filterBox[open] summary::before { content: '▾'; }
+.filterBox .toolbar { padding: 0 0 10px; }
+
+.bottomNav {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  gap: 6px;
+  padding: 8px 10px calc(8px + env(safe-area-inset-bottom));
+  background: #111418;
+  border-top: 1px solid #333a45;
+  z-index: 20;
+}
+.bottomNav .tab {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  font-size: 0.75rem;
+  padding: 6px 2px;
+  white-space: nowrap;
+}
+.navIcon { font-size: 1.2rem; line-height: 1; }
+
+.moreList { display: flex; flex-direction: column; gap: 10px; margin-top: 8px; }
+.moreItem {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  padding: 16px;
+  min-height: 64px;
+  font-size: 1.05rem;
+  text-align: left;
+  border: 1px solid #333a45;
+  border-radius: 12px;
+  background: #1d2229;
+  color: #f2f2f2;
+}
+.moreItem span { font-size: 0.8rem; color: #9aa4b2; }
+
 .tab {
   flex: 1;
   padding: 12px;
@@ -66,7 +136,7 @@ body {
 .view { padding: 0 16px; }
 .view.hidden { display: none; }
 
-#childSearch, #adultSearch, #techniqueSelect {
+#childSearch, #adultSearch, #attendanceSearch, #techniqueSelect {
   width: 100%;
   padding: 12px;
   font-size: 1rem;
@@ -176,7 +246,7 @@ body {
   white-space: nowrap;
 }
 .activeToggle input { width: 20px; height: 20px; }
-#activeFilter, #typFilter, #kindGruppeFilter {
+#activeFilter {
   flex: 1;
   min-width: 140px;
   padding: 10px;
@@ -262,20 +332,13 @@ body {
   .view { padding: 0 10px; }
   .toolbar { padding: 10px; }
 
-  .view-switch {
-    flex-wrap: wrap;
-  }
-  .tab {
-    flex: 1 1 30%;
-    font-size: 0.8rem;
-    padding: 10px 4px;
-  }
+  .filterBox { margin: 0 10px; }
+  .seg { font-size: 0.78rem; }
 
   .toolbar button,
   .toolbar a,
   .fileLabel,
-  #activeFilter,
-  #typFilter {
+  #activeFilter {
     min-width: 100%;
   }
 
