@@ -29,10 +29,32 @@ function memberFullName(m) {
   return `${m.vorname} ${m.nachname}`;
 }
 
+let attendanceCounts = null;
+
+function invalidateAttendanceCounts() {
+  attendanceCounts = null;
+}
+
+function attendanceCountFor(m) {
+  if (!attendanceCounts) {
+    attendanceCounts = {};
+    const full = getFullAttendance();
+    for (const typ of Object.keys(full)) {
+      for (const sessionMap of Object.values(full[typ] || {})) {
+        for (const [memberId, present] of Object.entries(sessionMap)) {
+          if (present) attendanceCounts[memberId] = (attendanceCounts[memberId] || 0) + 1;
+        }
+      }
+    }
+  }
+  return attendanceCounts[m.id] || 0;
+}
+
 function memberName(m) {
   const initial = m.nachname ? `${m.nachname.trim().charAt(0).toUpperCase()}.` : '';
   const alter = currentAlter(m);
-  return [m.vorname, initial, alter != null ? String(alter) : null].filter(Boolean).join(' ');
+  const base = [m.vorname, initial, alter != null ? String(alter) : null].filter(Boolean).join(' ');
+  return `${base} (${attendanceCountFor(m)})`;
 }
 
 const nameCollator = new Intl.Collator('de', { sensitivity: 'base' });
@@ -110,6 +132,7 @@ async function init() {
 }
 
 function renderAll() {
+  invalidateAttendanceCounts();
   renderMemberList(SCOPES.Kind);
   renderMemberDetail(SCOPES.Kind);
   renderMemberTechniques(SCOPES.Kind);
@@ -581,19 +604,27 @@ function renderAttendanceList() {
 
   for (const m of relevant) {
     const present = !!sessionMap[m.id];
-    const attendedCount = allDates.filter((d) => attendanceData[d][m.id]).length;
-    const pct = allDates.length ? Math.round((attendedCount / allDates.length) * 100) : 0;
 
     const row = document.createElement('div');
     row.className = 'memberItem' + (present ? ' done' : '') + (m.probetraining ? ' probetraining' : '');
     const checkboxId = `att_${m.id}`;
     row.innerHTML = `
       <input type="checkbox" id="${checkboxId}" ${present ? 'checked' : ''} />
-      <label for="${checkboxId}">${escapeHtml(memberName(m))}<span class="techLabelSmall">${pct}% Beteiligung</span></label>
+      <label for="${checkboxId}"><span class="memberLabelName"></span><span class="techLabelSmall"></span></label>
     `;
+    const nameEl = row.querySelector('.memberLabelName');
+    const pctEl = row.querySelector('.techLabelSmall');
+    const updateLabels = () => {
+      const attended = attendanceCountFor(m);
+      nameEl.textContent = memberName(m);
+      pctEl.textContent = `${allDates.length ? Math.round((attended / allDates.length) * 100) : 0}% Beteiligung`;
+    };
+    updateLabels();
     row.querySelector('input').addEventListener('change', (e) => {
       setAttendance(typ, date, m.id, e.target.checked, attendanceData);
+      invalidateAttendanceCounts();
       row.classList.toggle('done', e.target.checked);
+      updateLabels();
     });
     container.appendChild(row);
   }
@@ -666,6 +697,7 @@ document.getElementById('btnDeleteSession').onclick = () => {
   const date = document.getElementById('attendanceSessionSelect').value;
   if (!date) return;
   deleteSession(typ, date, attendanceData);
+  invalidateAttendanceCounts();
   loadAttendanceView();
 };
 
@@ -679,6 +711,7 @@ function bulkMarkAttendance(present) {
   for (const m of attendanceMembers()) {
     setAttendance(typ, date, m.id, present, attendanceData);
   }
+  invalidateAttendanceCounts();
   renderAttendanceList();
 }
 
@@ -794,6 +827,8 @@ function setView(view) {
 
 document.getElementById('btnViewMembers').onclick = () => {
   setView('members');
+  renderMemberList(SCOPES.Kind);
+  renderMemberList(SCOPES.Erwachsener);
   renderMemberTechniques(SCOPES.Kind);
   renderMemberTechniques(SCOPES.Erwachsener);
 };
